@@ -91,7 +91,7 @@ export default function TestimonialsSection() {
         <section
             ref={sectionRef}
             className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
-            style={{ backgroundColor: "#5a403d" }}
+            style={{ backgroundColor: "#0097ab" }}
         >
             <div className="max-w-7xl mx-auto flex flex-col gap-10">
 

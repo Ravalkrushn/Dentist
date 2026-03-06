@@ -3,18 +3,23 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Phone, CalendarDays, Menu, X } from "lucide-react";
 
-type NavLink = {
-    label: string;
-    href: string;
-    dropdown?: string[];
-};
-
-const navLinks: NavLink[] = [
+const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/about-us" },
-    { label: "Services", href: "/services" },
-    { label: "Appointment", href: "/appointment" },
-    { label: "Gallery", href: "/gallery" },
+    {
+        label: "Our Practice",
+        href: "/our-practice",
+        dropdown: ["Meet Dr. Nicholas Brown", "Careers"],
+    },
+    {
+        label: "Patient Information",
+        href: "/patient-information",
+        dropdown: ["New Patients", "Financing & Insurance", "Referral Program"],
+    },
+    {
+        label: "Procedures",
+        href: "/procedures",
+        dropdown: ["General Dentistry", "Cosmetic Dentistry", "Orthodontics", "Oral Surgery"],
+    },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
 ];

@@ -45,7 +45,7 @@ export default function ServicesSection() {
         <section
             ref={sectionRef}
             className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
-            style={{ backgroundColor: "#5a403d" }}
+            style={{ backgroundColor: "#0097ab" }}
         >
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-24">
 

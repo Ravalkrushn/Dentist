@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 export default function DoctorSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,13 +62,6 @@ export default function DoctorSection() {
         return () => ctx.revert();
     }, []);
 
-    const bullets = [
-        "Creating personalized treatment plans to each patient's unique needs.",
-        "Offering sedation dentistry to ensure a relaxed and stress-free experience.",
-        "Using advanced dental technology to deliver precise and efficient care.",
-        "Ensuring he and his team are continuously advancing their knowledge to provide the best care possible."
-    ];
-
     return (
         <section
             ref={sectionRef}
@@ -107,39 +101,50 @@ export default function DoctorSection() {
                         </div>
                     </div>
 
-                    {/* Right: Doctor Info & Bullets */}
-                    <div className="doctor-text w-full lg:w-1/2 flex flex-col pt-4">
+                    {/* Right: Doctor Info & Details */}
+                    <div className="doctor-text w-full lg:w-1/2 flex flex-col justify-center py-4 lg:py-0">
+                        {/* Qualification & Experience */}
+                        <div className="mb-8 space-y-4">
+                            <h3 className="text-3xl md:text-5xl font-semibold text-[#4a2e2b] font-[vatsal]">
+                                Dr. Nicholas Brown
+                            </h3>
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-[#5a3a3a] text-[15px] sm:text-base font-medium">
+                                <span className="flex items-center gap-2 bg-[#d7c6bf] px-5 py-2.5 rounded-full shadow-sm">
+                                    <svg className="w-5 h-5 text-[#4a2e2b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422M12 20v-6m0 0V8m0 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    </svg>
+                                    BDS, MDS
+                                </span>
+                                <span className="flex items-center gap-2 border-2 border-[#d7c6bf] px-5 py-2 rounded-full shadow-sm bg-white/30 backdrop-blur-sm">
+                                    <svg className="w-5 h-5 text-[#4a2e2b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    15+ Years of Experience
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Short Intro */}
                         <p
-                            className="text-[#5a3a3a] mb-10"
-                            style={{
-                                fontFamily: "'Playfair Display', Georgia, serif",
-                                fontSize: "clamp(1.2rem, 2vw, 1.45rem)",
-                                fontWeight: 400,
-                                lineHeight: 1.8,
-                            }}
+                            className="text-[#5a3a3a] mb-10 text-lg leading-relaxed"
+                            style={{ fontFamily: "'Lato', sans-serif" }}
                         >
-                            With a passion for modern, comfortable dentistry, Dr. Nicholas Brown is dedicated to providing
-                            exceptional care with the latest advancements in dental technology. He specializes in comprehensive
-                            treatment plans, including conscious sedation for a truly relaxed experience. Dr. Brown is committed
-                            to:
+                            With a passion for modern, comfortable dentistry, Dr. Brown is dedicated to providing exceptional care equipped with the latest advancements in dental technology. He specializes in comprehensive treatment plans, focusing on conscious sedation for a relaxed and stress-free patient experience.
                         </p>
 
-                        <div className="flex flex-col w-full">
-                            {bullets.map((text, idx) => (
-                                <div key={idx} className="doctor-bullet border-b border-[#a8908a] py-5 last:border-0 hover:bg-[#e0d2cc] transition-colors duration-300 px-2 rounded-sm cursor-default">
-                                    <p
-                                        className="text-[#2c1e1c]"
-                                        style={{
-                                            fontFamily: "'Lato', sans-serif",
-                                            fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)",
-                                            fontWeight: 400,
-                                            lineHeight: 1.5,
-                                        }}
-                                    >
-                                        {text}
-                                    </p>
-                                </div>
-                            ))}
+                        {/* Read More Button */}
+                        <div className="doctor-bullet w-full sm:w-auto mt-2">
+                            <Link href="/about-us">
+                                <button className="group relative overflow-hidden rounded-full bg-[#0097ab] px-8 py-4 text-base sm:text-lg font-medium text-[#eaddd7] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0097ab]/30">
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        Read More
+                                        <svg className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </span>
+                                    <div className="absolute inset-0 z-0 h-full w-full scale-x-0 transform bg-[#2c1e1c] transition-transform duration-500 group-hover:scale-x-100 origin-left"></div>
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

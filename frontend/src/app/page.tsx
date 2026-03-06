@@ -1,13 +1,13 @@
 import MainNavbar from "@/components/Navbar/MainNavbar";
 import HeroSection from "@/components/HomePage/LandingPage";
-import AboutSection from "@/components/sections/AboutSection";
-import ServicesSection from "@/components/sections/ServicesSection";
 import DoctorSection from "@/components/sections/DoctorSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ReviewsSection from "@/components/sections/ReviewsSection";
 import ComprehensiveServicesSection from "@/components/sections/ComprehensiveServicesSection";
+import AboutSection from "@/components/sections/AboutSection";
+import BeforeAfterGallery from "@/components/gallery/BeforeAfterGallery";
+import ReviewsSection from "@/components/sections/ReviewsSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import LocationSection from "@/components/sections/LocationSection";
-import AppointmentSection from "@/components/sections/AppointmentSection";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -15,14 +15,12 @@ export default function Home() {
     <main>
       <MainNavbar />
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
       <DoctorSection />
-      <TestimonialsSection />
-      <ReviewsSection />
       <ComprehensiveServicesSection />
+      <AboutSection />
+      <BeforeAfterGallery />
+      <ReviewsSection />
       <LocationSection />
-      <AppointmentSection />
       <Footer />
     </main>
   );

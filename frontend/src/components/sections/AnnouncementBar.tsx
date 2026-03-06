@@ -8,7 +8,7 @@ export default function AnnouncementBar() {
   if (!visible) return null;
 
   return (
-    <div className="bg-[#3b1a1a] text-white text-center text-xs md:text-sm font-semibold py-3 px-10 relative tracking-wide">
+    <div className="bg-[#0097ab] text-white text-center text-xs md:text-sm font-semibold py-3 px-10 relative tracking-wide">
       NEW PATIENT SPECIAL: $199 — INCLUDES CLEANING, X-RAYS, FULL COMPREHENSIVE
       EXAM, AND MORE! CALL TODAY TO BOOK YOUR APPOINTMENT
       <button

@@ -3,8 +3,8 @@ import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="w-full pt-20 pb-8 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#5a403d" }}>
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 lg:gap-16 mb-20 text-white">
+        <footer className="w-full pt-20 pb-8 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#e2ded9" }}>
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 lg:gap-16 mb-20 text-[#4a2e2b]">
 
                 {/* Column 1: Logo & Contact Info */}
                 <div className="flex flex-col gap-10 md:w-1/3">
@@ -13,23 +13,23 @@ export default function Footer() {
                     <div className="flex flex-col w-fit">
                         <div className="flex items-center relative mb-1">
                             <span
-                                className="text-white text-[2.1rem] leading-none"
+                                className="text-[#4a2e2b] text-[2.1rem] leading-none"
                                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                             >
                                 Relaxation
                             </span>
-                            <span className="text-white text-[2.1rem] leading-none font-light tracking-tight ml-0.5">
+                            <span className="text-[#4a2e2b] text-[2.1rem] leading-none font-light tracking-tight ml-0.5">
                                 Dental
                             </span>
                             {/* Absolute SVG Leaf near the 'D' */}
-                            <svg className="absolute -top-[18px] right-[2.5rem] w-8 h-8 text-white opacity-90" viewBox="0 0 24 24" fill="currentColor">
+                            <svg className="absolute -top-[18px] right-[2.5rem] w-8 h-8 text-[#0097ab] opacity-90" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C12 2 17 4 19 8C20.66 11.32 19.5 17 19.5 17C19.5 17 16 15 13 13C10 11 7 11 7 11C7 11 9 13.5 11 15C13 16.5 14.5 19 14.5 19C14.5 19 12.5 17 8 16C5.5 15.44 2 15 2 15C2 15 5.5 12 8.5 9C10.5 7 12 2 12 2Z" />
                             </svg>
                         </div>
-                        <div className="bg-white text-[#5a403d] text-[0.6rem] font-bold tracking-[0.16em] px-2 py-0.5 mt-0.5 w-full text-center whitespace-nowrap rounded-[2px]">
+                        <div className="bg-[#4a2e2b] text-[#e2ded9] text-[0.6rem] font-bold tracking-[0.16em] px-2 py-0.5 mt-0.5 w-full text-center whitespace-nowrap rounded-[2px]">
                             BECAUSE THERE IS A BETTER WAY
                         </div>
-                        <div className="text-white text-[0.45rem] tracking-[0.2em] font-medium mt-1 uppercase w-full flex justify-between px-0.5 opacity-90">
+                        <div className="text-[#4a2e2b] text-[0.45rem] tracking-[0.2em] font-medium mt-1 uppercase w-full flex justify-between px-0.5 opacity-90">
                             <span>Sedation</span>
                             <span>•</span>
                             <span>Implants</span>
@@ -78,13 +78,13 @@ export default function Footer() {
 
                 {/* Column 4: Social Icons */}
                 <div className="flex gap-5 mt-2">
-                    <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#5a403d] hover:bg-white/80 transition-all hover:scale-105">
+                    <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-[#0097ab] flex items-center justify-center text-white hover:bg-[#4a2e2b] transition-all hover:scale-105">
                         <Facebook size={18} fill="currentColor" strokeWidth={0} />
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white/10 transition-all hover:scale-105">
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab]/10 transition-all hover:scale-105">
                         <Instagram size={17} />
                     </a>
-                    <a href="https://google.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white/10 transition-all hover:scale-105">
+                    <a href="https://google.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab]/10 transition-all hover:scale-105">
                         <span className="font-bold font-serif text-[1.1rem] leading-none mb-[2px]">G</span>
                     </a>
                 </div>
@@ -92,12 +92,12 @@ export default function Footer() {
             </div>
 
             {/* Bottom Section: Copyright */}
-            <div className="max-w-7xl mx-auto border-t border-white/20 pt-8 pb-4 flex items-center justify-center text-white">
+            <div className="max-w-7xl mx-auto border-t border-[#4a2e2b]/20 pt-8 pb-4 flex items-center justify-center text-[#4a2e2b]">
                 <p
                     className="text-sm font-light tracking-wide opacity-90"
                     style={{ fontFamily: "'Lato', sans-serif" }}
                 >
-                    © All rights reserved.
+                    © Develop by RND technosoft-2026.
                 </p>
             </div>
         </footer>
