@@ -83,6 +83,24 @@ export default function AboutSection() {
                     }
                 }
             );
+
+            // Show swipe hint every time section enters viewport
+            let hintTimer: NodeJS.Timeout;
+            ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: "top 75%",
+                onEnter: () => {
+                    setShowHint(true);
+                    clearTimeout(hintTimer);
+                    hintTimer = setTimeout(() => setShowHint(false), 3000);
+                },
+                onEnterBack: () => {
+                    setShowHint(true);
+                    clearTimeout(hintTimer);
+                    hintTimer = setTimeout(() => setShowHint(false), 3000);
+                },
+            });
+
         }, sectionRef);
 
         return () => ctx.revert();
@@ -170,12 +188,8 @@ export default function AboutSection() {
 
     useEffect(() => {
         startTimer();
-        // Hide hint after 4 seconds automatically
-        const hintTimer = setTimeout(() => setShowHint(false), 4000);
-
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
-            clearTimeout(hintTimer);
         };
     }, []);
 
@@ -234,16 +248,70 @@ export default function AboutSection() {
                     </p>
                 </div>
 
+
                 {/* Overlapping Playing Cards Container */}
                 <div
                     ref={containerRef}
                     className="relative w-full h-[450px] md:h-[500px] flex justify-center items-center opacity-0 cursor-grab active:cursor-grabbing outline-none"
-                    style={{ touchAction: "pan-y" }} // prevent default horizontal touch behavior for better dragging
+                    style={{ touchAction: "pan-y" }}
                     onPointerDown={handlePointerDown}
                     onPointerMove={handlePointerMove}
                     onPointerUp={handlePointerUp}
                     onPointerLeave={handlePointerUp}
                 >
+                    {/* Swipe Hint — Animated left→right swipe */}
+                    {showHint && (
+                        <div
+                            className="absolute top-2 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none select-none z-50"
+                            style={{ animation: "swipeHintFade 0.4s ease-out forwards" }}
+                        >
+                            {/* Swipe track */}
+                            <div className="relative w-20 h-8 flex items-center">
+                                {/* Trail line */}
+                                <div style={{
+                                    position: "absolute",
+                                    left: "4px",
+                                    right: "4px",
+                                    height: "2px",
+                                    borderRadius: "99px",
+                                    background: "linear-gradient(to right, transparent, #8b5c3e88, transparent)",
+                                }} />
+                                {/* Animated finger */}
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    className="w-6 h-6 absolute"
+                                    fill="#8b5c3e"
+                                    style={{ animation: "swipeMove 1.2s ease-in-out infinite", opacity: 0.85 }}
+                                >
+                                    <path d="M10.5 3.75a.75.75 0 0 1 .75.75V9h1.5V5.25a.75.75 0 0 1 1.5 0V9h1.5V6.75a.75.75 0 0 1 1.5 0v6a4.5 4.5 0 0 1-4.5 4.5 4.5 4.5 0 0 1-4.5-4.5V9.75a.75.75 0 0 1 1.5 0V9h.75V4.5a.75.75 0 0 1 .75-.75z" />
+                                </svg>
+                            </div>
+                            <span style={{
+                                fontFamily: "'Lato', sans-serif",
+                                fontSize: "8px",
+                                fontWeight: 700,
+                                letterSpacing: "0.15em",
+                                color: "#8b5c3e",
+                                opacity: 0.75,
+                                textTransform: "uppercase",
+                                marginTop: "2px"
+                            }}>
+                                Swipe
+                            </span>
+                        </div>
+                    )}
+                    <style>{`
+                        @keyframes swipeHintFade {
+                            from { opacity: 0; }
+                            to   { opacity: 1; }
+                        }
+                        @keyframes swipeMove {
+                            0%   { left: 4px;  opacity: 0; }
+                            15%  { opacity: 0.9; }
+                            85%  { opacity: 0.9; }
+                            100% { left: calc(100% - 28px); opacity: 0; }
+                        }
+                    `}</style>
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
@@ -254,16 +322,6 @@ export default function AboutSection() {
                         >
                             <span className="text-[#8b5c3e] mb-6 p-5 bg-white rounded-full shadow-md inline-flex relative">
                                 {feature.icon}
-
-                                {/* Half-circle arrow hint above the active card */}
-                                {showHint && idx === activeIndex && (
-                                    <div className="absolute -top-[100px] left-1/2 -translate-x-1/2 flex flex-col items-center animate-pulse pointer-events-none w-32">
-                                        <span className="text-[10px] font-bold text-[#8b5c3e] mb-1 tracking-wider whitespace-nowrap uppercase">Swipe Here</span>
-                                        <svg className="w-8 h-8 text-[#8b5c3e] animate-bounce-horizontal opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15c0-4 3-7 7-7s7 3 7 7m0 0l-3-3m3 3l3-3" />
-                                        </svg>
-                                    </div>
-                                )}
                             </span>
                             <h3 className="text-[#2e1a0e] font-serif font-semibold text-[1.25rem] mb-4">
                                 {feature.title}

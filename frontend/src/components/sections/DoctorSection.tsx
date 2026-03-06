@@ -135,14 +135,14 @@ export default function DoctorSection() {
                         {/* Read More Button */}
                         <div className="doctor-bullet w-full sm:w-auto mt-2">
                             <Link href="/about-us">
-                                <button className="group relative overflow-hidden rounded-full bg-[#0097ab] px-8 py-4 text-base sm:text-lg font-medium text-[#eaddd7] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0097ab]/30">
+                                <button className="group relative overflow-hidden rounded-full bg-[#0097ab] px-8 py-4 text-base sm:text-lg font-medium text-[#eaddd7] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-[#0097ab]/50">
                                     <span className="relative z-10 flex items-center gap-2">
                                         Read More
                                         <svg className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>
                                     </span>
-                                    <div className="absolute inset-0 z-0 h-full w-full scale-x-0 transform bg-[#2c1e1c] transition-transform duration-500 group-hover:scale-x-100 origin-left"></div>
+                                    <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#007b8a] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
                                 </button>
                             </Link>
                         </div>

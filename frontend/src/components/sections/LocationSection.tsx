@@ -44,14 +44,14 @@ export default function LocationSection() {
         <section
             ref={sectionRef}
             className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
-            style={{ backgroundColor: "#e2ded9" }}
+            style={{ backgroundColor: "#0097ab" }}
         >
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
 
                 {/* Left Side: Contact Info */}
                 <div className="loc-text w-full md:w-1/3 flex flex-col items-start gap-12">
                     <h2
-                        className="text-[#4a2e2b]"
+                        className="text-white"
                         style={{
                             fontFamily: "'Playfair Display', Georgia, serif",
                             fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
@@ -64,59 +64,76 @@ export default function LocationSection() {
                         Information
                     </h2>
 
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-7">
+
                         {/* Phone */}
-                        <div className="flex items-center gap-4 text-[#2c1e1c]">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                        <div className="flex items-center gap-4 text-white">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
-                            <a
-                                href="tel:7195393145"
-                                className="underline decoration-[#4a2e2b] decoration-1 underline-offset-4 hover:text-[#4a2e2b] transition-colors"
-                                style={{
-                                    fontFamily: "'Lato', sans-serif",
-                                    fontSize: "1rem",
-                                    fontWeight: 400,
-                                }}
-                            >
-                                719-539-3145
-                            </a>
+                            <div className="flex flex-col">
+                                <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.65)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Phone</span>
+                                <a href="tel:7195393145" className="text-white hover:text-white/80 transition-colors" style={{ fontFamily: "'Lato', sans-serif", fontSize: "1rem", fontWeight: 400 }}>
+                                    719-539-3145
+                                </a>
+                            </div>
                         </div>
 
                         {/* Address */}
-                        <div className="flex items-start gap-4 text-[#2c1e1c]">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                        <div className="flex items-start gap-4 text-white">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-1">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
                             <div className="flex flex-col">
-                                <span
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontSize: "0.95rem",
-                                        fontWeight: 400,
-                                        color: "#5f4f4f",
-                                        marginBottom: "0.2rem"
-                                    }}
-                                >
-                                    Relaxation Dental
-                                </span>
+                                <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.65)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Address</span>
                                 <a
                                     href="https://maps.google.com/?q=1222+C+Street,+Salida,+CO+81201"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="underline decoration-[#4a2e2b] decoration-1 underline-offset-4 hover:text-[#4a2e2b] transition-colors"
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontSize: "1rem",
-                                        fontWeight: 400,
-                                    }}
+                                    className="text-white hover:text-white/80 transition-colors"
+                                    style={{ fontFamily: "'Lato', sans-serif", fontSize: "1rem", fontWeight: 400 }}
                                 >
                                     1222 C Street, Salida, CO 81201
                                 </a>
                             </div>
                         </div>
+
+                        {/* Opening Hours */}
+                        <div className="flex items-start gap-4 text-white">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-1">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <div className="flex flex-col">
+                                <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.65)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Opening Hours</span>
+                                <span className="text-white" style={{ fontFamily: "'Lato', sans-serif", fontSize: "1rem", fontWeight: 400 }}>
+                                    Mon – Fri: 8:00 AM – 5:00 PM
+                                </span>
+                                <span className="text-white/70" style={{ fontFamily: "'Lato', sans-serif", fontSize: "0.9rem" }}>
+                                    Sat – Sun: Closed
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Quick Book Appointment Button */}
+                        <div className="mt-2">
+                            <a
+                                href="/contact"
+                                className="group relative overflow-hidden inline-flex rounded-full bg-white px-7 py-3 text-sm md:text-base font-semibold text-[#0097ab] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-xl"
+                            >
+                                <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
+                                    Quick Book Appointment
+                                    <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                    </svg>
+                                </span>
+                                <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#007b8a] transition-transform duration-500 group-hover:scale-y-100 origin-bottom rounded-full"></div>
+                            </a>
+                        </div>
+
                     </div>
+
                 </div>
 
                 {/* Right Side: Google Maps Iframe */}

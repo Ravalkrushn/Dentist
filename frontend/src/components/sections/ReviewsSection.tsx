@@ -107,20 +107,20 @@ export default function ReviewsSection() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
+            className="w-full py-14 px-6 md:px-12 lg:px-24 overflow-hidden"
             style={{ backgroundColor: "#e2ded9" }}
         >
-            <div className="max-w-7xl mx-auto flex flex-col gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col gap-8">
 
                 {/* Top Section: Text left, Video right */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                     {/* Left: Heading & Intro Text */}
                     <div className="reviews-header w-full md:w-3/5 lg:w-1/2 flex flex-col">
                         <h2
-                            className="text-[#4a2e2b] mb-6"
+                            className="text-[#4a2e2b] mb-4"
                             style={{
                                 fontFamily: "'Playfair Display', Georgia, serif",
-                                fontSize: "clamp(2.5rem, 4vw, 3.8rem)",
+                                fontSize: "clamp(2rem, 3.5vw, 3rem)",
                                 fontWeight: 400,
                             }}
                         >
@@ -145,8 +145,8 @@ export default function ReviewsSection() {
                     {/* Right: Floating Video component */}
                     <div className="reviews-video w-full md:w-2/5 lg:w-1/3 flex justify-center md:justify-end">
                         <div
-                            className="relative w-full max-w-[320px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl"
-                            style={{ transform: "rotate(6deg)" }} // Rotated photo/video style
+                            className="relative w-full max-w-[220px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl"
+                            style={{ transform: "rotate(6deg)" }}
                         >
                             {/* Auto-playing muted video loop */}
                             <video
@@ -162,7 +162,7 @@ export default function ReviewsSection() {
                 </div>
 
                 {/* Bottom Section: Testimonial Carousel */}
-                <div ref={contentRef} className="w-full flex flex-col pt-8">
+                <div ref={contentRef} className="w-full flex flex-col pt-2">
 
                     {/* Track Container */}
                     <div className="w-full overflow-hidden">
@@ -177,9 +177,9 @@ export default function ReviewsSection() {
                                     style={{ width: `${100 / itemsPerPage}%` }}
                                 >
                                     {/* 5 Stars Component */}
-                                    <div className="flex gap-1 mb-6">
+                                    <div className="flex gap-1 mb-4">
                                         {[1, 2, 3, 4, 5].map((star) => (
-                                            <svg key={star} width="22" height="22" viewBox="0 0 24 24" fill="#6d4c41" xmlns="http://www.w3.org/2000/svg">
+                                            <svg key={star} width="18" height="18" viewBox="0 0 24 24" fill="#6d4c41" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                                             </svg>
                                         ))}
@@ -187,10 +187,10 @@ export default function ReviewsSection() {
 
                                     {/* Review Text */}
                                     <p
-                                        className="text-[#2c1e1c] flex-grow mb-8"
+                                        className="text-[#2c1e1c] flex-grow mb-5"
                                         style={{
                                             fontFamily: "'Lato', sans-serif",
-                                            fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+                                            fontSize: "clamp(0.85rem, 1.1vw, 0.95rem)",
                                             fontWeight: 400,
                                             lineHeight: 1.6,
                                         }}
@@ -215,7 +215,7 @@ export default function ReviewsSection() {
                     </div>
 
                     {/* Pagination / Arrows */}
-                    <div className="w-full flex items-center justify-between mt-12 px-4">
+                    <div className="w-full flex items-center justify-between mt-6 px-4">
 
                         {/* Dots */}
                         <div className="flex gap-2">

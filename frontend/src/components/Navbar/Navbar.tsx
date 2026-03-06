@@ -5,36 +5,25 @@ import { ChevronDown, Phone, CalendarDays, Menu, X } from "lucide-react";
 
 const navLinks = [
     { label: "Home", href: "/" },
-    {
-        label: "Our Practice",
-        href: "/our-practice",
-        dropdown: ["Meet Dr. Nicholas Brown", "Careers"],
-    },
-    {
-        label: "Patient Information",
-        href: "/patient-information",
-        dropdown: ["New Patients", "Financing & Insurance", "Referral Program"],
-    },
-    {
-        label: "Procedures",
-        href: "/procedures",
-        dropdown: ["General Dentistry", "Cosmetic Dentistry", "Orthodontics", "Oral Surgery"],
-    },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Appointment / Book Consultation", href: "/contact" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    // const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     return (
         <nav className="sticky top-0 z-50 bg-white shadow-sm">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex flex-col leading-tight">
-                    <span className="text-[#3b1a1a] font-bold text-xl tracking-tight">
-                        Relaxation<span className="text-[#8b5c5c]">Dental</span>
+                    <span className="text-[#0097ab] font-bold text-xl tracking-tight">
+                        Relaxation<span className="text-[#0097ab]">Dental</span>
                     </span>
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest">
                         Because There Is A Better Way
@@ -42,39 +31,19 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <ul className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#3b1a1a]">
+                <ul className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#0097ab]">
                     {navLinks.map((link) => (
                         <li
                             key={link.label}
                             className="relative group"
-                            onMouseEnter={() => setActiveDropdown(link.label)}
-                            onMouseLeave={() => setActiveDropdown(null)}
                         >
                             <Link
                                 href={link.href}
-                                className="flex items-center gap-1 hover:text-[#8b5c5c] transition"
+                                className="flex items-center gap-1 hover:text-[#007b8b] transition"
                             >
                                 {link.label}
-                                {link.dropdown && <ChevronDown size={14} />}
                             </Link>
 
-                            {/* Dropdown */}
-                            {link.dropdown && activeDropdown === link.label && (
-                                <div className="absolute top-full left-0 pt-8 z-50">
-                                    <ul className="bg-white shadow-lg rounded-lg py-2 w-52">
-                                        {link.dropdown.map((item) => (
-                                            <li key={item}>
-                                                <Link
-                                                    href="#"
-                                                    className="block px-4 py-2 text-sm text-[#3b1a1a] hover:bg-[#f5f0eb] hover:text-[#8b5c5c] transition"
-                                                >
-                                                    {item}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
                         </li>
                     ))}
                 </ul>
@@ -83,23 +52,29 @@ export default function Navbar() {
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
                         href="/contact"
-                        className="flex items-center gap-2 bg-[#3b1a1a] text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#5c2e2e] transition"
+                        className="group relative overflow-hidden flex items-center gap-2 bg-[#0097ab] text-[#eaddd7] text-sm font-semibold px-5 py-2.5 rounded-full shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0097ab]/40"
                     >
-                        <CalendarDays size={15} />
-                        Schedule Now
+                        <span className="relative z-10 flex items-center gap-2">
+                            <CalendarDays size={15} className="transition-transform duration-300 group-hover:rotate-12" />
+                            Schedule Now
+                        </span>
+                        <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#007b8a] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
                     </Link>
                     <a
                         href="tel:7195393145"
-                        className="flex items-center gap-2 border border-[#3b1a1a] text-[#3b1a1a] text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#f5f0eb] transition"
+                        className="group relative overflow-hidden flex items-center gap-2 border border-[#0097ab] text-[#0097ab] text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-[#0097ab]/20"
                     >
-                        <Phone size={15} />
-                        719-539-3145
+                        <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                            <Phone size={15} className="transition-transform duration-300 group-hover:rotate-12" />
+                            719-539-3145
+                        </span>
+                        <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#0097ab] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
                     </a>
                 </div>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="lg:hidden text-[#3b1a1a]"
+                    className="lg:hidden text-[#0097ab]"
                     onClick={() => setMobileOpen(!mobileOpen)}
                 >
                     {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -113,7 +88,7 @@ export default function Navbar() {
                         <Link
                             key={link.label}
                             href={link.href}
-                            className="text-[#3b1a1a] font-medium text-sm hover:text-[#8b5c5c]"
+                            className="text-[#0097ab] font-medium text-sm hover:text-[#007b8b]"
                             onClick={() => setMobileOpen(false)}
                         >
                             {link.label}
@@ -121,18 +96,21 @@ export default function Navbar() {
                     ))}
                     <Link
                         href="/contact"
-                        className="bg-[#3b1a1a] text-white text-sm font-semibold px-4 py-2 rounded-full text-center"
+                        className="group relative overflow-hidden bg-[#0097ab] text-[#eaddd7] text-sm font-semibold px-4 py-3 rounded-full text-center shadow-md transition-all duration-300"
                     >
-                        Schedule Now
+                        <span className="relative z-10">Schedule Now</span>
+                        <div className="absolute inset-0 z-0 h-full w-full scale-x-0 transform bg-[#007b8a] transition-transform duration-500 group-hover:scale-x-100 origin-left"></div>
                     </Link>
                     <a
                         href="tel:7195393145"
-                        className="border border-[#3b1a1a] text-[#3b1a1a] text-sm font-semibold px-4 py-2 rounded-full text-center"
+                        className="group relative overflow-hidden border border-[#0097ab] text-[#0097ab] text-sm font-semibold px-4 py-3 rounded-full text-center shadow-sm transition-all duration-300"
                     >
-                        719-539-3145
+                        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">719-539-3145</span>
+                        <div className="absolute inset-0 z-0 h-full w-full scale-x-0 transform bg-[#0097ab] transition-transform duration-500 group-hover:scale-x-100 origin-right"></div>
                     </a>
                 </div>
             )}
         </nav>
     );
 }
+
