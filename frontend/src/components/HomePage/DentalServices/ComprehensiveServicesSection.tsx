@@ -166,7 +166,8 @@ export default function ComprehensiveServicesSection() {
                 {/* Cards Grid: changed to 3 columns on large screens to fit 6 cards perfectly */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
                     {cards.map((card, idx) => (
-                        <div
+                        <Link
+                            href="/services"
                             key={idx}
                             className="comp-card group relative flex flex-col items-center text-center px-6 py-12 rounded-3xl border border-white/40 bg-black/20 backdrop-blur-md transition-all duration-500 hover:bg-black/40 hover:border-white/70"
                         >
@@ -179,7 +180,7 @@ export default function ComprehensiveServicesSection() {
                             <p className="text-white/80 text-sm">
                                 {card.desc}
                             </p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

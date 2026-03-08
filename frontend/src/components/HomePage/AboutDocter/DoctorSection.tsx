@@ -134,7 +134,7 @@ export default function DoctorSection() {
 
                         {/* Read More Button */}
                         <div className="doctor-bullet w-full sm:w-auto mt-2">
-                            <Link href="/about-us">
+                            <Link href="/about">
                                 <button className="group relative overflow-hidden rounded-full bg-[#0097ab] px-8 py-4 text-base sm:text-lg font-medium text-[#eaddd7] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-[#0097ab]/50">
                                     <span className="relative z-10 flex items-center gap-2">
                                         Read More
