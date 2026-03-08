@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 const doctorsList = [
     {
@@ -75,159 +76,219 @@ const doctorsList = [
     }
 ];
 
-function DoctorCard({ doctor, index }: { doctor: any, index: number }) {
-    const [expanded, setExpanded] = useState(false);
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const isDarkBg = index % 2 !== 0;
+export default function DoctorProfile() {
+    const bannerContainerRef = useRef<HTMLDivElement>(null);
+    const bannerImageRef = useRef<HTMLDivElement>(null);
+    const textContainerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
+    const [activeDoc, setActiveDoc] = useState(0);
+    const [expandedDocs, setExpandedDocs] = useState<Record<number, boolean>>({});
+
+    const toggleExpanded = (i: number) => {
+        setExpandedDocs(prev => ({ ...prev, [i]: !prev[i] }));
+    }
+
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        if (bannerContainerRef.current && bannerImageRef.current) {
+            const bannerTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: bannerContainerRef.current,
+                    start: "top top",
+                    end: "+=350%",
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                },
+            });
+
+            bannerTl.to(bannerImageRef.current, {
+                rotate: 0,
+                height: "100vh",
+                width: "100vw",
+                top: "50%",
+                boxShadow: "none",
+                borderRadius: "0px",
+                duration: 1,
+                ease: "power2.inOut",
+            })
+                .to(".banner-title-top", { opacity: 0, y: -50, duration: 0.5 }, "<")
+                .to(".banner-title-bottom", { opacity: 0, y: 50, duration: 0.5 }, "<")
+                .to({}, { duration: 10/88 }); // This forces the photo to hold perfectly still at full-screen while you keep scrolling for another 1.5x the duration of the zoom before releasing down.
         }
 
-        const ctx = gsap.context(() => {
-            // Main Doctor Profile animations
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse",
-                }
+        const blocks = gsap.utils.toArray(".doctor-text-block") as HTMLDivElement[];
+        blocks.forEach((block, i) => {
+            ScrollTrigger.create({
+                trigger: block,
+                start: "top 50%",
+                end: "bottom 50%",
+                onEnter: () => setActiveDoc(i),
+                onEnterBack: () => setActiveDoc(i),
             });
 
-            tl.from(".doctor-image", {
-                opacity: 0,
-                y: 60,
-                duration: 1.2,
-                ease: "power3.out"
-            })
-                .from(".doctor-text", {
+            const eduCards = block.querySelectorAll(".edu-card");
+            if (eduCards.length > 0) {
+                gsap.from(eduCards, {
+                    scrollTrigger: {
+                        trigger: block.querySelector(".edu-section"),
+                        start: "top 80%",
+                        toggleActions: "play none none reverse",
+                    },
                     opacity: 0,
-                    x: isDarkBg ? 40 : -40, // Slide from opposite side based on index
-                    duration: 1,
+                    y: 30,
+                    duration: 0.8,
+                    stagger: 0.15,
                     ease: "power3.out"
-                }, "-=0.8");
+                });
+            }
 
-            // Education items stagger
-            gsap.from(".edu-card", {
-                scrollTrigger: {
-                    trigger: ".edu-section",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                y: 30,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out"
-            });
+            const certItems = block.querySelectorAll(".cert-item");
+            if (certItems.length > 0) {
+                gsap.from(certItems, {
+                    scrollTrigger: {
+                        trigger: block.querySelector(".cert-section"),
+                        start: "top 80%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    x: 30,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                });
+            }
 
-            // Certifications stagger
-            gsap.from(".cert-item", {
-                scrollTrigger: {
-                    trigger: ".cert-section",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                x: 30,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power3.out"
-            });
+            const expCards = block.querySelectorAll(".exp-card");
+            if (expCards.length > 0) {
+                gsap.from(expCards, {
+                    scrollTrigger: {
+                        trigger: block.querySelector(".exp-section"),
+                        start: "top 80%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out"
+                });
+            }
+        });
 
-            // Experience items stagger
-            gsap.from(".exp-card", {
-                scrollTrigger: {
-                    trigger: ".exp-section",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                y: 40,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out"
-            });
-
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, [isDarkBg]);
+    }, []);
 
     return (
-        <div ref={sectionRef} className={`w-full ${isDarkBg ? 'bg-[#0097ab]' : 'bg-[#E2DED9]'} py-20 px-6 lg:px-28 overflow-hidden`}>
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14 items-center mb-20">
-                <div className={`doctor-image w-full lg:w-[400px] flex-shrink-0 ${isDarkBg ? 'lg:order-2' : ''}`}>
-                    <img src={doctor.image} alt={doctor.name} className="w-full h-[500px] rounded-3xl shadow-xl object-cover object-top" />
+        <section className="w-full bg-[#E2DED9]">
+            {/* Banner Section */}
+            <div ref={bannerContainerRef} className="h-[100dvh] w-full relative overflow-hidden flex flex-col items-center justify-between py-24 px-6 bg-[#E2DED9] z-10">
+                <div className="absolute inset-0 z-[0] bg-[#E2DED9]" />
+
+                <h1 className="banner-title-top absolute top-[9%] left-1/2 -translate-x-1/2 w-full z-[3] text-5xl md:text-7xl font-serif text-[#3b2a28] text-center">
+                    meet team members
+                </h1>
+
+                <div
+                    ref={bannerImageRef}
+                    className="absolute top-[47%] left-[50%] z-[2] w-[22rem] md:w-[32rem] h-[16rem] md:h-[22rem] -translate-x-1/2 -translate-y-1/2 -rotate-6 transform-gpu overflow-hidden rounded-[50px] shadow-2xl will-change-transform"
+                >
+                    <img
+                        src="/image/team_member.jpg"
+                        alt="Meet the Dentists"
+                        className="h-full w-full object-cover"
+                    />
                 </div>
-                <div className={`doctor-text flex-1 ${isDarkBg ? 'text-white' : 'text-[#5a3a3a]'} ${isDarkBg ? 'lg:order-1' : ''}`}>
-                    <h2 className={`${isDarkBg ? 'text-white' : 'text-[#3b2a28]'} text-4xl lg:text-5xl font-serif mb-2`}>{doctor.name}</h2>
-                    <p className={`${isDarkBg ? 'text-gray-200' : 'text-[#0097ab]'} font-bold uppercase tracking-widest text-sm mb-5`}>{doctor.title}</p>
-                    <p className="leading-relaxed text-lg mb-4">{doctor.shortDesc}</p>
-                    {expanded && (
-                        <p className="leading-relaxed text-lg scale-up-anim mb-4">{doctor.longDesc}</p>
-                    )}
-                    <button onClick={() => setExpanded(!expanded)} className={`text-white ${isDarkBg ? 'bg-[#3b2a28] hover:bg-[#2a1a19]' : 'bg-[#0097ab] hover:bg-[#007b8a]'} px-6 py-2 rounded-full font-medium transition-colors mt-3 text-sm uppercase tracking-wide`}>
-                        {expanded ? "Show Less" : "Read More"}
-                    </button>
+
+                <div className="banner-title-bottom absolute top-[75%] left-1/2 -translate-x-1/2 w-full z-[3] text-center text-[#5a3a3a]">
+                    <p className="text-2xl md:text-4xl font-serif">Welcome to Relaxation Dental</p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto">
-                <div className="edu-section">
-                    <h3 className={`text-3xl font-serif ${isDarkBg ? 'text-white border-white' : 'text-[#3b2a28] border-[#0097ab]'} mb-8 border-b-2 inline-block pb-2`}>Education Background</h3>
-                    <div className="space-y-6">
-                        {doctor.education.map((ed: any, i: number) => (
-                            <div key={i} className="edu-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                                <p className="text-[#0097ab] font-bold text-sm mb-1">{ed.year}</p>
-                                <h4 className="text-[#3b2a28] font-bold text-lg">{ed.degree}</h4>
-                                <p className="text-[#5a3a3a]">{ed.institution}</p>
-                            </div>
+            {/* Doctors Profile Section with Sticky Sidebar */}
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 flex gap-16 relative bg-[#E2DED9] z-20">
+                {/* Left side: Sticky Avatar (Desktop Only) */}
+                <div className="hidden lg:block w-5/12 shrink-0">
+                    <div className="sticky top-32 h-[80vh] w-full rounded-3xl overflow-hidden shadow-2xl">
+                        {doctorsList.map((doc, i) => (
+                            <img
+                                key={i}
+                                src={doc.image}
+                                alt={doc.name}
+                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${activeDoc === i ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                            />
                         ))}
                     </div>
                 </div>
-                <div className="cert-section">
-                    <h3 className={`text-3xl font-serif ${isDarkBg ? 'text-white border-white' : 'text-[#3b2a28] border-[#0097ab]'} mb-8 border-b-2 inline-block pb-2`}>Certifications</h3>
-                    <ul className="space-y-4">
-                        {doctor.certifications.map((cert: string, i: number) => (
-                            <li key={i} className="cert-item flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                                <span className="text-[#0097ab] text-xl">✓</span>
-                                <span className="text-[#5a3a3a] font-medium">{cert}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
 
-            <div className="exp-section max-w-7xl mx-auto mt-20">
-                <h3 className={`text-3xl font-serif ${isDarkBg ? 'text-white border-white' : 'text-[#3b2a28] border-[#0097ab]'} mb-10 border-b-2 inline-block pb-2`}>Experience</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {doctor.experience.map((exp: any, i: number) => (
-                        <div key={i} className={`exp-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 ${isDarkBg ? '' : 'border-t-4 border-t-[#0097ab]'}`}>
-                            <p className="text-[#0097ab] font-bold text-sm mb-2">{exp.duration}</p>
-                            <h4 className="text-[#3b2a28] font-bold text-xl mb-1">{exp.role}</h4>
-                            <p className="text-gray-500 text-sm mb-4">{exp.place}</p>
-                            <p className="text-[#5a3a3a]">{exp.desc}</p>
+                {/* Right side: Doctors Info Scrollable Text */}
+                <div ref={textContainerRef} className="w-full lg:w-7/12 flex flex-col gap-[30vh]">
+                    {doctorsList.map((doc, i) => (
+                        <div key={i} className="doctor-text-block relative pt-20" data-index={i}>
+                            {/* Mobile Image (Hidden on Desktop) */}
+                            <div className="block lg:hidden w-full h-[400px] mb-8 rounded-3xl overflow-hidden shadow-xl">
+                                <img src={doc.image} alt={doc.name} className="w-full h-full object-cover" />
+                            </div>
+
+                            <h2 className="text-5xl font-serif text-[#3b2a28] mb-2">{doc.name}</h2>
+                            <p className="text-[#0097ab] font-bold uppercase tracking-widest text-sm mb-6 pb-4 border-b-2 border-slate-300 w-fit">{doc.title}</p>
+
+                            <p className="text-lg text-[#5a3a3a] mb-4 leading-relaxed">{doc.shortDesc}</p>
+
+                            {expandedDocs[i] && (
+                                <p className="text-lg text-[#5a3a3a] mb-4 scale-up-anim leading-relaxed">{doc.longDesc}</p>
+                            )}
+                            <button onClick={() => toggleExpanded(i)} className="text-white bg-[#0097ab] hover:bg-[#007b8a] px-6 py-2 rounded-full font-medium transition-colors mt-2 mb-10 text-xs uppercase tracking-wider">
+                                {expandedDocs[i] ? "Show Less" : "Read More"}
+                            </button>
+
+                            {/* Education Background */}
+                            <div className="edu-section mb-10">
+                                <h3 className="text-2xl font-serif text-[#3b2a28] border-b-2 border-[#0097ab] inline-block pb-2 mb-6">Education Background</h3>
+                                <div className="space-y-4">
+                                    {doc.education.map((ed: { degree: string; institution: string; year: string }, edIdx: number) => (
+                                        <div key={edIdx} className="edu-card bg-white p-6 rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-[#0097ab]">
+                                            <p className="text-[#0097ab] font-bold text-xs mb-1 uppercase bg-[#e2ded9] w-fit px-2 py-1 rounded">{ed.year}</p>
+                                            <h4 className="text-[#3b2a28] font-bold text-lg">{ed.degree}</h4>
+                                            <p className="text-slate-500 text-sm mt-1">{ed.institution}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Certifications */}
+                            <div className="cert-section mb-10">
+                                <h3 className="text-2xl font-serif text-[#3b2a28] border-b-2 border-[#0097ab] inline-block pb-2 mb-6">Certifications</h3>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {doc.certifications.map((cert: string, certIdx: number) => (
+                                        <li key={certIdx} className="cert-item flex items-start gap-3 bg-[#e2ded9] p-4 rounded-xl shadow-sm border border-slate-200">
+                                            <span className="text-[#0097ab] text-lg font-bold leading-none mt-1">✓</span>
+                                            <span className="text-[#5a3a3a] text-sm font-medium">{cert}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Experience */}
+                            <div className="exp-section">
+                                <h3 className="text-2xl font-serif text-[#3b2a28] border-b-2 border-[#0097ab] inline-block pb-2 mb-6">Experience</h3>
+                                <div className="space-y-6">
+                                    {doc.experience.map((exp: { duration: string; role: string; place: string; desc: string }, expIdx: number) => (
+                                        <div key={expIdx} className="exp-card relative pl-6 border-l-2 border-slate-300 ml-3">
+                                            <div className="absolute w-3 h-3 bg-[#0097ab] rounded-full -left-[7px] top-1"></div>
+                                            <p className="text-[#0097ab] font-bold text-xs mb-1">{exp.duration}</p>
+                                            <h4 className="text-[#3b2a28] font-bold text-lg mb-1">{exp.role}</h4>
+                                            <p className="text-slate-600 text-xs font-semibold mb-2">{exp.place}</p>
+                                            <p className="text-[#5a3a3a] text-sm leading-relaxed">{exp.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
-    );
-}
-
-export default function DoctorProfile() {
-    return (
-        <section className="w-full">
-            <div className="bg-[#E2DED9] pt-14 pb-8 text-center px-6">
-                <h2 className="text-[#3b2a28] text-4xl lg:text-5xl font-serif mt-3 mb-6 inline-block border-b-4 border-[#0097ab] pb-2">Meet Our Doctors</h2>
-                <p className="text-[#5a3a3a] max-w-2xl mx-auto text-lg leading-relaxed">
-                </p>
-            </div>
-            {doctorsList.map((doc, index) => (
-                <DoctorCard key={index} doctor={doc} index={index} />
-            ))}
         </section>
     );
 }
+
