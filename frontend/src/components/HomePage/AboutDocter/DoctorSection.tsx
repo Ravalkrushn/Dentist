@@ -19,7 +19,7 @@ export default function DoctorSection() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 75%",
+                    start: "top 90%",
                     toggleActions: "play none none reverse",
                 }
             });
@@ -27,35 +27,35 @@ export default function DoctorSection() {
             // Title fade in
             tl.from(titleRef.current, {
                 opacity: 0,
-                y: 30,
-                duration: 1,
+                y: 20,
+                duration: 0.6,
                 ease: "power3.out"
             });
 
             // Image slide up & fade
             tl.from(".doctor-image", {
                 opacity: 0,
-                y: 60,
-                duration: 1.2,
+                y: 40,
+                duration: 0.8,
                 ease: "power3.out"
-            }, "-=0.6");
+            }, "-=0.4");
 
             // Text paragraph slide & fade
             tl.from(".doctor-text", {
                 opacity: 0,
-                x: 40,
-                duration: 1,
+                x: 30,
+                duration: 0.6,
                 ease: "power3.out"
-            }, "-=0.8");
+            }, "-=0.6");
 
             // Bullet points stagger
             tl.from(".doctor-bullet", {
                 opacity: 0,
-                x: 30,
-                duration: 0.8,
-                stagger: 0.15,
+                x: 20,
+                duration: 0.5,
+                stagger: 0.1,
                 ease: "power3.out"
-            }, "-=0.6");
+            }, "-=0.4");
 
         }, sectionRef);
 
