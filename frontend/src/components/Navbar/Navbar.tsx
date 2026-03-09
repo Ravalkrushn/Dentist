@@ -6,7 +6,18 @@ import { ChevronDown, Phone, CalendarDays, Menu, X } from "lucide-react";
 const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
+    {
+        label: "Services",
+        href: "/services",
+        dropdown: [
+            { label: "Teeth Cleaning", href: "/services/teeth-cleaning" },
+            { label: "Root Canal", href: "/services/root-canal" },
+            { label: "Dental Implants", href: "/services/dental-implants" },
+            { label: "Braces & Aligners", href: "/services/braces-aligners" },
+            { label: "Teeth Whitening", href: "/services/teeth-whitening" },
+            { label: "Pediatric Dentistry", href: "/services/pediatric-dentistry" },
+        ],
+    },
     { label: "Appointment / Book Consultation", href: "/contact" },
     { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
@@ -15,7 +26,7 @@ const navLinks = [
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
-    // const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     return (
         <nav className="sticky top-0 z-50 bg-white shadow-sm">
@@ -39,11 +50,28 @@ export default function Navbar() {
                         >
                             <Link
                                 href={link.href}
-                                className="flex items-center gap-1 hover:text-[#007b8b] transition"
+                                className="flex items-center gap-1 hover:text-[#007b8b] transition py-4"
                             >
                                 {link.label}
+                                {link.dropdown && <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />}
                             </Link>
 
+                            {/* Dropdown Menu */}
+                            {link.dropdown && (
+                                <div className="absolute top-full left-0 w-60 bg-white border-t-2 border-[#0097ab] shadow-xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50">
+                                    <div className="py-2 flex flex-col">
+                                        {link.dropdown.map((sublink) => (
+                                            <Link
+                                                key={sublink.label}
+                                                href={sublink.href}
+                                                className="px-5 py-2.5 hover:bg-[#F5F9FA] hover:text-[#007b8b] text-[#0097ab] text-sm transition-colors border-b border-gray-50 last:border-0"
+                                            >
+                                                {sublink.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </li>
                     ))}
                 </ul>
@@ -85,14 +113,41 @@ export default function Navbar() {
             {mobileOpen && (
                 <div className="lg:hidden bg-white border-t px-6 py-4 flex flex-col gap-4">
                     {navLinks.map((link) => (
-                        <Link
-                            key={link.label}
-                            href={link.href}
-                            className="text-[#0097ab] font-medium text-sm hover:text-[#007b8b]"
-                            onClick={() => setMobileOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
+                        <div key={link.label} className="flex flex-col">
+                            <div className="flex items-center justify-between">
+                                <Link
+                                    href={link.href}
+                                    className="text-[#0097ab] font-medium text-sm hover:text-[#007b8b]"
+                                    onClick={() => !link.dropdown && setMobileOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                                {link.dropdown && (
+                                    <button
+                                        onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                                        className="text-[#0097ab] p-1 bg-[#0097ab]/5 rounded-md"
+                                    >
+                                        <ChevronDown size={18} className={`transition-transform duration-300 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* Mobile Dropdown */}
+                            {link.dropdown && activeDropdown === link.label && (
+                                <div className="flex flex-col gap-3 mt-3 mb-2 pl-4 border-l-2 border-[#0097ab]/20">
+                                    {link.dropdown.map((sublink) => (
+                                        <Link
+                                            key={sublink.label}
+                                            href={sublink.href}
+                                            className="text-[#0097ab]/80 font-medium text-sm hover:text-[#007b8b]"
+                                            onClick={() => setMobileOpen(false)}
+                                        >
+                                            {sublink.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     ))}
                     <Link
                         href="/contact"
