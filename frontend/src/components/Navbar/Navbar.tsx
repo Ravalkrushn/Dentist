@@ -32,13 +32,22 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 bg-white shadow-sm">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex flex-col leading-tight">
-                    <span className="text-[#0097ab] font-bold text-xl tracking-tight">
-                        Relaxation<span className="text-[#0097ab]">Dental</span>
-                    </span>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest">
-                        Because There Is A Better Way
-                    </span>
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-xl bg-[#0097ab]/10 flex items-center justify-center p-1.5 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#0097ab]/20 group-hover:shadow-lg">
+                        <img
+                            src="/icon.png"
+                            alt="Relaxation Dental Logo"
+                            className="w-full h-full object-contain"
+                        />
+                    </div>
+                    <div className="flex flex-col leading-[1.1]">
+                        <span className="text-[#0097ab] font-bold text-lg md:text-xl tracking-tight">
+                            Relaxation<span className="text-[#0097ab]/80 ml-0.5">Dental</span>
+                        </span>
+                        <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+                            Because There Is A Better Way
+                        </span>
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}
