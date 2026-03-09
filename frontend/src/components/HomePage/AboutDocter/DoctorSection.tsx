@@ -65,10 +65,10 @@ export default function DoctorSection() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
+            className="w-full py-24 overflow-hidden"
             style={{ backgroundColor: "#eaddd7" }}
         >
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Centered Top Title */}
                 <div ref={titleRef} className="text-center mb-16 md:mb-24">
@@ -91,7 +91,7 @@ export default function DoctorSection() {
                 <div ref={contentRef} className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
 
                     {/* Left: Doctor Image */}
-                    <div className="doctor-image w-full lg:w-1/2 flex justify-center lg:justify-end">
+                    <div className="doctor-image w-full lg:w-1/2 flex justify-center lg:justify-start">
                         <div className="w-full max-w-[500px] h-[600px] rounded-tl-[3rem] rounded-tr-[3rem] rounded-bl-xl rounded-br-xl overflow-hidden shadow-xl">
                             <img
                                 src="/image/ABOUT2.png" // Assuming SIR.webp is the doctor portrait based on file list

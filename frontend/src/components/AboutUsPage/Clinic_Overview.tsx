@@ -147,7 +147,7 @@ export default function ClinicOverview() {
     return (
         <section ref={sectionRef} className="w-full bg-[#E2DED9] py-20 overflow-hidden">
             {/* Header */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-28 mb-16 text-center">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
                 <h2 className="text-[#3b2a28] text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-[#0097ab] pb-2">
                     Clinic Overview
                 </h2>
@@ -157,7 +157,7 @@ export default function ClinicOverview() {
             </div>
 
             {/* Centered Equipment Photos Carousel */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-28 mb-24">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-24">
                 <div className="w-full text-center mb-10">
                     <h3 className="text-3xl font-serif text-[#3b2a28] border-b-2 border-[#0097ab] inline-block pb-2">Equipment Photos</h3>
                 </div>
@@ -207,7 +207,7 @@ export default function ClinicOverview() {
             </div>
 
             {/* Split Layout: Infrastructure (Left) & Hygiene (Right) */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
                 {/* Left Column: Infrastructure */}
                 <div className="infra-section flex flex-col">

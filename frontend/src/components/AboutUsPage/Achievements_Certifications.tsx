@@ -59,12 +59,12 @@ export default function AchievementsCertifications() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#0097ab] py-20 px-6 lg:px-28">
-            <div className="max-w-7xl mx-auto mb-16 text-center">
+        <section ref={sectionRef} className="w-full bg-[#0097ab] py-20">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
                 <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-white pb-2">Achievements & Certifications</h2>
             </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="awards-section">
                     <h3 className="text-3xl font-serif text-white mb-8 border-b-2 border-white inline-block pb-2">Awards</h3>
                     <div className="space-y-6">

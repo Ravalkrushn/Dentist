@@ -145,8 +145,8 @@ export default function BeforeAfterGallery() {
 
 
     return (
-        <section ref={sectionRef} className="w-full py-24 px-4 md:px-12 lg:px-24 overflow-hidden" style={{ backgroundColor: "#0097ab" }}>
-            <div className="max-w-[90rem] mx-auto flex flex-col items-center">
+        <section ref={sectionRef} className="w-full py-24 overflow-hidden" style={{ backgroundColor: "#0097ab" }}>
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center">
                 <div className="gallery-header text-center mb-16 max-w-3xl">
                     <h2 className="text-white font-[Playfair_Display] text-[clamp(2.5rem,4vw,3.5rem)] mb-4 leading-tight">
                         Smile Transformations

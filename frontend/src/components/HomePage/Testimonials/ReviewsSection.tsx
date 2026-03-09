@@ -107,10 +107,10 @@ export default function ReviewsSection() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-14 px-6 md:px-12 lg:px-24 overflow-hidden"
+            className="w-full py-14 overflow-hidden"
             style={{ backgroundColor: "#e2ded9" }}
         >
-            <div className="max-w-7xl mx-auto flex flex-col gap-8">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col gap-8">
 
                 {/* Top Section: Text left, Video right */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">

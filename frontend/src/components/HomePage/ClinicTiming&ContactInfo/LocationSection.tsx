@@ -43,10 +43,10 @@ export default function LocationSection() {
     return (
         <section
             ref={sectionRef}
-            className="w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
+            className="w-full py-24 overflow-hidden"
             style={{ backgroundColor: "#0097ab" }}
         >
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-16">
 
                 {/* Left Side: Contact Info */}
                 <div className="loc-text w-full md:w-1/3 flex flex-col items-start gap-12">

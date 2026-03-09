@@ -115,7 +115,7 @@ export default function DoctorProfile() {
             })
                 .to(".banner-title-top", { opacity: 0, y: -50, duration: 0.5 }, "<")
                 .to(".banner-title-bottom", { opacity: 0, y: 50, duration: 0.5 }, "<")
-                .to({}, { duration: 10/88 }); // This forces the photo to hold perfectly still at full-screen while you keep scrolling for another 1.5x the duration of the zoom before releasing down.
+                .to({}, { duration: 10 / 88 }); // This forces the photo to hold perfectly still at full-screen while you keep scrolling for another 1.5x the duration of the zoom before releasing down.
         }
 
         const blocks = gsap.utils.toArray(".doctor-text-block") as HTMLDivElement[];
@@ -206,7 +206,7 @@ export default function DoctorProfile() {
             </div>
 
             {/* Doctors Profile Section with Sticky Sidebar */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 flex gap-16 relative bg-[#E2DED9] z-20">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32 flex gap-16 relative bg-[#E2DED9] z-20">
                 {/* Left side: Sticky Avatar (Desktop Only) */}
                 <div className="hidden lg:block w-5/12 shrink-0">
                     <div className="sticky top-24 h-[80vh] w-full rounded-3xl overflow-hidden shadow-2xl">

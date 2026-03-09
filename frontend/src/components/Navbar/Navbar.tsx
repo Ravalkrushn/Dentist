@@ -30,7 +30,7 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 bg-white shadow-sm">
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex flex-col leading-tight">
                     <span className="text-[#0097ab] font-bold text-xl tracking-tight">

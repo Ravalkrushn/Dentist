@@ -143,7 +143,7 @@ export default function ComprehensiveServicesSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full min-h-screen py-24 px-6 md:px-12 lg:px-24 flex items-center overflow-hidden"
+            className="relative w-full min-h-screen py-24 flex items-center overflow-hidden"
         >
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
@@ -161,7 +161,7 @@ export default function ComprehensiveServicesSection() {
             <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center">
 
                 {/* Header */}
                 <div className="comp-header w-full text-center max-w-3xl mb-16">

@@ -237,7 +237,7 @@ export default function AboutSection() {
                 overflow: "hidden",
             }}
         >
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                 <div className="text-center mb-16 opacity-0" ref={headerRef}>
                     <h2 className="text-3xl md:text-5xl font-[Playfair_Display] text-[#2e1a0e] mb-4">
                         Why Choose Our Dental Clinic
