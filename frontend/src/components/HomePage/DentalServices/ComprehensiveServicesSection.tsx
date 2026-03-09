@@ -56,6 +56,7 @@ export default function ComprehensiveServicesSection() {
     const cards = [
         {
             title: "Teeth Cleaning",
+            id: "teeth-cleaning",
             desc: "Prevent cavities and gum disease with regular checkups and professional cleanings.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -71,6 +72,7 @@ export default function ComprehensiveServicesSection() {
         },
         {
             title: "Root Canal",
+            id: "root-canal-treatment",
             desc: "Save your natural tooth and relieve pain with our gentle root canal therapies.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -85,6 +87,7 @@ export default function ComprehensiveServicesSection() {
         },
         {
             title: "Dental Implants",
+            id: "dental-implants",
             desc: "Replace missing teeth with long-lasting, natural-looking permanent implants.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -99,6 +102,7 @@ export default function ComprehensiveServicesSection() {
         },
         {
             title: "Braces & Aligners",
+            id: "orthodontics",
             desc: "Straighten your teeth discreetly and comfortably with modern orthodontic care.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -112,6 +116,7 @@ export default function ComprehensiveServicesSection() {
         },
         {
             title: "Teeth Whitening",
+            id: "teeth-whitening",
             desc: "Enhance your smile instantly with professional and safe teeth whitening treatments.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -126,6 +131,7 @@ export default function ComprehensiveServicesSection() {
         },
         {
             title: "Pediatric Dentistry",
+            id: "pediatric-dentistry",
             desc: "Gentle and specialized dental care to keep your child's smile healthy and bright.",
             icon: (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -178,7 +184,7 @@ export default function ComprehensiveServicesSection() {
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
                     {cards.map((card, idx) => (
                         <Link
-                            href="/services"
+                            href={`/services/${card.id}`}
                             key={idx}
                             className="comp-card group relative flex flex-col items-center text-center px-6 py-12 rounded-3xl border border-white/40 bg-black/20 backdrop-blur-md transition-all duration-500 hover:bg-black/40 hover:border-white/70"
                         >
