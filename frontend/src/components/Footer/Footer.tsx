@@ -3,12 +3,11 @@ import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="w-full pt-20 pb-8 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#e2ded9" }}>
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 lg:gap-16 mb-20 text-[#4a2e2b]">
+        <footer className="w-full pt-16 pb-6 px-6 md:px-12 lg:px-24" style={{ backgroundColor: "#e2ded9" }}>
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 lg:gap-16 mb-12 text-[#4a2e2b]">
 
                 {/* Column 1: Logo & Contact Info */}
-                <div className="flex flex-col gap-10 md:w-1/3">
-
+                <div className="flex flex-col gap-6 md:w-1/4">
                     {/* Recreating the Logo from screenshot */}
                     <div className="flex flex-col w-fit">
                         <div className="flex items-center relative mb-1">
@@ -41,52 +40,60 @@ export default function Footer() {
                             <span>Family</span>
                         </div>
                     </div>
+                    
+                    <p className="text-[0.9rem] font-light leading-relaxed opacity-85 mt-[-10px]" style={{ fontFamily: "'Lato', sans-serif" }}>
+                        Your comfort is our top priority. We provide world-class dental care with a gentle touch, using advanced technology for a stress-free experience.
+                    </p>
+                </div>
 
-                    <div className="flex flex-col gap-6" style={{ fontFamily: "'Lato', sans-serif" }}>
-                        <div className="text-[0.95rem] font-light leading-relaxed">
-                            <strong className="font-bold">Address:</strong><br />
-                            Relaxation Dental<br />
-                            1222 C Street<br />
-                            Salida, Colorado 81201
-                        </div>
-                        <div className="text-[0.95rem] font-light leading-relaxed">
-                            <strong className="font-bold">Phone Number:</strong><br />
-                            <a href="tel:7195393145" className="hover:underline transition-all">719-539-3145</a>
-                        </div>
-                        <div className="text-[0.95rem] font-light leading-relaxed">
-                            <strong className="font-bold">Email:</strong><br />
-                            <a href="mailto:info@relaxationdds.com" className="hover:underline transition-all">info@relaxationdds.com</a>
-                        </div>
+                {/* Column 2: Contact Info */}
+                <div className="flex flex-col gap-6 md:w-1/4" style={{ fontFamily: "'Lato', sans-serif" }}>
+                    <h4 className="text-[1.1rem] font-bold uppercase tracking-wider mb-1">Contact Us</h4>
+                    <div className="text-[0.9rem] font-light leading-relaxed">
+                        <strong className="font-bold">Address:</strong><br />
+                        Relaxation Dental<br />
+                        1222 C Street, Salida, CO 81201
+                    </div>
+                    <div className="text-[0.9rem] font-light leading-relaxed">
+                        <strong className="font-bold">Phone Number:</strong><br />
+                        <a href="tel:7195393145" className="hover:underline transition-all">719-539-3145</a>
+                    </div>
+                    <div className="text-[0.9rem] font-light leading-relaxed">
+                        <strong className="font-bold">Email:</strong><br />
+                        <a href="mailto:info@relaxationdds.com" className="hover:underline transition-all">info@relaxationdds.com</a>
                     </div>
                 </div>
 
-                {/* Column 2: Nav Links 1 */}
-                <div className="flex flex-col gap-5 mt-2 lg:ml-12" style={{ fontFamily: "'Lato', sans-serif" }}>
-                    <Link href="/" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Home</Link>
-                    <Link href="/our-practice" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Our Practice</Link>
-                    <Link href="/patient-information" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Patient Information</Link>
-                    <Link href="/procedures" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Procedures</Link>
-                    <Link href="/careers" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Careers</Link>
+                {/* Column 3: Quick Links */}
+                <div className="flex flex-col gap-4 md:w-1/6" style={{ fontFamily: "'Lato', sans-serif" }}>
+                    <h4 className="text-[1.1rem] font-bold uppercase tracking-wider mb-1">Quick Links</h4>
+                    <Link href="/" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Home</Link>
+                    <Link href="/our-practice" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Our Practice</Link>
+                    <Link href="/patient-information" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Patient Info</Link>
+                    <Link href="/procedures" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Procedures</Link>
+                    <Link href="/careers" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Careers</Link>
+                    <Link href="/contact" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Contact Us</Link>
                 </div>
 
-                {/* Column 3: Nav Links 2 */}
-                <div className="flex flex-col gap-5 mt-2" style={{ fontFamily: "'Lato', sans-serif" }}>
-                    <Link href="/referral-program" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Referral Program</Link>
-                    <Link href="/blog" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Blog</Link>
-                    <Link href="/contact" className="text-[0.95rem] font-light hover:underline underline-offset-4 transition-all">Contact</Link>
-                </div>
-
-                {/* Column 4: Social Icons */}
-                <div className="flex gap-5 mt-2">
-                    <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-[#0097ab] flex items-center justify-center text-white hover:bg-[#4a2e2b] transition-all hover:scale-105">
-                        <Facebook size={18} fill="currentColor" strokeWidth={0} />
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab]/10 transition-all hover:scale-105">
-                        <Instagram size={17} />
-                    </a>
-                    <a href="https://google.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab]/10 transition-all hover:scale-105">
-                        <span className="font-bold font-serif text-[1.1rem] leading-none mb-[2px]">G</span>
-                    </a>
+                {/* Column 4: Opening Hours & Socials */}
+                <div className="flex flex-col gap-6 md:w-1/4" style={{ fontFamily: "'Lato', sans-serif" }}>
+                    <h4 className="text-[1.1rem] font-bold uppercase tracking-wider mb-1">Opening Hours</h4>
+                    <div className="text-[0.9rem] font-light space-y-1">
+                        <div className="flex justify-between"><span>Mon – Thu:</span> <span>8:00 AM – 5:00 PM</span></div>
+                        <div className="flex justify-between border-b border-[#4a2e2b]/10 pb-1"><span>Fri – Sun:</span> <span>Closed</span></div>
+                    </div>
+                    
+                    <div className="flex gap-4 mt-2">
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-[#0097ab] flex items-center justify-center text-white hover:bg-[#4a2e2b] transition-all hover:scale-105 shadow-sm">
+                            <Facebook size={18} fill="currentColor" strokeWidth={0} />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab] hover:text-white transition-all hover:scale-105 shadow-sm">
+                            <Instagram size={17} />
+                        </a>
+                        <a href="https://google.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab] hover:text-white transition-all hover:scale-105 shadow-sm">
+                            <span className="font-bold font-serif text-[1.1rem] leading-none mb-[2px]">G</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>

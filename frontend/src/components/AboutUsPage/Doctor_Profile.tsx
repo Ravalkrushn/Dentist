@@ -97,7 +97,7 @@ export default function DoctorProfile() {
                     trigger: bannerContainerRef.current,
                     start: "top top",
                     end: "+=350%",
-                    scrub: 1,
+                    scrub: 0.2,
                     pin: true,
                     anticipatePin: 1,
                 },
@@ -111,7 +111,7 @@ export default function DoctorProfile() {
                 boxShadow: "none",
                 borderRadius: "0px",
                 duration: 1,
-                ease: "power2.inOut",
+                ease: "none",
             })
                 .to(".banner-title-top", { opacity: 0, y: -50, duration: 0.5 }, "<")
                 .to(".banner-title-bottom", { opacity: 0, y: 50, duration: 0.5 }, "<")

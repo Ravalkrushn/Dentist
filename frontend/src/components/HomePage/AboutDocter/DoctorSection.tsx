@@ -88,7 +88,7 @@ export default function DoctorSection() {
                 </div>
 
                 {/* Two Column Content */}
-                <div ref={contentRef} className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
+                <div ref={contentRef} className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
                     {/* Left: Doctor Image */}
                     <div className="doctor-image w-full lg:w-1/2 flex justify-center lg:justify-start">
