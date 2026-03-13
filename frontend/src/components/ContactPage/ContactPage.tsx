@@ -3,13 +3,13 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { 
-    MapPin, 
-    Phone, 
-    Clock, 
-    MessageCircle, 
-    Send, 
-    Instagram, 
+import {
+    MapPin,
+    Phone,
+    Clock,
+    MessageCircle,
+    Send,
+    Instagram,
     Facebook,
     ArrowRight,
     Star,
@@ -66,7 +66,7 @@ export default function ContactPage() {
     }, []);
 
     return (
-        <div ref={sectionRef} className="w-full">
+        <div ref={sectionRef} className="w-full bg-[#EADDD7]">
             {/* 1. Hero Section - Background #EADDD7 */}
             <section className="bg-[#EADDD7] pt-32 pb-20 px-6 lg:px-12 text-center">
                 <div className="max-w-4xl mx-auto contact-header">
@@ -134,8 +134,8 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="text-[#3b2a28] text-lg font-bold mb-2 font-[Playfair_Display]">Working Hours</h3>
                                     <div className="text-[#3b2a28] font-[Lato] text-sm space-y-0.5">
-                                        <p>Mon - Thu: 8 AM – 5 PM</p>
-                                        <p>Fri – Sun: Closed</p>
+                                        <p>Mon - SAT: 8 AM – 5 PM</p>
+                                        <p>SUN: Closed</p>
                                     </div>
                                 </div>
                             </div>
@@ -151,9 +151,9 @@ export default function ContactPage() {
                     {/* Left Side: Photo */}
                     <div className="relative">
                         <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-x-1 -rotate-2 transform transition-transform hover:rotate-0 hover:skew-x-0 duration-700">
-                            <img 
-                                src="/image/ABOUT2.png" 
-                                alt="Why Choose Us" 
+                            <img
+                                src="/image/ABOUT2.png"
+                                alt="Why Choose Us"
                                 className="w-full h-full object-cover scale-110"
                             />
                             {/* Overlay Blur Effect */}
@@ -209,14 +209,14 @@ export default function ContactPage() {
             {/* 3. Form Section - Background #EADDD7 */}
             <section className="contact-main bg-[#0097AB] py-24 px-6 lg:px-12">
                 <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    
+
                     {/* Form */}
                     <div className="form-section bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl border border-white/20">
                         <div className="mb-10">
                             <h2 className="text-4xl font-[Playfair_Display] text-[#3b2a28] mb-4">Send Us a <span className="italic text-[#0097ab]">Message</span></h2>
                             <p className="text-[#3b2a28]/60 font-[Lato]">Our team usually responds within one business day.</p>
                         </div>
-                        
+
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -228,7 +228,7 @@ export default function ContactPage() {
                                     <input type="email" placeholder="email@address.com" className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-[#0097ab]/40 focus:ring-0 shadow-sm transition-all outline-none placeholder:text-[#3b2a28]/40" />
                                 </div>
                             </div>
-                            
+
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-[#3b2a28] uppercase tracking-widest ml-1">Select Service</label>
                                 <select className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-[#0097ab]/40 shadow-sm outline-none appearance-none cursor-pointer text-[#3b2a28]/60">
@@ -256,23 +256,23 @@ export default function ContactPage() {
                     {/* Map & Social */}
                     <div className="map-section flex flex-col gap-6">
                         <div className="bg-white p-4 rounded-[3rem] shadow-2xl h-[450px] lg:h-[550px] overflow-hidden border-8 border-white">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.3654441315516!2d-106.00030568466052!3d38.53676797962803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x871578508eb9419b%3A0xe7f9f257b4587391!2s1222%20C%20St%2C%20Salida%2C%20CO%2081201%2C%20USA!5e0!3m2!1sen!2sin!4v1710321234567!5m2!1sen!2sin" 
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.3654441315516!2d-106.00030568466052!3d38.53676797962803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x871578508eb9419b%3A0xe7f9f257b4587391!2s1222%20C%20St%2C%20Salida%2C%20CO%2081201%2C%20USA!5e0!3m2!1sen!2sin!4v1710321234567!5m2!1sen!2sin"
                                 className="w-full h-full rounded-[2.5rem]"
-                                style={{ border: 0 }} 
-                                allowFullScreen={true} 
-                                loading="lazy" 
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
                             />
                         </div>
-                        
-                        <div className="bg-[#0097AB] p-8 rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden group">
+
+                        <div className="bg-white p-8 rounded-[3rem] text-[#3b2a28] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden group border border-slate-100">
                             <div className="flex items-center gap-4 relative z-10">
-                                <Star size={24} className="text-[#EADDD7]" fill="#EADDD7" />
-                                <span className="font-[Playfair_Display] text-xl">Follow our smiles on Socials</span>
+                                <Star size={24} className="text-[#0097ab]" fill="#0097ab" />
+                                <span className="font-[Playfair_Display] text-xl font-bold">Follow our smiles on Socials</span>
                             </div>
                             <div className="flex gap-4 relative z-10">
-                                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0097ab] transition-all"><Instagram size={22} /></a>
-                                <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#0097ab] transition-all"><Facebook size={22} /></a>
+                                <a href="#" className="w-12 h-12 rounded-full border border-[#3b2a28]/20 flex items-center justify-center hover:bg-[#0097ab] hover:text-white transition-all"><Instagram size={22} /></a>
+                                <a href="#" className="w-12 h-12 rounded-full border border-[#3b2a28]/20 flex items-center justify-center hover:bg-[#0097ab] hover:text-white transition-all"><Facebook size={22} /></a>
                             </div>
                         </div>
                     </div>

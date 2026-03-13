@@ -80,8 +80,8 @@ export default function Footer() {
                 <div className="flex flex-col gap-6 md:w-1/4" style={{ fontFamily: "'Lato', sans-serif" }}>
                     <h4 className="text-[1.1rem] font-bold uppercase tracking-wider mb-1">Opening Hours</h4>
                     <div className="text-[0.9rem] font-light space-y-1">
-                        <div className="flex justify-between"><span>Mon – Thu:</span> <span>8:00 AM – 5:00 PM</span></div>
-                        <div className="flex justify-between border-b border-[#4a2e2b]/10 pb-1"><span>Fri – Sun:</span> <span>Closed</span></div>
+                        <div className="flex justify-between"><span>Mon – SAT:</span> <span>8:00 AM – 5:00 PM</span></div>
+                        <div className="flex justify-between border-b border-[#4a2e2b]/10 pb-1"><span>SUN:</span> <span>Closed</span></div>
                     </div>
                     
                     <div className="flex gap-4 mt-2">
