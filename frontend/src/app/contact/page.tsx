@@ -1,18 +1,19 @@
-"use client";
-import AppointmentHero from "@/components/AppointmentPage/AppointmentHero";
-import AppointmentForm from "@/components/AppointmentPage/AppointmentForm";
-import NavbarAlert from "@/components/Navbar/Navbar-alert";
-import Navbar from "@/components/Navbar/Navbar";
+import MainNavbar from "@/components/Navbar/MainNavbar";
 import Footer from "@/components/Footer/Footer";
-export default function ContactPage() {
-  return (
-    <main className="min-h-screen bg-[#fcf9f7]">
-      <NavbarAlert />
-      <Navbar />
-     
-      <AppointmentHero />
-      <AppointmentForm />
-      <Footer />
-    </main>
-  );
+import ContactSection from "@/components/ContactPage/ContactPage";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact Us | Relaxation Dental – Salida, CO",
+    description: "Get in touch with Relaxation Dental. Schedule your dental appointment or ask questions about our services in Salida, CO.",
+};
+
+export default function ContactRoute() {
+    return (
+        <main className="min-h-screen">
+            <MainNavbar />
+            <ContactSection />
+            <Footer />
+        </main>
+    );
 }

@@ -59,15 +59,7 @@ export default function ComprehensiveServicesSection() {
             id: "teeth-cleaning",
             desc: "Prevent cavities and gum disease with regular checkups and professional cleanings.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <g transform="translate(12, 13) scale(0.7) translate(-12, -12)">
-                        <path d="M 12 5.5 C 11.2 3 9.7 2 8 2 C 4.7 2 2 4.7 2 8 C 2 11 4.2 12.5 4.2 17 C 4.2 19 5.7 20 7.5 20 C 9 20 10 18.5 10 17 C 10 16 11 15.5 12 15.5 C 13 15.5 14 16 14 17 C 14 18.5 15 20 16.5 20 C 18.3 20 19.8 19 19.8 17 C 19.8 12.5 22 11 22 8 C 22 4.7 19.3 2 16 2 C 14.3 2 12.8 3 12 5.5 Z" />
-                    </g>
-                    <circle cx="19" cy="7" r="2" />
-                    <circle cx="17" cy="13" r="1" />
-                    <circle cx="5" cy="9" r="2" />
-                    <circle cx="8" cy="4" r="1" />
-                </svg>
+                <img src="/image/L1.svg" alt="Teeth Cleaning" />
             )
         },
         {
@@ -75,14 +67,7 @@ export default function ComprehensiveServicesSection() {
             id: "root-canal-treatment",
             desc: "Save your natural tooth and relieve pain with our gentle root canal therapies.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 12 5.5 C 11.2 3 9.7 2 8 2 C 4.7 2 2 4.7 2 8 C 2 11 4.2 12.5 4.2 17 C 4.2 19 5.7 20 7.5 20 C 9 20 10 18.5 10 17 C 10 16 11 15.5 12 15.5 C 13 15.5 14 16 14 17 C 14 18.5 15 20 16.5 20 C 18.3 20 19.8 19 19.8 17 C 19.8 12.5 22 11 22 8 C 22 4.7 19.3 2 16 2 C 14.3 2 12.8 3 12 5.5 Z" />
-                    <path d="M 12 7 L 12 10" />
-                    <path d="M 12 10 Q 10 12 9 16" />
-                    <path d="M 12 10 Q 14 12 15 16" />
-                    <circle cx="9" cy="16" r="0.5" fill="currentColor" />
-                    <circle cx="15" cy="16" r="0.5" fill="currentColor" />
-                </svg>
+                <img src="/image/L2.svg" alt="Root Canal" />
             )
         },
         {
@@ -90,14 +75,7 @@ export default function ComprehensiveServicesSection() {
             id: "dental-implants",
             desc: "Replace missing teeth with long-lasting, natural-looking permanent implants.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 12 4.5 C 11.2 2 9.7 1 8 1 C 4.7 1 2 3.7 2 7 C 2 10 4.2 11.5 6 12 C 9 13 10 12 12 11 C 14 12 15 13 18 12 C 19.8 11.5 22 10 22 7 C 22 3.7 19.3 1 16 1 C 14.3 1 12.8 2 12 4.5 Z" />
-                    <path d="M 12 11 L 12 22" />
-                    <path d="M 9 14 L 15 14" />
-                    <path d="M 9 17 L 15 17" />
-                    <path d="M 10 20 L 14 20" />
-                    <path d="M 12 22 L 10 20 M 12 22 L 14 20" />
-                </svg>
+                <img src="/image/l3.svg" alt="Dental Implants" />
             )
         },
         {
@@ -105,13 +83,7 @@ export default function ComprehensiveServicesSection() {
             id: "orthodontics",
             desc: "Straighten your teeth discreetly and comfortably with modern orthodontic care.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 12 5.5 C 11.2 3 9.7 2 8 2 C 4.7 2 2 4.7 2 8 C 2 11 4.2 12.5 4.2 17 C 4.2 19 5.7 20 7.5 20 C 9 20 10 18.5 10 17 C 10 16 11 15.5 12 15.5 C 13 15.5 14 16 14 17 C 14 18.5 15 20 16.5 20 C 18.3 20 19.8 19 19.8 17 C 19.8 12.5 22 11 22 8 C 22 4.7 19.3 2 16 2 C 14.3 2 12.8 3 12 5.5 Z" />
-                    <path d="M 1.5 10 Q 12 14 22.5 10" />
-                    <rect x="5.5" y="10.5" width="2" height="2" rx="0.5" fill="currentColor" />
-                    <rect x="11" y="11" width="2" height="2" rx="0.5" fill="currentColor" />
-                    <rect x="16.5" y="10.5" width="2" height="2" rx="0.5" fill="currentColor" />
-                </svg>
+                <img src="/image/L4.svg" alt="Braces & Aligners" />
             )
         },
         {
@@ -119,14 +91,7 @@ export default function ComprehensiveServicesSection() {
             id: "teeth-whitening",
             desc: "Enhance your smile instantly with professional and safe teeth whitening treatments.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <g transform="translate(12, 13) scale(0.8) translate(-12, -12)">
-                        <path d="M 12 5.5 C 11.2 3 9.7 2 8 2 C 4.7 2 2 4.7 2 8 C 2 11 4.2 12.5 4.2 17 C 4.2 19 5.7 20 7.5 20 C 9 20 10 18.5 10 17 C 10 16 11 15.5 12 15.5 C 13 15.5 14 16 14 17 C 14 18.5 15 20 16.5 20 C 18.3 20 19.8 19 19.8 17 C 19.8 12.5 22 11 22 8 C 22 4.7 19.3 2 16 2 C 14.3 2 12.8 3 12 5.5 Z" />
-                    </g>
-                    <path d="M 19 1 Q 19 4 16 4 Q 19 4 19 7 Q 19 4 22 4 Q 19 4 19 1 Z" fill="currentColor" />
-                    <path d="M 6 15 Q 6 16.5 4.5 16.5 Q 6 16.5 6 18 Q 6 16.5 7.5 16.5 Q 6 16.5 6 15 Z" fill="currentColor" />
-                    <path d="M 5 3 L 5 5 M 4 4 L 6 4" />
-                </svg>
+                <img src="/image/L5.svg" alt="Teeth Whitening" />
             )
         },
         {
@@ -134,14 +99,7 @@ export default function ComprehensiveServicesSection() {
             id: "pediatric-dentistry",
             desc: "Gentle and specialized dental care to keep your child's smile healthy and bright.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <g transform="translate(12, 13) scale(0.85) translate(-12, -12)">
-                        <path d="M 12 5.5 C 11.2 3 9.7 2 8 2 C 4.7 2 2 4.7 2 8 C 2 11 4.2 12.5 4.2 17 C 4.2 19 5.7 20 7.5 20 C 9 20 10 18.5 10 17 C 10 16 11 15.5 12 15.5 C 13 15.5 14 16 14 17 C 14 18.5 15 20 16.5 20 C 18.3 20 19.8 19 19.8 17 C 19.8 12.5 22 11 22 8 C 22 4.7 19.3 2 16 2 C 14.3 2 12.8 3 12 5.5 Z" />
-                    </g>
-                    <circle cx="9" cy="11" r="0.8" fill="currentColor" stroke="none" />
-                    <circle cx="15" cy="11" r="0.8" fill="currentColor" stroke="none" />
-                    <path d="M 9.5 13 Q 12 16 14.5 13" />
-                </svg>
+                <img src="/image/L6.svg" alt="Pediatric Dentistry" />
             )
         }
     ];
@@ -186,17 +144,33 @@ export default function ComprehensiveServicesSection() {
                         <Link
                             href={`/services/${card.id}`}
                             key={idx}
-                            className="comp-card group relative flex flex-col items-center text-center px-6 py-12 rounded-3xl border border-white/40 bg-black/20 backdrop-blur-md transition-all duration-500 hover:bg-black/40 hover:border-white/70"
+                            className="comp-card group relative flex flex-col items-center text-center px-8 py-12 rounded-3xl border border-white/40 bg-black/20 backdrop-blur-md transition-all duration-500 hover:bg-black/40 hover:border-white/70 h-full"
                         >
-                            <div className="text-white mb-6 transition-transform duration-500 group-hover:scale-110">
-                                {card.icon}
+                            <div className="relative w-20 h-20 mb-8 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                                <div className="absolute inset-0 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors"></div>
+                                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                                    {/* Applying consistent sizing to the icon */}
+                                    {typeof card.icon === 'object' && 'type' in card.icon && card.icon.type === 'img' ? (
+                                        <img 
+                                            src={card.icon.props.src} 
+                                            alt={card.icon.props.alt} 
+                                            className="max-w-full max-h-full w-auto h-auto object-contain"
+                                        />
+                                    ) : (
+                                        <div className="w-12 h-12 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
+                                            {card.icon}
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                            <h3 className="text-white mb-4 text-xl whitespace-pre-line font-serif">
-                                {card.title}
-                            </h3>
-                            <p className="text-white/80 text-sm">
-                                {card.desc}
-                            </p>
+                            <div className="flex flex-col flex-grow items-center">
+                                <h3 className="text-white mb-4 text-2xl font-serif min-h-[64px] flex items-center justify-center">
+                                    {card.title}
+                                </h3>
+                                <p className="text-white/70 text-sm leading-relaxed max-w-[260px]">
+                                    {card.desc}
+                                </p>
+                            </div>
                         </Link>
                     ))}
                 </div>

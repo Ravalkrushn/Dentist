@@ -1,26 +1,48 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import MainNavbar from "@/components/Navbar/MainNavbar";
 import Footer from "@/components/Footer/Footer";
 import { servicesData } from "@/data/servicesData";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Our Services | Relaxation Dental – Salida, CO",
-    description: "Explore our comprehensive range of dental services including teeth cleaning, root canals, implants, and orthodontics.",
-};
 
 export default function ServicesPage() {
+    const headerRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const descRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        
+        tl.fromTo(titleRef.current, 
+            { y: 50, opacity: 0 }, 
+            { y: 0, opacity: 1, duration: 1.2, delay: 0.5 }
+        )
+        .fromTo(descRef.current, 
+            { y: 30, opacity: 0 }, 
+            { y: 0, opacity: 1, duration: 1 }, 
+            "-=0.8"
+        );
+    }, []);
+
     return (
-        <main className="bg-[#E2DED9] min-h-screen">
+        <main className="bg-[#0097AB] min-h-screen">
             <MainNavbar />
 
             {/* Header Section */}
-            <section className="w-full pt-32 pb-16 px-6 lg:px-12 bg-[#0097ab] text-center">
-                <div className="max-w-[1400px] mx-auto">
-                    <h1 className="text-white text-5xl md:text-6xl font-[Playfair_Display] mb-6 inline-block border-b-4 border-white pb-2 leading-tight">
+            <section className="w-full min-h-[400px] py-55 px-6 lg:px-12 bg-[#E2DED9] flex items-center justify-center text-center overflow-hidden">
+                <div className="max-w-[1400px] mx-auto" ref={headerRef}>
+                    <h1 
+                        ref={titleRef}
+                        className="text-[#3b2a28] text-5xl md:text-6xl font-[Playfair_Display] mb-6 inline-block border-b-4 border-[#3b2a28] pb-2 leading-tight opacity-0"
+                    >
                         Our Services
                     </h1>
-                    <p className="text-white/90 font-[Lato] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    <p 
+                        ref={descRef}
+                        className="text-[#3b2a28]/80 font-[Lato] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-0"
+                    >
                         Comprehensive dental care tailored to your specific needs. From routine cleanings to complete smile makeovers, we ensure a comfortable and professional experience.
                     </p>
                 </div>

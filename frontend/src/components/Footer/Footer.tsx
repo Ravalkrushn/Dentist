@@ -72,6 +72,7 @@ export default function Footer() {
                     <Link href="/patient-information" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Patient Info</Link>
                     <Link href="/procedures" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Procedures</Link>
                     <Link href="/careers" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Careers</Link>
+                    <Link href="/blog" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Blog</Link>
                     <Link href="/contact" className="text-[0.9rem] font-light hover:underline underline-offset-4 transition-all">Contact Us</Link>
                 </div>
 
@@ -104,7 +105,7 @@ export default function Footer() {
                     className="text-sm font-light tracking-wide opacity-90"
                     style={{ fontFamily: "'Lato', sans-serif" }}
                 >
-                    © Develop by RND technosoft-2026.
+                    © Develop by ----
                 </p>
             </div>
         </footer>

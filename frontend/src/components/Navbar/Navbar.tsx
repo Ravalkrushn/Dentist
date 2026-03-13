@@ -20,7 +20,7 @@ const navLinks = [
             { label: "Teeth Whitening", href: "/services/teeth-whitening" },
         ],
     },
-    { label: "Appointment / Book Consultation", href: "/contact" },
+    { label: "Appointment / Book Consultation", href: "/appointment" },
     { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
