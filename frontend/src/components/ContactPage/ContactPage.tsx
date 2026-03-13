@@ -12,7 +12,11 @@ import {
     Instagram, 
     Facebook,
     ArrowRight,
-    Star
+    Star,
+    ShieldCheck,
+    Wind,
+    Cpu,
+    Zap
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -66,10 +70,6 @@ export default function ContactPage() {
             {/* 1. Hero Section - Background #EADDD7 */}
             <section className="bg-[#EADDD7] pt-32 pb-20 px-6 lg:px-12 text-center">
                 <div className="max-w-4xl mx-auto contact-header">
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <Star size={14} className="text-[#0097ab]" fill="#0097ab" />
-                        <span className="text-[#0097ab] font-bold tracking-[0.2em] uppercase text-sm">Contact Us</span>
-                    </div>
                     <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
                         Let's Start a <span className="italic text-[#0097ab]">Conversation.</span>
                     </h1>
@@ -145,12 +145,73 @@ export default function ContactPage() {
                 </div>
             </section>
 
+            {/* Why Choose Section - Background #3b2a28 */}
+            <section className="bg-[#EADDD7] py-24 px-6 lg:px-12 relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    {/* Left Side: Photo */}
+                    <div className="relative">
+                        <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-x-1 -rotate-2 transform transition-transform hover:rotate-0 hover:skew-x-0 duration-700">
+                            <img 
+                                src="/image/ABOUT2.png" 
+                                alt="Why Choose Us" 
+                                className="w-full h-full object-cover scale-110"
+                            />
+                            {/* Overlay Blur Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#3b2a28]/60 to-transparent" />
+                        </div>
+                        {/* Decorative Element */}
+                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#0097ab]/20 rounded-full blur-3xl" />
+                    </div>
+
+                    {/* Right Side: Content */}
+                    <div className="space-y-12">
+                        <h2 className="text-4xl md:text-5xl font-[Playfair_Display] text-[#3b2a28] leading-tight">
+                            Why Choose <span className="italic text-[#0097ab]">Relaxation Dental?</span>
+                        </h2>
+
+                        <div className="space-y-8">
+                            {/* Feature 1 */}
+                            <div className="flex items-center gap-6 group">
+                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
+                                    <ShieldCheck size={32} strokeWidth={1.5} />
+                                </div>
+                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comprehensive family and cosmetic dentistry</p>
+                            </div>
+
+                            {/* Feature 2 */}
+                            <div className="flex items-center gap-6 group">
+                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
+                                    <Wind size={32} strokeWidth={1.5} />
+                                </div>
+                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comfort-focused care with sedation options</p>
+                            </div>
+
+                            {/* Feature 3 */}
+                            <div className="flex items-center gap-6 group">
+                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
+                                    <Cpu size={32} strokeWidth={1.5} />
+                                </div>
+                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Advanced technology for precise and gentle treatment</p>
+                            </div>
+
+                            {/* Feature 4 */}
+                            <div className="flex items-center gap-6 group">
+                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
+                                    <Zap size={32} strokeWidth={1.5} />
+                                </div>
+                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Emergency dental services available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* 3. Form Section - Background #EADDD7 */}
-            <section className="contact-main bg-[#EADDD7] py-24 px-6 lg:px-12">
+            <section className="contact-main bg-[#0097AB] py-24 px-6 lg:px-12">
                 <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     
                     {/* Form */}
-                    <div className="form-section bg-white/50 backdrop-blur-xl p-10 md:p-14 rounded-[3rem] shadow-2xl border border-white/40">
+                    <div className="form-section bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl border border-white/20">
                         <div className="mb-10">
                             <h2 className="text-4xl font-[Playfair_Display] text-[#3b2a28] mb-4">Send Us a <span className="italic text-[#0097ab]">Message</span></h2>
                             <p className="text-[#3b2a28]/60 font-[Lato]">Our team usually responds within one business day.</p>

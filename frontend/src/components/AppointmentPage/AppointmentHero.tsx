@@ -28,11 +28,6 @@ export default function AppointmentHero() {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
             <div className="max-w-4xl mx-auto hero-content relative z-10">
-                <div className="flex items-center justify-center gap-2 mb-6">
-                    <Star size={14} className="text-[#0097ab]" fill="#0097ab" />
-                    <span className="text-[#0097ab] font-bold tracking-[0.2em] uppercase text-sm">Reservations</span>
-                </div>
-                
                 <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
                     Book Your <span className="italic text-[#0097ab]">Visit.</span>
                 </h1>
