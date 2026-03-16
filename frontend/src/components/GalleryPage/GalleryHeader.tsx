@@ -15,18 +15,19 @@ export default function GalleryHeader() {
     }, []);
 
     return (
-        <section className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden pb-40">
+        <section className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <img 
-                    src="/image/ABOUT.png" 
-                    alt="Clinic Gallery" 
-                    className="w-full h-full object-cover object-[center_15%] scale-110"
+                <img
+                    src="/image/ABOUT.png"
+                    alt="Clinic Gallery"
+                    className="w-full h-full object-cover object-[center_15%]"
                 />
-                <div className="absolute inset-0 bg-[#001524]/40 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 bg-[#001524]/45" />
             </div>
 
-            <div className="max-w-7xl mx-auto text-center relative z-10 px-6 pt-20" ref={headerRef}>
+            {/* Content */}
+            <div className="max-w-7xl mx-auto text-center relative z-10 px-6" ref={headerRef}>
                 <h1 className="text-6xl md:text-9xl font-serif text-white mb-8 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
                     Our <span className="text-[#0097ab] italic font-light font-sans">Gallery</span>
                 </h1>
@@ -37,9 +38,6 @@ export default function GalleryHeader() {
 
                 <div className="w-32 h-1 bg-[#0097ab] mx-auto mt-12 rounded-full shadow-lg" />
             </div>
-
-            {/* Visual spacer */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
         </section>
     );
 }
