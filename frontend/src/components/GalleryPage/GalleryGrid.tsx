@@ -97,7 +97,7 @@ export default function GalleryGrid() {
                 }}
             />
 
-            <div className="relative max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 pt-16">
+            <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-16">
 
                 {/* Header row */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -204,8 +204,8 @@ export default function GalleryGrid() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/80 via-[#001524]/20 to-transparent translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" />
 
                                 {/* Info */}
-                                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <p className="text-[#0097ab] text-[12px] font-bold tracking-[0.25em] uppercase mb-2">
+                                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                    <p className="text-white text-[12px] font-bold tracking-[0.25em] uppercase mb-2">
                                         {item.subtitle}
                                     </p>
                                     <h3 className="text-white text-3xl font-serif font-medium leading-tight">
@@ -293,10 +293,10 @@ export default function GalleryGrid() {
                             </div>
 
                             <div>
-                                <p className="text-[#ccc] text-[11px] font-mono mb-5">
+                                <p className="text-[#001524] text-[11px] font-mono mb-5 opacity-60">
                                     {String(selectedIdx! + 1).padStart(2, "0")} / {String(filteredItems.length).padStart(2, "0")}
                                 </p>
-                                <p className="text-[#c8bdb6] text-[12px] leading-relaxed mb-8">
+                                <p className="text-[#001524] text-[12px] leading-relaxed mb-8 font-medium">
                                     Modern dental care with precision and comfort — every transformation tells a story.
                                 </p>
                                 <button
