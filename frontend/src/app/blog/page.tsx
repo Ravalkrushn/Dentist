@@ -12,7 +12,6 @@ export default function BlogPage() {
     return (
         <main className="bg-[#E2DED9] min-h-screen">
             <MainNavbar />
-            
             {/* The BlogSection component handles the main content and layout */}
             <div className="pt-20"> {/* Add padding for the fixed navbar */}
                 <BlogSection />

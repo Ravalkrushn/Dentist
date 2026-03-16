@@ -194,7 +194,7 @@ export default function DoctorProfile() {
                     className="absolute top-[47%] left-[50%] z-[2] w-[22rem] md:w-[32rem] h-[16rem] md:h-[22rem] -translate-x-1/2 -translate-y-1/2 -rotate-6 transform-gpu overflow-hidden rounded-[50px] shadow-2xl will-change-transform"
                 >
                     <img
-                        src="/image/team_member.jpg"
+                        src="/image/team_member.png"
                         alt="Meet the Dentists"
                         className="h-full w-full object-cover"
                     />

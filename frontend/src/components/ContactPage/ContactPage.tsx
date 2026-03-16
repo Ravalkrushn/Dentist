@@ -11,6 +11,7 @@ import {
     Send,
     Instagram,
     Facebook,
+    Linkedin,
     ArrowRight,
     Star,
     ShieldCheck,
@@ -273,6 +274,7 @@ export default function ContactPage() {
                             <div className="flex gap-4 relative z-10">
                                 <a href="#" className="w-12 h-12 rounded-full border border-[#3b2a28]/20 flex items-center justify-center hover:bg-[#0097ab] hover:text-white transition-all"><Instagram size={22} /></a>
                                 <a href="#" className="w-12 h-12 rounded-full border border-[#3b2a28]/20 flex items-center justify-center hover:bg-[#0097ab] hover:text-white transition-all"><Facebook size={22} /></a>
+                                <a href="#" className="w-12 h-12 rounded-full border border-[#3b2a28]/20 flex items-center justify-center hover:bg-[#0097ab] hover:text-white transition-all"><Linkedin size={22} /></a>
                             </div>
                         </div>
                     </div>

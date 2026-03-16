@@ -156,45 +156,77 @@ export default function GalleryGrid() {
                     </div>
                 </div>
 
-                {/* Grid */}
-                <div
-                    ref={gridRef}
-                    className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 transition-opacity duration-300 ${isAnimating ? "opacity-0" : "opacity-100"}`}
-                    style={{ gridAutoRows: "280px" }}
-                >
-                    {filteredItems.map((item, idx) => (
-                        <div
-                            key={item.id}
-                            onClick={() => setSelectedIdx(idx)}
-                            className={`group relative overflow-hidden cursor-pointer bg-[#e8e2db] ${getGridClass(idx)}`}
-                            style={{ borderRadius: "6px" }}
-                        >
-                            <img
-                                src={item.src}
-                                alt={item.title}
-                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
-                            />
+                {/* Scrollable Gallery Container */}
+                <div className="relative group/gallery">
+                    {/* Navigation Buttons */}
+                    <button 
+                        onClick={() => {
+                            if (gridRef.current) {
+                                gridRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+                            }
+                        }}
+                        className="absolute left-[-2rem] top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full shadow-xl flex items-center justify-center text-[#001524] opacity-0 group-hover/gallery:opacity-100 hover:bg-[#0097ab] hover:text-white transition-all duration-300 -translate-x-4 group-hover/gallery:translate-x-0"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
 
-                            {/* Hover gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/75 via-[#001524]/10 to-transparent translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400" />
+                    <button 
+                        onClick={() => {
+                            if (gridRef.current) {
+                                gridRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+                            }
+                        }}
+                        className="absolute right-[-2rem] top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full shadow-xl flex items-center justify-center text-[#001524] opacity-0 group-hover/gallery:opacity-100 hover:bg-[#0097ab] hover:text-white transition-all duration-300 translate-x-4 group-hover/gallery:translate-x-0"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
 
-                            {/* Info */}
-                            <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                                <p className="text-[#0097ab] text-[10px] font-semibold tracking-[0.2em] uppercase mb-1">
-                                    {item.subtitle}
-                                </p>
-                                <p className="text-white text-[15px] font-medium">
-                                    {item.title}
-                                </p>
+                    {/* Grid / Horizontal Scroll Container */}
+                    <div
+                        ref={gridRef}
+                        className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-12 transition-opacity duration-300 ${isAnimating ? "opacity-0" : "opacity-100"}`}
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        {filteredItems.map((item, idx) => (
+                            <div
+                                key={item.id}
+                                onClick={() => setSelectedIdx(idx)}
+                                className="group relative min-w-[300px] md:min-w-[400px] h-[500px] overflow-hidden cursor-pointer bg-[#e8e2db] snap-start"
+                                style={{ borderRadius: "24px" }}
+                            >
+                                <img
+                                    src={item.src}
+                                    alt={item.title}
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                                />
+
+                                {/* Hover gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/80 via-[#001524]/20 to-transparent translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" />
+
+                                {/* Info */}
+                                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                    <p className="text-[#0097ab] text-[12px] font-bold tracking-[0.25em] uppercase mb-2">
+                                        {item.subtitle}
+                                    </p>
+                                    <h3 className="text-white text-3xl font-serif font-medium leading-tight">
+                                        {item.title}
+                                    </h3>
+                                </div>
+
+                                {/* Arrow badge */}
+                                <div className="absolute top-6 right-6 w-12 h-12 bg-white/95 rounded-full flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-xl">
+                                    <ArrowUpRight size={20} className="text-[#001524]" />
+                                </div>
                             </div>
-
-                            {/* Arrow badge */}
-                            <div className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-sm">
-                                <ArrowUpRight size={14} className="text-[#001524]" />
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
+                <style jsx>{`
+                    .hide-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+                `}</style>
 
             </div>
 

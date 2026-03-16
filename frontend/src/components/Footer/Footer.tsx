@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -90,6 +90,9 @@ export default function Footer() {
                         </a>
                         <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab] hover:text-white transition-all hover:scale-105 shadow-sm">
                             <Instagram size={17} />
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab] hover:text-white transition-all hover:scale-105 shadow-sm">
+                            <Linkedin size={16} fill="currentColor" strokeWidth={0} />
                         </a>
                         <a href="https://google.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border-[1.5px] border-[#0097ab] flex items-center justify-center text-[#0097ab] hover:bg-[#0097ab] hover:text-white transition-all hover:scale-105 shadow-sm">
                             <span className="font-bold font-serif text-[1.1rem] leading-none mb-[2px]">G</span>
