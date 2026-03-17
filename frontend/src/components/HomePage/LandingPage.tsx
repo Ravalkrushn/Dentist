@@ -173,7 +173,7 @@ const LandingPage = () => {
           Because There&apos;s a Better Way to Experience Dental Care
         </span>
         <span className="mt-3 text-center text-sm leading-relaxed sm:text-base sm:mt-4 md:text-xl lg:text-3xl pointer-events-auto">
-          At Relaxation Dental, we believe that going to the dentist should be a comfortable, stress-free experience.
+          At Dento, we believe that going to the dentist should be a comfortable, stress-free experience.
         </span>
         <div className="mt-5 sm:mt-8 flex flex-row items-center justify-center gap-3 sm:gap-4 pointer-events-auto">
           <a href="/contact" className="group relative overflow-hidden rounded-full bg-[#0097ab] px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[10px] sm:text-xs md:text-sm font-medium text-[#eaddd7] shadow-xl transition-all duration-150 hover:scale-105 hover:shadow-2xl hover:shadow-[#0097ab]/50">

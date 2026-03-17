@@ -133,7 +133,7 @@ export default function ComprehensiveServicesSection() {
                         Our Dental Services
                     </h2>
                     <p className="text-white/90 text-lg">
-                        At Relaxation Dental, we offer a full range of general, cosmetic, and restorative treatments to
+                        At Dento, we offer a full range of general, cosmetic, and restorative treatments to
                         keep your smile healthy and beautiful.
                     </p>
                 </div>

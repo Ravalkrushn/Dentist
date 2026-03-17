@@ -10,7 +10,7 @@ const doctorsList = [
         title: "Founder & Lead Dentist",
         image: "/image/ABOUT2.png",
         shortDesc: "With a passion for modern, comfortable dentistry, Dr. Brown is dedicated to providing exceptional care equipped with the latest advancements in dental technology. He specializes in comprehensive treatment plans, focusing on conscious sedation for a relaxed and stress-free patient experience.",
-        longDesc: "Dr. Brown grew up in Colorado and has always felt a deep connection to the Salida community. After completing his advanced residency in sedation dentistry at NYU, he returned home to establish Relaxation Dental — a practice built on the belief that every patient deserves compassionate, judgment-free care.",
+        longDesc: "Dr. Brown grew up in Colorado and has always felt a deep connection to the Salida community. After completing his advanced residency in sedation dentistry at NYU, he returned home to establish Dento — a practice built on the belief that every patient deserves compassionate, judgment-free care.",
         education: [
             { degree: "Doctor of Dental Surgery (DDS)", institution: "University of Colorado School of Dental Medicine", year: "2008" },
             { degree: "Bachelor of Science in Biology", institution: "Colorado State University", year: "2004" },
@@ -25,7 +25,7 @@ const doctorsList = [
             "Fellow – Academy of General Dentistry"
         ],
         experience: [
-            { role: "Founder & Lead Dentist", place: "Relaxation Dental, Salida, CO", duration: "2010 – Present", desc: "Built a patient-first practice renowned for comfortable care." },
+            { role: "Founder & Lead Dentist", place: "Dento, Salida, CO", duration: "2010 – Present", desc: "Built a patient-first practice renowned for comfortable care." },
             { role: "Associate Dentist", place: "Mountain View Dental Group, Denver, CO", duration: "2009 – 2010", desc: "Provided comprehensive care including prosthodontics." },
             { role: "Clinical Resident", place: "NYU Langone Dental Associates", duration: "2008 – 2009", desc: "Specialized training in IV sedation and implants." }
         ]
@@ -48,7 +48,7 @@ const doctorsList = [
             "Certified in Lingual Braces"
         ],
         experience: [
-            { role: "Lead Orthodontist", place: "Relaxation Dental, Salida, CO", duration: "2015 – Present", desc: "Spearheading modern alignment procedures and technologies." },
+            { role: "Lead Orthodontist", place: "Dento, Salida, CO", duration: "2015 – Present", desc: "Spearheading modern alignment procedures and technologies." },
             { role: "Associate Orthodontist", place: "Bay Area Smiles, CA", duration: "2012 – 2015", desc: "Managed high-volume pediatric and adult alignment cases." },
             { role: "Orthodontic Resident", place: "UCSF Health", duration: "2009 – 2012", desc: "Comprehensive training in complex craniofacial anomalies." }
         ]
@@ -70,7 +70,7 @@ const doctorsList = [
             "Certified in IV Deep Sedation"
         ],
         experience: [
-            { role: "Oral Surgeon", place: "Relaxation Dental, Salida, CO", duration: "2018 – Present", desc: "Performing advanced surgical and implant treatments with precision." },
+            { role: "Oral Surgeon", place: "Dento, Salida, CO", duration: "2018 – Present", desc: "Performing advanced surgical and implant treatments with precision." },
             { role: "Attending Surgeon", place: "Denver Health Medical Center", duration: "2014 – 2018", desc: "Handled severe facial trauma and complex reconstructive cases." }
         ]
     }
@@ -201,7 +201,7 @@ export default function DoctorProfile() {
                 </div>
 
                 <div className="banner-title-bottom absolute top-[75%] left-1/2 -translate-x-1/2 w-full z-[3] text-center text-[#5a3a3a]">
-                    <p className="text-2xl md:text-4xl font-serif">Welcome to Relaxation Dental</p>
+                    <p className="text-2xl md:text-4xl font-serif">Welcome to Dento</p>
                 </div>
             </div>
 

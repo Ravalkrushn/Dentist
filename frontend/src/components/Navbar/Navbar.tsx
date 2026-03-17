@@ -38,13 +38,13 @@ export default function Navbar() {
                     <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-xl bg-[#0097ab]/10 flex items-center justify-center p-1.5 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#0097ab]/20 group-hover:shadow-lg">
                         <img
                             src="/icon.png"
-                            alt="Relaxation Dental Logo"
+                            alt="Dento Logo"
                             className="w-full h-full object-contain"
                         />
                     </div>
                     <div className="flex flex-col leading-[1.1]">
                         <span className="text-[#0097ab] font-bold text-lg md:text-xl tracking-tight">
-                            Relaxation<span className="text-[#0097ab]/80 ml-0.5">Dental</span>
+                            Dento
                         </span>
                         <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-medium">
                             Because There Is A Better Way

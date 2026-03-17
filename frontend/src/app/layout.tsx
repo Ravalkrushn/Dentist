@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Relaxation Dental | Salida, CO",
+  title: "Dento",
   description: "Gentle, Modern Dentistry in Salida, CO",
 };
 

@@ -167,7 +167,7 @@ export default function ContactPage() {
                     {/* Right Side: Content */}
                     <div className="space-y-12">
                         <h2 className="text-4xl md:text-5xl font-[Playfair_Display] text-[#3b2a28] leading-tight">
-                            Why Choose <span className="italic text-[#0097ab]">Relaxation Dental?</span>
+                            Why Choose <span className="italic text-[#0097ab]">Dento?</span>
                         </h2>
 
                         <div className="space-y-8">

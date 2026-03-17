@@ -13,8 +13,8 @@ const galleryData = [
     { id: 1,  category: "The Team",       src: "/image/dentist1.png",                        title: "Dr. Nicholas Brown",  subtitle: "Founder & Lead Dentist" },
     { id: 2,  category: "The Team",       src: "/image/ABOUT2.PNG",                          title: "Dr. Emily Chen",      subtitle: "Orthodontist Specialist" },
     { id: 3,  category: "The Team",       src: "/image/dentist2.png",                        title: "Dr. James Wilson",    subtitle: "Oral & Maxillofacial surgeon" },
-    { id: 12, category: "The Team",       src: "/image/dentist3.png",                        title: "Our Specialists",    subtitle: "Relaxation Dental Team" },
-    { id: 13, category: "The Team",       src: "/image/dentist4.png",                        title: "Our Specialists",    subtitle: "Relaxation Dental Team" },
+    { id: 12, category: "The Team",       src: "/image/dentist3.png",                        title: "Our Specialists",    subtitle: "Dento Team" },
+    { id: 13, category: "The Team",       src: "/image/dentist4.png",                        title: "Our Specialists",    subtitle: "Dento Team" },
     { id: 4,  category: "Before & After", src: "/image/DentalImplants_before.jpg",           title: "Dental Implants",    subtitle: "Before" },
     { id: 5,  category: "Before & After", src: "/image/DentalImplants_after.jpg",            title: "Dental Implants",    subtitle: "After" },
     { id: 6,  category: "Before & After", src: "/image/VeneersTransformation_before.jpg",    title: "Veneers",            subtitle: "Before" },
@@ -105,7 +105,7 @@ export default function GalleryGrid() {
                     {/* Left: title */}
                     <div>
                         <p className="text-[#0097ab] text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
-                            Relaxation Dental
+                            Dento
                         </p>
                         <h2 className="text-[#001524] font-serif text-4xl md:text-5xl font-semibold leading-[0.95] tracking-tight">
                             Browse<br />

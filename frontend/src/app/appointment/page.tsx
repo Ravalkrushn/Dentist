@@ -5,8 +5,8 @@ import AppointmentForm from "@/components/AppointmentPage/AppointmentForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Book an Appointment | Relaxation Dental – Salida, CO",
-    description: "Ready for a smile makeover? Book your dental appointment at Relaxation Dental in Salida, CO. Easy scheduling for all our services.",
+    title: "Book an Appointment | Dento – Salida, CO",
+    description: "Ready for a smile makeover? Book your dental appointment at Dento in Salida, CO. Easy scheduling for all our services.",
 };
 
 export default function AppointmentRoute() {

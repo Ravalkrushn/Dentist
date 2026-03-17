@@ -15,10 +15,7 @@ export default function Footer() {
                                 className="text-[#4a2e2b] text-[2.1rem] leading-none"
                                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                             >
-                                Relaxation
-                            </span>
-                            <span className="text-[#4a2e2b] text-[2.1rem] leading-none font-light tracking-tight ml-0.5">
-                                Dental
+                                Dento
                             </span>
                             {/* Absolute SVG Leaf near the 'D' */}
                             <svg className="absolute -top-[18px] right-[2.5rem] w-8 h-8 text-[#0097ab] opacity-90" viewBox="0 0 24 24" fill="currentColor">
@@ -51,7 +48,7 @@ export default function Footer() {
                     <h4 className="text-[1.1rem] font-bold uppercase tracking-wider mb-1">Contact Us</h4>
                     <div className="text-[0.9rem] font-light leading-relaxed">
                         <strong className="font-bold">Address:</strong><br />
-                        Relaxation Dental<br />
+                        Dento<br />
                         1222 C Street, Salida, CO 81201
                     </div>
                     <div className="text-[0.9rem] font-light leading-relaxed">

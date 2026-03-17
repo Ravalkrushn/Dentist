@@ -7,9 +7,9 @@ import AchievementsCertifications from "@/components/AboutUsPage/Achievements_Ce
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us | Relaxation Dental – Salida, CO",
+    title: "About Us | Dento – Salida, CO",
     description:
-        "Meet Dr. Nicholas Brown and the Relaxation Dental team. Learn about our mission, modern clinic, and award-winning dental care in Salida, Colorado.",
+        "Meet Dr. Nicholas Brown and the Dento team. Learn about our mission, modern clinic, and award-winning dental care in Salida, Colorado.",
 };
 
 export default function AboutPage() {
