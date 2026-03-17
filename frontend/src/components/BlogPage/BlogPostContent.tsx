@@ -23,7 +23,7 @@ import {
     Phone
 } from "lucide-react";
 import Link from "next/link";
-import { Blog } from "@/data/blogData";
+import { Blog, blogData } from "@/data/blogData";
 
 interface BlogPostContentProps {
     blog: Blog;
@@ -81,21 +81,21 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
     return (
         <article ref={articleRef} className="w-full bg-[#E2DED9]">
             {/* 1. Header Section - Premium Design */}
-            <header className="bg-[#E2DED9] pt-8 pb-10">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-8">
-                    {/* Back Link - Aligned with the content/logo below navbar */}
+            <header className="bg-[#E2DED9] pt-12 pb-16">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-14">
+                    {/* Back Link */}
                     <div className="flex justify-start">
                         <Link
                             href="/blog"
-                            className="inline-flex items-center gap-2 text-[#0097ab] font-bold hover:gap-3 transition-all duration-300"
+                            className="group inline-flex items-center gap-2 text-[#0097ab] font-mono text-xs font-bold tracking-[0.2em] hover:gap-4 transition-all duration-300"
                         >
-                            <ChevronLeft size={18} /> BACK TO ALL BLOGS
+                            <ChevronLeft size={16} /> BACK TO JOURNALS
                         </Link>
                     </div>
 
                     {/* Centered Title */}
                     <div className="text-center">
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-[Playfair_Display] text-[#3b2a28] leading-[1.2] font-medium max-w-4xl mx-auto px-4">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-[Playfair_Display] text-[#3b2a28] leading-[1.1] font-medium max-w-5xl mx-auto italic">
                             {blog.title}
                         </h1>
                     </div>
@@ -103,61 +103,111 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             </header>
 
             {/* 2. Featured Image Section with Parallax Feel */}
-            <div className="w-full pb-24">
-                <div className="max-w-6xl mx-auto px-6 lg:px-12 relative group">
-                    <div className="aspect-[21/9] w-full rounded-[3rem] overflow-hidden shadow-2xl relative">
+            <div className="w-full pb-32">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
+                    <div className="aspect-[21/9] w-full rounded-[4rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.15)] relative">
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                            className="w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-black/10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
+                    
+                    {/* Floating Accent */}
+                    <div className="absolute -bottom-10 -right-4 w-40 h-40 bg-[#0097ab]/10 rounded-full blur-3xl -z-10"></div>
+                    <div className="absolute -top-10 -left-4 w-60 h-60 bg-[#3b2a28]/5 rounded-full blur-3xl -z-10"></div>
                 </div>
             </div>
 
             {/* 3. Main Content - "Big Data" Structured Layout */}
             <div className="w-full bg-[#0097AB] py-24 rounded-t-[4rem]">
-                <div className="max-w-5xl mx-auto px-6 lg:px-12 blog-body flex flex-col gap-20">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-body flex flex-col gap-20">
 
-                    {/* Intro Section */}
-                    <section className="animate-section">
-                        <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-black/10">
-                            <div className="max-w-4xl">
+                    {/* Intro Section - Two Column (Text in white box, Widget outside) */}
+                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start relative">
+                        {/* Main Text Content (White Box) */}
+                        <section className="animate-section flex-[2.8]">
+                            <div className="bg-white rounded-[4rem] p-10 md:p-14 lg:p-20 shadow-[0_50px_120px_rgba(0,0,0,0.1)] relative overflow-hidden group">
+                                {/* Decorative Grid Accent */}
+                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0097ab_1.5px,transparent_1.5px)] [background-size:32px_32px]"></div>
+                                
                                 {(() => {
                                     const firstDotIndex = blog.detailedData.intro.indexOf('.');
                                     const heading = blog.detailedData.intro.substring(0, firstDotIndex + 1);
                                     const body = blog.detailedData.intro.substring(firstDotIndex + 1);
 
                                     return (
-                                        <>
-                                            <h2 className="text-[#3b2a28] text-3xl md:text-4xl font-[Playfair_Display] leading-tight mb-8 font-semibold">
+                                        <div className="relative z-10">
+                                            <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
                                                 {heading}
                                             </h2>
-                                            <p className="text-[#3b2a28]/80 text-lg md:text-xl font-[Lato] leading-relaxed">
-                                                {body}
-                                            </p>
-                                        </>
+                                            <div className="space-y-8">
+                                                <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed italic border-l-4 border-[#0097ab]/30 pl-8">
+                                                    {body}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    );
+                                })()}
+                            </div>
+                        </section>
+
+                        {/* Right Side: Related Read Widget (OUTSIDE the white box) */}
+                        <div className="w-full lg:w-[320px] lg:sticky lg:top-32 shrink-0">
+                            <div className="bg-[#EADDD7]/30 rounded-[3rem] p-8 border border-white/10 shadow-2xl backdrop-blur-md">
+                                <h3 className="text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+                                    <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
+                                    </div>
+                                    Curated For You
+                                </h3>
+                                
+                                {(() => {
+                                    const related = blogData.find(b => b.id !== blog.id);
+                                    if (!related) return null;
+                                    
+                                    return (
+                                        <Link href={`/blog/${related.id}`} className="group block">
+                                            <div className="aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 shadow-2xl ring-1 ring-white/20">
+                                                <img 
+                                                    src={related.image} 
+                                                    alt={related.title}
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                                                />
+                                            </div>
+                                            <h4 className="text-white font-[Playfair_Display] text-2xl font-bold mb-5 group-hover:text-white/80 transition-colors line-clamp-2 leading-tight">
+                                                {related.title}
+                                            </h4>
+                                            <div className="flex items-center gap-3 text-white font-bold text-[11px] tracking-[0.2em] uppercase origin-left group-hover:scale-110 transition-transform">
+                                                EXPLORE NOW <ArrowRight size={14} />
+                                            </div>
+                                        </Link>
                                     );
                                 })()}
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     {/* Quick Tips Grid */}
                     {blog.detailedData.quickTips && blog.detailedData.quickTips.length > 0 && (
                         <section className="animate-section">
-                            <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-black/10">
-                                <h2 className="text-[#3b2a28] text-3xl font-[Playfair_Display] mb-10 text-center flex items-center justify-center gap-4">
-                                    <Sparkles className="text-[#0097ab]" /> Quick Tips for Success
-                                </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl relative overflow-hidden">
+                                {/* Title with Decorative Bar */}
+                                <div className="text-center mb-16 relative">
+                                    <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[#3b2a28]/5 z-0"></div>
+                                    <h2 className="bg-white px-8 relative z-10 text-[#3b2a28] text-3xl md:text-4xl font-[Playfair_Display] inline-flex items-center gap-4 italic">
+                                        <Sparkles className="text-[#0097ab] w-6 h-6" /> Daily Essentials
+                                    </h2>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                                     {blog.detailedData.quickTips.map((tip, i) => (
-                                        <div key={i} className="flex items-start gap-4 text-[#3b2a28]">
-                                            <div className="bg-[#0097ab] text-white p-1.5 rounded-full shrink-0 mt-1">
-                                                <Check size={16} strokeWidth={4} />
+                                        <div key={i} className="flex items-start gap-6 group">
+                                            <div className="bg-[#0097ab] text-white p-2 rounded-xl shrink-0 mt-0.5 shadow-lg shadow-[#0097ab]/20 transform group-hover:rotate-12 transition-transform duration-300">
+                                                <Check size={18} strokeWidth={3} />
                                             </div>
-                                            <span className="text-lg font-[Lato] opacity-90">{tip}</span>
+                                            <span className="text-xl font-[Lato] text-[#3b2a28]/80 leading-snug font-medium">{tip}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -168,14 +218,15 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                     {/* Main Highlights - Card Grid Style */}
                     {blog.detailedData.mainHighlights && blog.detailedData.mainHighlights.length > 0 && (
                         <section className="animate-section">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                                 {blog.detailedData.mainHighlights.map((highlight, i) => (
-                                    <div key={i} className="bg-white p-8 rounded-[2.5rem] shadow-xl hover:-translate-y-2 transition-transform h-full flex flex-col items-center text-center">
-                                        <div className="bg-[#0097ab]/10 p-5 rounded-2xl mb-6 text-[#0097ab]">
-                                            <IconComponent name={highlight.iconName} size={40} />
+                                    <div key={i} className="bg-white p-12 rounded-[3.5rem] shadow-[0_30px_70px_rgba(0,0,0,0.06)] hover:shadow-[0_45px_100px_rgba(0,151,171,0.1)] hover:-translate-y-3 transition-all duration-500 h-full flex flex-col items-center text-center border-t border-white/80">
+                                        <div className="w-24 h-24 bg-[#0097ab]/5 rounded-[2rem] mb-10 text-[#0097ab] flex items-center justify-center transform group-hover:scale-110 transition-transform ring-1 ring-[#0097ab]/10">
+                                            <IconComponent name={highlight.iconName} size={48} />
                                         </div>
-                                        <h3 className="text-[#3b2a28] text-2xl font-[Playfair_Display] mb-4 font-bold">{highlight.title}</h3>
-                                        <p className="text-[#3b2a28]/70 font-[Lato] leading-relaxed">{highlight.description}</p>
+                                        <h3 className="text-[#3b2a28] text-3xl font-[Playfair_Display] mb-6 font-bold tracking-tight">{highlight.title}</h3>
+                                        <div className="w-12 h-0.5 bg-[#0097ab]/20 mb-8 rounded-full"></div>
+                                        <p className="text-[#3b2a28]/60 font-[Lato] text-lg leading-relaxed">{highlight.description}</p>
                                     </div>
                                 ))}
                             </div>
@@ -184,15 +235,25 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
 
                     {/* Informative Steps / Procedures */}
                     {blog.detailedData.detailedSteps && (
-                        <section className="animate-section bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-black/10">
-                            <h2 className="text-[#3b2a28] text-4xl font-[Playfair_Display] mb-12 text-center">Comprehensive Steps & Professional Insights</h2>
-                            <div className="space-y-10">
+                        <section className="animate-section bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group">
+                            {/* Accent Circle */}
+                            <div className="absolute top-0 right-0 w-96 h-96 bg-[#EADDD7]/20 rounded-full -translate-y-1/2 translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
+                            
+                            <h2 className="text-[#3b2a28] text-4xl md:text-6xl font-[Playfair_Display] mb-20 text-center tracking-tight leading-tight">
+                                Detailed Narrative & <span className="italic font-normal text-[#0097ab]">Expert Insights</span>
+                            </h2>
+                            <div className="space-y-16 max-w-5xl mx-auto">
                                 {blog.detailedData.detailedSteps.map((step, i) => (
-                                    <div key={i} className="flex gap-8 group">
-                                        <div className="text-[#0097ab] text-5xl font-serif opacity-30 group-hover:opacity-100 transition-opacity">0{i + 1}</div>
-                                        <div className="flex flex-col gap-2 pt-2">
-                                            <h4 className="text-[#3b2a28] text-2xl font-[Playfair_Display] font-bold">{step.title}</h4>
-                                            <p className="text-[#3b2a28]/70 text-lg leading-relaxed font-[Lato]">{step.point}</p>
+                                    <div key={i} className="flex flex-col md:flex-row gap-8 md:gap-14 group/step">
+                                        <div className="shrink-0">
+                                            <div className="text-[#0097ab]/20 text-8xl font-serif leading-none transition-all duration-500 group-hover/step:text-[#0097ab]/80 group-hover/step:-translate-y-2">
+                                                0{i + 1}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-5 pt-4">
+                                            <div className="h-1 w-12 bg-[#0097ab]/20 mb-2 transition-all duration-500 group-hover/step:w-24 group-hover/step:bg-[#0097ab]"></div>
+                                            <h4 className="text-[#3b2a28] text-3xl font-[Playfair_Display] font-bold leading-tight">{step.title}</h4>
+                                            <p className="text-[#3b2a28]/70 text-xl leading-relaxed font-[Lato] max-w-2xl">{step.point}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -200,45 +261,128 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         </section>
                     )}
 
-                    {/* Conclusion & Call to Action */}
-                    <section className="animate-section">
-                        <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-black/10 flex flex-col items-center gap-10">
-                            <div className="max-w-3xl text-center">
-                                <p className="text-[#3b2a28]/80 text-xl md:text-2xl font-[Lato] leading-relaxed">
-                                    {blog.detailedData.conclusion}
-                                </p>
-                            </div>
-
-                            <div className="flex flex-col items-center gap-8 w-full">
-                                <span className="text-[#3b2a28] font-[Playfair_Display] text-2xl md:text-3xl font-medium">Connect With Our Experts</span>
-                                
-                                <div className="flex flex-wrap justify-center gap-6">
-                                    <a
-                                        href="tel:7195393145"
-                                        className="group relative overflow-hidden bg-[#0097ab] text-white px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 shadow-xl hover:-translate-y-2 flex items-center gap-4"
-                                    >
-                                        <span className="relative z-10 flex items-center gap-3 transition-colors duration-300">
-                                            <Phone className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" />
-                                            719-539-3145
-                                        </span>
-                                        <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#3b2a28] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
-                                    </a>
-
-                                    <Link
-                                        href="/contact"
-                                        className="group relative overflow-hidden bg-white border-2 border-[#0097ab] text-[#0097ab] px-10 py-5 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 shadow-xl hover:-translate-y-2 flex items-center gap-4"
-                                    >
-                                        <span className="relative z-10 flex items-center gap-3 transition-colors duration-300 group-hover:text-white">
-                                            <Mail className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
-                                            Send Us a Message
-                                        </span>
-                                        <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#0097ab] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
+                    {/* 4. Related Blogs Suggestions Section (Moved here) */}
+                    <div className="w-full pb-10">
+                        <div className="bg-white/5 backdrop-blur-xl rounded-[4rem] p-12 md:p-24 border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.15)] relative overflow-hidden">
+                            {/* Decorative Shape */}
+                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0097ab]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+                            
+                            <div className="relative z-10">
+                                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
+                                    <div className="space-y-4">
+                                        <h4 className="text-white text-4xl md:text-5xl font-[Playfair_Display]">Continue Reading</h4>
+                                        <p className="text-white/50 font-[Lato] text-xl">Expand your knowledge with more professional insights.</p>
+                                    </div>
+                                    <Link href="/blog" className="text-white font-bold text-sm tracking-widest uppercase border-b-2 border-[#0097ab] pb-2 hover:text-[#0097ab] transition-colors">
+                                        View Library
                                     </Link>
                                 </div>
+                                
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                    {(() => {
+                                        const relatedBlogs = blogData
+                                            .filter((b: Blog) => b.id !== blog.id)
+                                            .slice(0, 2);
 
-                                <p className="text-[#3b2a28]/60 font-[Lato] text-sm md:text-base italic">
-                                    Our team usually responds within one business day.
-                                </p>
+                                        return relatedBlogs.map((item: Blog, i: number) => (
+                                            <Link 
+                                                key={i} 
+                                                href={`/blog/${item.id}`}
+                                                className="group bg-white rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 flex flex-col h-full"
+                                            >
+                                                <div className="aspect-[16/10] overflow-hidden relative">
+                                                    <img 
+                                                        src={item.image} 
+                                                        alt={item.title} 
+                                                        className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                                                    />
+                                                    <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full shadow-lg">
+                                                        <span className="text-[#0097ab] font-bold text-[10px] uppercase tracking-widest">{item.category}</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="p-12 flex flex-col h-full">
+                                                    <div className="flex items-center gap-4 text-[#3b2a28]/40 font-mono text-[10px] uppercase tracking-[0.2em] mb-6">
+                                                        <span className="flex items-center gap-2">
+                                                            <Calendar size={12} className="text-[#0097ab]" /> {item.date}
+                                                        </span>
+                                                        <span className="w-[1px] h-3 bg-[#3b2a28]/10"></span>
+                                                        <span>{item.readTime}</span>
+                                                    </div>
+                                                    
+                                                    <h5 className="text-[#3b2a28] text-3xl font-[Playfair_Display] font-bold mb-6 group-hover:text-[#0097ab] transition-colors line-clamp-2 leading-tight">
+                                                        {item.title}
+                                                    </h5>
+                                                    
+                                                    <p className="text-[#3b2a28]/60 font-[Lato] text-lg line-clamp-2 mb-10 leading-relaxed">
+                                                        {item.excerpt}
+                                                    </p>
+                                                    
+                                                    <div className="mt-auto border-t border-[#3b2a28]/5 pt-8 flex items-center justify-between">
+                                                        <div className="flex items-center gap-3 text-[#0097ab] font-bold text-xs tracking-[0.2em] group-hover:gap-6 transition-all duration-500">
+                                                            READ FULL FEATURE <ArrowRight size={16} />
+                                                        </div>
+                                                        <div className="w-10 h-10 rounded-full border border-[#0097ab]/20 flex items-center justify-center text-[#0097ab] transform group-hover:rotate-[360deg] transition-all duration-1000">
+                                                            <Sparkles size={16} />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ));
+                                    })()}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Conclusion & Call to Action */}
+                    <section className="animate-section">
+                        <div className="bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group text-center">
+                            {/* Subtle Background Text */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif text-[#EADDD7]/10 opacity-30 whitespace-nowrap pointer-events-none select-none italic">
+                                Care Without Compromise
+                            </div>
+
+                            <div className="max-w-4xl mx-auto relative z-10 space-y-16">
+                                <div className="space-y-10">
+                                    <div className="w-20 h-1 bg-[#0097ab] mx-auto rounded-full"></div>
+                                    <p className="text-[#3b2a28]/80 text-2xl md:text-4xl font-[Playfair_Display] leading-[1.3] italic font-medium">
+                                        {blog.detailedData.conclusion}
+                                    </p>
+                                </div>
+
+                                <div className="space-y-12">
+                                    <h3 className="text-[#3b2a28] font-[Playfair_Display] text-3xl md:text-5xl font-bold tracking-tight">Your Health, Reimagined.</h3>
+                                    
+                                    <div className="flex flex-wrap justify-center gap-8">
+                                        <a
+                                            href="tel:7195393145"
+                                            className="group/btn relative overflow-hidden bg-[#0097ab] text-white px-12 py-6 rounded-full text-xl font-bold transition-all duration-500 shadow-[0_20px_50px_rgba(0,151,171,0.25)] hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,151,171,0.4)] flex items-center gap-4"
+                                        >
+                                            <span className="relative z-10 flex items-center gap-3">
+                                                <Phone className="w-6 h-6 animate-pulse" />
+                                                719-539-3145
+                                            </span>
+                                            <div className="absolute inset-0 z-0 h-full w-full bg-[#3b2a28] translate-y-full transform transition-transform duration-500 group-hover/btn:translate-y-0"></div>
+                                        </a>
+
+                                        <Link
+                                            href="/contact"
+                                            className="group/btn relative overflow-hidden border-2 border-[#0097ab] text-[#0097ab] px-12 py-6 rounded-full text-xl font-bold transition-all duration-500 bg-white hover:-translate-y-2 hover:bg-[#0097ab] hover:text-white shadow-xl"
+                                        >
+                                            <span className="relative z-10 flex items-center gap-3">
+                                                <Mail className="w-6 h-6" />
+                                                Send Us a Message
+                                            </span>
+                                        </Link>
+                                    </div>
+
+                                    <div className="flex items-center justify-center gap-4 text-[#3b2a28]/40 font-mono text-[11px] uppercase tracking-[0.3em]">
+                                        <div className="w-8 h-[1px] bg-[#3b2a28]/10"></div>
+                                        Trusted Specialist Care
+                                        <div className="w-8 h-[1px] bg-[#3b2a28]/10"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>

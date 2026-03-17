@@ -31,7 +31,7 @@ export default function Service_CTA() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#0097ab] py-32 rounded-t-[5rem] -mt-12 z-20 relative overflow-hidden px-6 lg:px-12">
+        <section ref={sectionRef} className="w-full bg-[#0097ab] py-32 z-20 relative overflow-hidden px-6 lg:px-12">
             <div className="max-w-4xl mx-auto bg-[#EADDD7] rounded-3xl p-14 text-center shadow-2xl relative overflow-hidden">
                 {/* Subtle Decorative Elements */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />

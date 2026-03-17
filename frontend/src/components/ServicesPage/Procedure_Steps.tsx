@@ -47,7 +47,7 @@ export default function Procedure_Steps({ steps }: { steps: { stepTitle: string;
     return (
         <section
             ref={containerRef}
-            className="w-full h-screen bg-[#0097ab] relative flex flex-col items-center justify-center px-6 pb-24 rounded-t-[5rem] -mt-12 z-20 overflow-hidden"
+            className="w-full h-screen bg-[#0097ab] relative flex flex-col items-center justify-center px-6 pb-24 z-20 overflow-hidden"
         >
             {/* Background Texture/Accent */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">

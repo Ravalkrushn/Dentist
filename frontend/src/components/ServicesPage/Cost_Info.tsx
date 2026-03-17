@@ -11,7 +11,7 @@ export default function Cost_Info({
     const sectionRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#0097ab] py-24 rounded-t-[5rem] -mt-12 z-20 relative overflow-hidden">
+        <section ref={sectionRef} className="w-full bg-[#0097ab] py-24 z-20 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
                 <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-white pb-2">
                     Cost Information

@@ -80,7 +80,7 @@ export const blogData: Blog[] = [
         id: "best-age-for-braces",
         title: "Best Age for Braces",
         excerpt: "Wondering when is the best time for orthodontic treatment? Orthodontic care can benefit patients of all ages, but early evaluation is key.",
-        image: "/image/team_member.jpg",
+        image: "/image/ABOUT2.png",
         date: "March 5, 2026",
         readTime: "10 min read",
         category: "Orthodontics",
