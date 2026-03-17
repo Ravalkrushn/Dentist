@@ -68,14 +68,22 @@ const LandingPage = () => {
         ref={videoRef}
         className="absolute top-[45%] left-1/2 z-[2] -rotate-6 overflow-hidden will-change-transform rounded-[30px] w-[80vw] h-[44vw] sm:rounded-[40px] sm:w-[68vw] sm:h-[38vw] md:rounded-[50px] md:w-[35rem] md:h-[28rem] lg:w-[35rem] lg:h-[28rem]"
       >
+        {/* Static Image on Mobile (no lag) */}
+        <img
+          src="/image/ABOUT2.png"
+          alt="Dental care"
+          className="h-full w-full object-cover block md:hidden"
+        />
+        {/* Video only on md+ screens (desktop/tablet) */}
         <video
           src="https://cdn.prod.website-files.com/67b3bcefab57ea684c7907ac%2F68e34fbb489d43d06d9921cd_bannercompressed-transcode.mp4"
-          preload="auto"
+          preload="none"
           autoPlay
           muted
           loop
           playsInline
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover hidden md:block"
+          style={{ transform: 'translateZ(0)', willChange: 'transform' }}
         />
         <div className="videoOverlay pointer-events-none absolute inset-0 bg-amber-900/97 opacity-0" />
       </div>
