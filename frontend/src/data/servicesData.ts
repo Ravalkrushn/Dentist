@@ -2,7 +2,7 @@ export const servicesData = [
     {
         id: "teeth-cleaning",
         title: "Teeth Cleaning",
-        heroImage: "/image/ABOUT2.png", // Or appropriate image
+        heroImage: "/image/service1.png",
         description: "Professional teeth cleaning is a preventative dental procedure designed to remove plaque and tartar buildup, leaving your teeth sparkling and healthy.",
         symptoms: [
             { title: "Bleeding Gums", desc: "Your gums bleed when you brush or floss." },
@@ -10,22 +10,24 @@ export const servicesData = [
             { title: "Visible Tartar", desc: "Yellow or brown deposits along the gumline." }
         ],
         steps: [
-            { stepTitle: "Exam", stepDesc: "A physical exam of your mouth." },
-            { stepTitle: "Scaling", stepDesc: "Removal of plaque and tartar." },
-            { stepTitle: "Polishing", stepDesc: "A gritty paste is used for deep cleaning." },
-            { stepTitle: "Flossing", stepDesc: "Expert flossing to remove leftover debris." }
+            { stepTitle: "Comprehensive Exam", stepDesc: "We perform a thorough physical exam of your mouth to check for cavities and gum disease. This initial assessment ensures your treatment is safe and effective." },
+            { stepTitle: "Plaque & Tartar Scaling", stepDesc: "Using specialized dental tools, we gently remove plaque and stubborn tartar buildup from around your gum line and between your teeth where brushing cannot reach." },
+            { stepTitle: "Professional Polishing", stepDesc: "After scaling, we use a high-powered electric brush and a special gritty toothpaste to deep clean and polish your teeth, removing surface stains for a smoother finish." },
+            { stepTitle: "Expert Flossing", stepDesc: "Our dental hygienist performs expert flossing to reach the tightest spots, ensuring no plaque or cleaning paste remains, while checking for potential trouble areas." }
         ],
         benefits: ["Prevents Cavities", "Stops Tooth Loss", "Brightens Your Smile", "Freshens Breath"],
         costInfo: { info: "Typical cost ranges from $100 to $200 before insurance.", isCoveredByInsurance: true },
         faqs: [
-            { question: "Does it hurt?", answer: "No, teeth cleaning is virtually painless." },
-            { question: "How often should I get it?", answer: "We recommend a professional cleaning every 6 months." }
+            { question: "Does professional cleaning hurt?", answer: "No, teeth cleaning is virtually painless. You may feel some mild pressure or vibrations, but most patients find it completely comfortable." },
+            { question: "How often should I get it?", answer: "We generally recommend a professional cleaning every 6 months to maintain optimal oral health and catch potential issues early." },
+            { question: "Can I eat right after my cleaning?", answer: "Yes, you can eat immediately after a standard cleaning. However, if you received a fluoride treatment, we recommend waiting 30 minutes before eating or drinking." },
+            { question: "Is it safe if I have sensitive teeth?", answer: "Absolutely. We use specialized techniques and can apply desensitizing agents to ensure your cleaning is gentle and pain-free even for sensitive teeth." }
         ]
     },
     {
         id: "root-canal-treatment",
         title: "Root Canal Treatment",
-        heroImage: "/image/ABOUT2.png", // Or appropriate image
+        heroImage: "/image/service2.png",
         description: "A root canal is a treatment used to repair and save a tooth that is badly decayed or becomes infected.",
         symptoms: [
             { title: "Severe Pain", desc: "Intense toothache when chewing or applying pressure." },
@@ -33,22 +35,24 @@ export const servicesData = [
             { title: "Swelling", desc: "Swollen or tender gums near the infected tooth." }
         ],
         steps: [
-            { stepTitle: "X-Ray", stepDesc: "To see the shape of the root canals and determine if there are signs of infection." },
-            { stepTitle: "Anesthesia", stepDesc: "Local anesthesia is applied to numb the tooth." },
-            { stepTitle: "Pulpectomy", stepDesc: "An opening is made and the diseased pulp is removed." },
-            { stepTitle: "Filling", stepDesc: "The root canals are filled with a biocompatible material." }
+            { stepTitle: "Diagnostic X-Ray", stepDesc: "We take detailed digital X-rays to see the exact shape of your root canals and determine the extent of the infection in the surrounding bone." },
+            { stepTitle: "Targeted Anesthesia", stepDesc: "To ensure a completely pain-free experience, a local anesthesia is applied to numb the tooth and the surrounding gum area before the procedure begins." },
+            { stepTitle: "Gentle Pulpectomy", stepDesc: "A small opening is created in the tooth crown to carefully remove the diseased or dead pulp tissue from the inner chambers and disinfect the area thoroughly." },
+            { stepTitle: "Sealing & Filling", stepDesc: "The cleaned root canals are filled with a biocompatible material called gutta-percha and sealed to prevent any future bacterial entry or reinfection." }
         ],
         benefits: ["Stops the Spread of Infection", "Relieves Pain", "Saves the Natural Tooth"],
         costInfo: { info: "Costs vary depending on the tooth structure, ranging anywhere from $800 to $1,500.", isCoveredByInsurance: true },
         faqs: [
-            { question: "Is a root canal painful?", answer: "With modern anesthesia, a root canal feels similar to a routine filling." },
-            { question: "How many visits does it take?", answer: "Most root canals can be completed in one to two appointments." }
+            { question: "Is a root canal painful?", answer: "With modern anesthesia, a root canal feels similar to a routine filling. The procedure actually relieves the pain caused by the tooth infection." },
+            { question: "What happens if I don't get a root canal?", answer: "The infection will spread, potentially leading to an abscess, bone loss, and eventually the loss of the tooth itself. It can also cause systemic health issues." },
+            { question: "How long does the tooth last after treatment?", answer: "With a proper crown and good oral hygiene, a root-canal-treated tooth can last a lifetime, just like your natural teeth." },
+            { question: "Will I need a crown after a root canal?", answer: "Most often, yes. Because the tooth becomes more brittle after the pulp is removed, a crown is necessary to protect it from fracturing." }
         ]
     },
     {
         id: "dental-implants",
         title: "Dental Implants",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service3.png",
         description: "Dental implants are artificial tooth roots placed into the jaw to hold a replacement tooth or bridge.",
         symptoms: [
             { title: "Missing Teeth", desc: "You have one or more missing teeth." },
@@ -56,22 +60,24 @@ export const servicesData = [
             { title: "Bone Loss", desc: "Missing teeth have begun to cause jawbone deterioration." }
         ],
         steps: [
-            { stepTitle: "Assessment", stepDesc: "Comprehensive examination and 3D imaging." },
-            { stepTitle: "Implant Placement", stepDesc: "The titanium post is surgically placed in the jawbone." },
-            { stepTitle: "Healing", stepDesc: "Osseointegration takes a few months to firmly anchor the implant." },
-            { stepTitle: "Crown Placement", stepDesc: "A custom-made crown is attached to the implant." }
+            { stepTitle: "Clinical Assessment", stepDesc: "We conduct a comprehensive oral examination and use advanced 3D imaging to evaluate your jawbone density and plan the perfect implant placement." },
+            { stepTitle: "Surgical Placement", stepDesc: "A medical-grade titanium post is surgically placed into the jawbone, acting as a strong, permanent root for your new artificial tooth." },
+            { stepTitle: "Osseointegration Period", stepDesc: "Over several months, the implant naturally fuses with your jawbone in a process called osseointegration, providing a solid foundation for the final crown." },
+            { stepTitle: "Custom Crown Fitting", stepDesc: "Once healing is complete, we attach a custom-designed porcelain crown that matches the color and shape of your natural teeth perfectly." }
         ],
         benefits: ["Looks and Feels Complete", "Prevents Bone Loss", "Lasts a Lifetime with Proper Care"],
         costInfo: { info: "A single implant can cost between $3,000 and $4,500 total.", isCoveredByInsurance: false },
         faqs: [
-            { question: "Am I a candidate for implants?", answer: "Most adults with healthy gums and adequate bone are good candidates." },
-            { question: "How long do they last?", answer: "With excellent oral hygiene, implants can last a lifetime." }
+            { question: "What is the success rate of dental implants?", answer: "Dental implants have an incredibly high success rate, typically over 95-98% when performed on healthy patients by experienced professionals." },
+            { question: "Does it feel like a real tooth?", answer: "Yes. Because they are anchored into your bone, dental implants function, feel, and look exactly like your natural teeth." },
+            { question: "How long is the entire implant process?", answer: "The process can take anywhere from 3 to 9 months, as time is needed for the bone to heal and fuse with the implant before the final crown is placed." },
+            { question: "Am I too old for dental implants?", answer: "There is no upper age limit. As long as you have good oral health and sufficient bone density, implants are a great solution for seniors." }
         ]
     },
     {
         id: "orthodontics",
         title: "Orthodontics (Braces)",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service4.png",
         description: "Orthodontic treatments align and straighten teeth to improve dental health and cosmetic appearance.",
         symptoms: [
             { title: "Crooked Teeth", desc: "Visibly misaligned or crowded teeth." },
@@ -79,22 +85,24 @@ export const servicesData = [
             { title: "Jaw Pain", desc: "Discomfort caused by poor jaw alignment." }
         ],
         steps: [
-            { stepTitle: "Consultation", stepDesc: "Evaluating your bite and discussing options like braces or clear aligners." },
-            { stepTitle: "Placement", stepDesc: "Attaching brackets or fitting your first aligner trays." },
-            { stepTitle: "Adjustments", stepDesc: "Periodic visits to tighten wires or receive new aligners." },
-            { stepTitle: "Retention", stepDesc: "Wearing a retainer to maintain your new smile." }
+            { stepTitle: "In-Depth Consultation", stepDesc: "We analyze your bite, take digital impressions, and discuss the best options for your lifestyle, whether it's traditional braces or clear aligners." },
+            { stepTitle: "Precision Placement", stepDesc: "We carefully bond orthodontic brackets to each tooth or provide you with your first set of custom-fitted clear aligner trays to begin the movement." },
+            { stepTitle: "Progress Adjustments", stepDesc: "During regular check-updates, we adjust your wires or provide new aligner sets to continuously guide your teeth into their ideal, healthy positions." },
+            { stepTitle: "Retention Phase", stepDesc: "To ensure your new smile stays perfect, we provide custom retainers that prevent your teeth from shifting back to their original positions." }
         ],
         benefits: ["Straight, Beautiful Smile", "Reduces Risk of Decay", "Improves Bite and Jaw Function"],
         costInfo: { info: "Costs range from $3,000 to $7,000 depending on the complexity and appliance type.", isCoveredByInsurance: true },
         faqs: [
-            { question: "How long does treatment take?", answer: "Usually between 12 and 24 months." },
-            { question: "Are clear aligners faster than braces?", answer: "In some mild cases, they can be faster, but it depends on your specific needs." }
+            { question: "Can adults get braces or aligners?", answer: "Absolutely! More than 25% of all orthodontic patients are adults. It's never too late to achieve the smile you've always wanted." },
+            { question: "Will braces affect my speech?", answer: "There might be a very brief adjustment period of a few days, but most patients speak perfectly normally with both braces and clear aligners." },
+            { question: "Can I still play sports with braces?", answer: "Yes, you can. We highly recommend wearing a professional mouthguard to protect your appliances and your teeth during contact sports." },
+            { question: "How often are the adjustment visits?", answer: "Visits are typically scheduled every 4 to 8 weeks to monitor progress and make necessary adjustments to your treatment plan." }
         ]
     },
     {
         id: "smile-makeover",
         title: "Smile Makeover",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service5.png",
         description: "A comprehensive cosmetic and restorative approach to redesigning and improving your smile.",
         symptoms: [
             { title: "Stained Teeth", desc: "Severe discoloration that doesn't respond to whitening." },
@@ -102,22 +110,24 @@ export const servicesData = [
             { title: "Gaps", desc: "Unwanted spaces between your front teeth." }
         ],
         steps: [
-            { stepTitle: "Design", stepDesc: "Digital smile design and consultation." },
-            { stepTitle: "Preparation", stepDesc: "Preparing teeth for veneers, crowns, or other restorations." },
-            { stepTitle: "Trial Smile", stepDesc: "Placing temporary restorations to test the look and feel." },
-            { stepTitle: "Final Delivery", stepDesc: "Bonding the final porcelain restorations." }
+            { stepTitle: "Smile Aesthetic Design", stepDesc: "Using digital smile design technology, we plan your new look, considering your facial features, lip line, and personal aesthetic goals." },
+            { stepTitle: "Preparation Work", stepDesc: "We prepare your teeth by removing a tiny amount of enamel if needed for veneers, ensuring a natural and comfortable fit for all restorations." },
+            { stepTitle: "Trial Smile Phase", stepDesc: "You wear high-quality temporary restorations to 'test drive' your new smile, allowing us to make final adjustments to the look and feel." },
+            { stepTitle: "Final Artistic Delivery", stepDesc: "Our master technicians craft your final porcelain restorations, which we then bond securely to create your breathtaking, permanent new smile." }
         ],
         benefits: ["Dramatic Cosmetic Improvement", "Boosts Self-Confidence", "Customized to Your Face"],
         costInfo: { info: "Highly variable depending on the number of services combined. Can range from $1,500 to over $10,000.", isCoveredByInsurance: false },
         faqs: [
-            { question: "Can I preview my new smile?", answer: "Yes, we use digital imaging and wax-ups to show you the expected result before touching your teeth." },
-            { question: "Is a smile makeover permanent?", answer: "Porcelain restorations are long-lasting, typically 10-15 years or more with good care." }
+            { question: "Is a smile makeover painful?", answer: "We prioritize your comfort. Most procedures involved are minimally invasive and performed under local anesthesia, ensuring a pain-free experience." },
+            { question: "How long does the makeover last?", answer: "With proper oral care and regular check-ups, porcelain veneers and crowns can last 10 to 15 years or even longer." },
+            { question: "How many appointments will I need?", answer: "A smile makeover is usually completed in 2 to 3 main visits after the initial design and consultation phase." },
+            { question: "Can I finance my smile makeover?", answer: "Yes, we offer flexible payment plans and financing options through partners like CareCredit to make your dream smile affordable." }
         ]
     },
     {
         id: "wisdom-tooth-extraction",
         title: "Wisdom Tooth Extraction",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service6.png",
         description: "A surgical procedure to remove one or more wisdom teeth — the four permanent adult teeth located at the back corners of your mouth.",
         symptoms: [
             { title: "Impaction", desc: "Teeth trapped within the jawbone or gums." },
@@ -125,22 +135,24 @@ export const servicesData = [
             { title: "Crowding", desc: "Wisdom teeth pushing and misaligning other teeth." }
         ],
         steps: [
-            { stepTitle: "Imaging", stepDesc: "X-rays to determine the exact position of the teeth." },
-            { stepTitle: "Sedation", stepDesc: "Administering local anesthesia or IV sedation for comfort." },
-            { stepTitle: "Extraction", stepDesc: "Removal of the tooth and any necessary bone clearing." },
-            { stepTitle: "Recovery", stepDesc: "Suturing the site and providing post-operative care instructions." }
+            { stepTitle: "Positional Imaging", stepDesc: "Advanced X-rays or 3D scans are used to determine the exact position of your wisdom teeth and their proximity to nerves and other teeth." },
+            { stepTitle: "Comfort Sedation", stepDesc: "We provide local anesthesia combined with conscious sedation or general anesthesia to ensure you remain completely relaxed and comfortable throughout." },
+            { stepTitle: "Surgical Extraction", stepDesc: "The surgeon carefully removes the tooth, clearing any small amounts of bone if necessary, while ensuring the surrounding tissue is preserved." },
+            { stepTitle: "Guided Recovery", stepDesc: "The site is gently sutured if needed, and we provide you with a comprehensive post-operative plan to ensure fast and comfortable healing at home." }
         ],
         benefits: ["Prevents Crowding", "Eliminates Pain", "Reduces Infection Risk"],
         costInfo: { info: "Usually $200-$600 per tooth depending on impaction level.", isCoveredByInsurance: true },
         faqs: [
-            { question: "Will I be awake during the procedure?", answer: "We offer conscious sedation so you will be relaxed and unaware of the surgery." },
-            { question: "How long is recovery?", answer: "Most patients return to normal activities in 3-4 days." }
+            { question: "Do all wisdom teeth need to be pulled?", answer: "Not always. If they are healthy, fully erupted, and properly aligned, they may stay. However, we often remove them to prevent future crowding or infection." },
+            { question: "What is the best age for extraction?", answer: "Extraction is typically easier and recovery faster if done in the late teens or early twenties, before the roots are fully developed." },
+            { question: "What is 'dry socket' and how do I avoid it?", answer: "Dry socket occurs when the blood clot is lost early. You can avoid it by not using straws, not smoking, and following all post-care instructions carefully." },
+            { question: "When can I return to work or school?", answer: "Most patients can return to their normal daily activities within 2 to 4 days after the surgery." }
         ]
     },
     {
         id: "pediatric-dentistry",
         title: "Pediatric Dentistry",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service7.png",
         description: "Specialized dental care for infants, children, and adolescents, focusing on prevention and early intervention.",
         symptoms: [
             { title: "First Tooth", desc: "Time for your child's first dental visit." },
@@ -148,22 +160,24 @@ export const servicesData = [
             { title: "Toothaches", desc: "Complaints of pain when eating sweets." }
         ],
         steps: [
-            { stepTitle: "Welcome", stepDesc: "A fun, friendly introduction to the dental chair." },
-            { stepTitle: "Gentle Exam", stepDesc: "Checking for cavities and developmental milestones." },
-            { stepTitle: "Cleaning", stepDesc: "A quick, gentle polishing of the teeth." },
-            { stepTitle: "Education", stepDesc: "Teaching proper brushing techniques to parent and child." }
+            { stepTitle: "Friendly Welcome", stepDesc: "We create a fun, welcoming environment to introduce your child to the dental clinic, turning the visit into a positive and engaging experience." },
+            { stepTitle: "Gentle Oral Exam", stepDesc: "A careful check of your child's teeth and gums to monitor healthy development and detect any early signs of cavities or misalignment." },
+            { stepTitle: "Painless Cleaning", stepDesc: "Our specialized pediatric hygienists perform a quick, gentle cleaning and polishing to keep your child's developing teeth strong and healthy." },
+            { stepTitle: "Family Education", stepDesc: "We teach both parent and child the best techniques for brushing and flossing at home, setting the foundation for a lifetime of healthy smiles." }
         ],
-        benefits: ["Establishes Healthy Habits", "Prevents Early Childhood Caries", "Creates a Positive Dental Outline"],
+        benefits: ["Establishes Healthy Habits", "Prevents Early Childhood Caries", "Creates a Positive Dental Feel"],
         costInfo: { info: "Preventative pediatric visits are typically fully covered by most dental insurances.", isCoveredByInsurance: true },
         faqs: [
-            { question: "When should I bring my child in?", answer: "By their first birthday or when their first tooth appears." },
-            { question: "Are dental x-rays safe for kids?", answer: "Yes, we use ultra-low dose digital x-rays only when strictly necessary." }
+            { question: "How do you handle nervous children?", answer: "We use 'Tell-Show-Do' techniques, kid-friendly language, and a gentle approach to build trust and make sure every child feels safe and happy." },
+            { question: "When should my child start using toothpaste?", answer: "You can start using a tiny 'smear' of fluoride toothpaste as soon as the first tooth appears, increasing to a pea-sized amount at age 3." },
+            { question: "Are baby teeth really that important?", answer: "Yes! They help children chew and speak properly and serve as essential placeholders for permanent teeth. Neglected baby teeth can lead to serious infections." },
+            { question: "What should I do if my child knockouts a tooth?", answer: "Keep the tooth moist (in milk if possible) and contact us immediately. Quick action can often save the tooth!" }
         ]
     },
     {
         id: "teeth-whitening",
         title: "Teeth Whitening",
-        heroImage: "/image/ABOUT2.png",
+        heroImage: "/image/service8.png",
         description: "Professional cosmetic treatment to lighten the color of your teeth and remove tough stains and discoloration.",
         symptoms: [
             { title: "Yellowing", desc: "General dullness or yellowing from aging." },
@@ -171,16 +185,18 @@ export const servicesData = [
             { title: "Special Occasion", desc: "Wanting a bright smile for a wedding or event." }
         ],
         steps: [
-            { stepTitle: "Shade Check", stepDesc: "Determining your current tooth shade." },
-            { stepTitle: "Gum Protection", stepDesc: "Applying a protective barrier over your gums." },
-            { stepTitle: "Gel Application", stepDesc: "Painting the professional-strength whitening gel onto teeth." },
-            { stepTitle: "Activation", stepDesc: "Using a specialized light to accelerate the bleaching process." }
+            { stepTitle: "Initial Shade Check", stepDesc: "We measure your current tooth color against a shade guide and discuss your target brightness to ensure a natural-looking, radiant result." },
+            { stepTitle: "Gum & Lip Protection", stepDesc: "A protective barrier is carefully applied to your gums and lips to prevent any irritation from the professional-grade whitening formula." },
+            { stepTitle: "Gel Application", stepDesc: "We apply a high-potency professional whitening gel to each tooth, which targets deep-set stains that regular stores-bought products cannot reach." },
+            { stepTitle: "LED Activation", stepDesc: "A specialized LED light is used to activate the whitening agent, accelerating the process to deliver a visibly brighter smile in just one visit." }
         ],
         benefits: ["Instantly Brighter Smile", "Non-Invasive", "Safe Under Doctor Supervision"],
         costInfo: { info: "In-office treatments usually cost around $400-$600.", isCoveredByInsurance: false },
         faqs: [
-            { question: "Will it make my teeth sensitive?", answer: "Mild sensitivity is common but temporary. We use desensitizing protocols to minimize it." },
-            { question: "How long do results last?", answer: "Usually 1-3 years depending on dietary habits." }
+            { question: "How white will my teeth get?", answer: "Results vary, but most patients see a brightness increase of 5 to 10 shades in just one session. We aim for a radiant but natural look." },
+            { question: "Will it make my teeth permanently sensitive?", answer: "No. Any sensitivity is temporary and usually fades within 24-48 hours. We use desensitizing gels to minimize any discomfort." },
+            { question: "Can whitening fix stains on crowns or veneers?", answer: "Whitening treatments only affect natural tooth enamel. They will not change the color of dental crowns, veneers, or fillings." },
+            { question: "How can I maintain my results?", answer: "Avoid staining foods and drinks like coffee or red wine for the first 48 hours, and maintain regular hygiene visits for long-lasting brightness." }
         ]
     }
 ];

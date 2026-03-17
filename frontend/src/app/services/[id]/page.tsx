@@ -36,10 +36,10 @@ export default async function ServiceDetail({ params }: { params: Promise<{ id: 
     }
 
     return (
-        <main className="bg-[#E2DED9]">
+        <main className="bg-[#EADDD7]">
             <MainNavbar />
             <Service_Hero title={service.title} image={service.heroImage} />
-            <div className="relative z-10 bg-[#E2DED9]">
+            <div className="relative z-10 bg-[#EADDD7]">
                 <Treatment_Description
                     title={service.title}
                     description={service.description}

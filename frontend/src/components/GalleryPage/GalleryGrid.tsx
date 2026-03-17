@@ -10,22 +10,22 @@ const categories = [
 ];
 
 const galleryData = [
-    { id: 1,  category: "The Team",       src: "/image/dentist1.png",                        title: "Dr. Nicholas Brown",  subtitle: "Founder & Lead Dentist" },
-    { id: 2,  category: "The Team",       src: "/image/ABOUT2.PNG",                          title: "Dr. Emily Chen",      subtitle: "Orthodontist Specialist" },
-    { id: 3,  category: "The Team",       src: "/image/dentist2.png",                        title: "Dr. James Wilson",    subtitle: "Oral & Maxillofacial surgeon" },
-    { id: 12, category: "The Team",       src: "/image/dentist3.png",                        title: "Our Specialists",    subtitle: "Dento Team" },
-    { id: 13, category: "The Team",       src: "/image/dentist4.png",                        title: "Our Specialists",    subtitle: "Dento Team" },
-    { id: 4,  category: "Before & After", src: "/image/DentalImplants_before.jpg",           title: "Dental Implants",    subtitle: "Before" },
-    { id: 5,  category: "Before & After", src: "/image/DentalImplants_after.jpg",            title: "Dental Implants",    subtitle: "After" },
-    { id: 6,  category: "Before & After", src: "/image/VeneersTransformation_before.jpg",    title: "Veneers",            subtitle: "Before" },
-    { id: 7,  category: "Before & After", src: "/image/VeneersTransformation_after.jpg",     title: "Veneers",            subtitle: "After" },
-    { id: 11, category: "Before & After", src: "/image/Invisalign&TeethWhitening_after.jpg", title: "Teeth Whitening",    subtitle: "After" },
-    { id: 8,  category: "Patients",       src: "/image/ABOUT.png",                           title: "Patient Care",       subtitle: "Our Priority" },
-    { id: 9,  category: "Patients",       src: "/image/p1.png",                          title: "Clinic Environment", subtitle: "Modern & Calm" },
-    { id: 14,  category:"Patients", src: "/image/p2.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
-    { id:15, category: "Patients", src: "/image/p3.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
-    { id:16, category: "Patients", src: "/image/p4.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
-];  
+    { id: 1, category: "The Team", src: "/image/dentist1.png", title: "Dr. Nicholas Brown", subtitle: "Founder & Lead Dentist" },
+    { id: 2, category: "The Team", src: "/image/ABOUT2.PNG", title: "Dr. Emily Chen", subtitle: "Orthodontist Specialist" },
+    { id: 3, category: "The Team", src: "/image/dentist2.png", title: "Dr. James Wilson", subtitle: "Oral & Maxillofacial surgeon" },
+    { id: 12, category: "The Team", src: "/image/dentist3.png", title: "Our Specialists", subtitle: "Dento Team" },
+    { id: 13, category: "The Team", src: "/image/dentist4.png", title: "Our Specialists", subtitle: "Dento Team" },
+    { id: 4, category: "Before & After", src: "/image/DentalImplants_before.jpg", title: "Dental Implants", subtitle: "Before" },
+    { id: 5, category: "Before & After", src: "/image/DentalImplants_after.jpg", title: "Dental Implants", subtitle: "After" },
+    { id: 6, category: "Before & After", src: "/image/VeneersTransformation_before.jpg", title: "Veneers", subtitle: "Before" },
+    { id: 7, category: "Before & After", src: "/image/VeneersTransformation_after.jpg", title: "Veneers", subtitle: "After" },
+    { id: 11, category: "Before & After", src: "/image/Invisalign&TeethWhitening_after.jpg", title: "Teeth Whitening", subtitle: "After" },
+    { id: 8, category: "Patients", src: "/image/ABOUT.png", title: "Patient Care", subtitle: "Our Priority" },
+    { id: 9, category: "Patients", src: "/image/p1.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
+    { id: 14, category: "Patients", src: "/image/p2.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
+    { id: 15, category: "Patients", src: "/image/p3.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
+    { id: 16, category: "Patients", src: "/image/p4.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
+];
 
 export default function GalleryGrid() {
     const [activeTab, setActiveTab] = useState("The Team");
@@ -86,16 +86,7 @@ export default function GalleryGrid() {
     };
 
     return (
-        <section className="relative bg-[#f8f5f2] min-h-screen pb-32 overflow-hidden">
-
-            {/* Subtle dot texture */}
-            <div
-                className="absolute inset-0 opacity-[0.06]"
-                style={{
-                    backgroundImage: "radial-gradient(circle at 1px 1px, #001524 1px, transparent 0)",
-                    backgroundSize: "32px 32px",
-                }}
-            />
+        <section className="relative bg-[#0097ab] min-h-screen pb-32 overflow-hidden rounded-t-[5rem] -mt-12 z-[30]">
 
             <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-16">
 
@@ -104,12 +95,12 @@ export default function GalleryGrid() {
 
                     {/* Left: title */}
                     <div>
-                        <p className="text-[#0097ab] text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
+                        <p className="text-white/60 text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
                             Dento
                         </p>
-                        <h2 className="text-[#001524] font-serif text-4xl md:text-5xl font-semibold leading-[0.95] tracking-tight">
+                        <h2 className="text-white font-[Playfair_Display] text-4xl md:text-5xl font-semibold leading-[0.95] tracking-tight">
                             Browse<br />
-                            <span className="text-[#0097ab]">our work</span>
+                            <span className="text-white/60 italic">our work</span>
                         </h2>
                     </div>
 
@@ -119,27 +110,26 @@ export default function GalleryGrid() {
                             <button
                                 key={cat.name}
                                 onClick={() => switchTab(cat.name)}
-                                className={`group relative flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-500 overflow-hidden ${
-                                    activeTab === cat.name 
-                                    ? "bg-white shadow-[0_10px_30px_rgba(0,151,171,0.1)] translate-x-2" 
-                                    : "hover:bg-white/50 hover:translate-x-1"
-                                }`}
+                                className={`group relative flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-500 overflow-hidden ${activeTab === cat.name
+                                        ? "bg-white shadow-[0_10px_30px_rgba(0,151,171,0.1)] translate-x-2"
+                                        : "hover:bg-white/50 hover:translate-x-1"
+                                    }`}
                             >
                                 <div className="flex items-center gap-4 z-10">
-                                    <span className={`text-[10px] font-mono font-bold transition-colors duration-300 ${activeTab === cat.name ? "text-[#0097ab]" : "text-[#bbb]"}`}>
+                                    <span className={`text-[10px] font-mono font-bold transition-colors duration-300 ${activeTab === cat.name ? "text-[#0097ab]" : "text-white/40"}`}>
                                         {cat.label}
                                     </span>
-                                    <span className={`text-[13px] font-bold tracking-[0.1em] uppercase transition-colors duration-300 ${activeTab === cat.name ? "text-[#001524]" : "text-[#a89990] group-hover:text-[#001524]"}`}>
+                                    <span className={`text-[13px] font-bold tracking-[0.1em] uppercase transition-colors duration-300 ${activeTab === cat.name ? "text-[#001524]" : "text-white/70 group-hover:text-white"}`}>
                                         {cat.name}
                                     </span>
                                 </div>
-                                
+
                                 {activeTab === cat.name && (
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#0097ab] shadow-[0_0_10px_#0097ab] z-10" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#0097ab] z-10" />
                                 )}
 
                                 {/* Hover/Active background effect */}
-                                <div className={`absolute inset-0 bg-gradient-to-r from-transparent to-[#0097ab]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                                <div className={`absolute inset-0 bg-white opacity-0 ${activeTab === cat.name ? "opacity-100" : "group-hover:opacity-10"} transition-opacity duration-500`} />
                             </button>
                         ))}
                     </nav>
@@ -147,10 +137,10 @@ export default function GalleryGrid() {
 
                 {/* Divider + count */}
                 <div className="flex items-center gap-6 mb-12">
-                    <div className="h-px flex-1 bg-gradient-to-r from-[#e2d8d0] to-transparent" />
+                    <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
                     <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#0097ab] animate-pulse" />
-                        <span className="text-[#8a7a72] text-[11px] tracking-[0.25em] uppercase font-bold">
+                        <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                        <span className="text-white/60 text-[11px] tracking-[0.25em] uppercase font-bold">
                             {filteredItems.length} Featured Works
                         </span>
                     </div>
@@ -159,7 +149,7 @@ export default function GalleryGrid() {
                 {/* Scrollable Gallery Container */}
                 <div className="relative group/gallery">
                     {/* Navigation Buttons */}
-                    <button 
+                    <button
                         onClick={() => {
                             if (gridRef.current) {
                                 gridRef.current.scrollBy({ left: -400, behavior: 'smooth' });
@@ -170,7 +160,7 @@ export default function GalleryGrid() {
                         <ChevronLeft size={24} />
                     </button>
 
-                    <button 
+                    <button
                         onClick={() => {
                             if (gridRef.current) {
                                 gridRef.current.scrollBy({ left: 400, behavior: 'smooth' });
@@ -222,7 +212,7 @@ export default function GalleryGrid() {
                     </div>
                 </div>
 
-                <style jsx>{`
+                <style>{`
                     .hide-scrollbar::-webkit-scrollbar {
                         display: none;
                     }
@@ -233,83 +223,83 @@ export default function GalleryGrid() {
             {/* ─── Lightbox Modal ─── */}
             {selectedImg && (
                 <div
-                    className="fixed inset-0 z-[100] bg-[#001524]/90 backdrop-blur-sm flex items-center justify-center"
+                    className="fixed inset-0 z-[150] bg-[#001524]/95 backdrop-blur-md flex items-center justify-center pt-24"
                     onClick={() => setSelectedIdx(null)}
                 >
-                    {/* Close */}
+                    {/* Close Area */}
                     <button
                         onClick={() => setSelectedIdx(null)}
-                        className="absolute top-6 right-6 z-20 w-10 h-10 border border-white/10 hover:border-white/30 text-white/30 hover:text-white rounded-full flex items-center justify-center transition-all duration-200"
+                        className="absolute top-8 right-8 z-20 w-12 h-12 border border-white/10 hover:border-white/40 text-white/40 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:rotate-90 bg-white/5"
                     >
-                        <X size={16} />
+                        <X size={20} />
                     </button>
 
                     {/* Prev */}
                     <button
                         onClick={(e) => { e.stopPropagation(); prev(); }}
-                        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/10 hover:border-white/30 text-white/30 hover:text-white rounded-full flex items-center justify-center transition-all duration-200"
+                        className="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-white/10 hover:border-white/40 text-white/40 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:bg-[#0097ab] hover:text-white bg-white/5"
                     >
-                        <ChevronLeft size={18} />
+                        <ChevronLeft size={24} />
                     </button>
 
                     {/* Next */}
                     <button
                         onClick={(e) => { e.stopPropagation(); next(); }}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/10 hover:border-white/30 text-white/30 hover:text-white rounded-full flex items-center justify-center transition-all duration-200"
+                        className="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-white/10 hover:border-white/40 text-white/40 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:bg-[#0097ab] hover:text-white bg-white/5"
                     >
-                        <ChevronRight size={18} />
+                        <ChevronRight size={24} />
                     </button>
 
                     {/* Modal box */}
                     <div
-                        className="relative flex flex-col md:flex-row w-full max-w-5xl mx-6 max-h-[85vh] overflow-hidden shadow-2xl"
-                        style={{ borderRadius: "8px" }}
+                        className="relative flex flex-col md:flex-row w-full max-w-6xl mx-6 max-h-[80vh] overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.5)] bg-[#f8f5f2]"
+                        style={{ borderRadius: "24px" }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Image side */}
-                        <div className="flex-1 bg-[#f8f5f2] flex items-center justify-center min-h-[50vh] md:min-h-[70vh] overflow-hidden">
+                        <div className="flex-1 flex items-center justify-center min-h-[40vh] md:min-h-[60vh] overflow-hidden p-4">
                             <img
                                 key={selectedImg.id}
                                 src={selectedImg.src}
                                 alt={selectedImg.title}
-                                className="max-w-full max-h-[70vh] object-contain"
-                                style={{ animation: "fadeIn 0.3s ease" }}
+                                className="max-w-full max-h-[70vh] object-contain shadow-lg"
+                                style={{ animation: "fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)" }}
                             />
                         </div>
 
                         {/* Info sidebar */}
-                        <div className="w-full md:w-64 bg-[#f8f5f2] border-l border-[#e2d8d0] flex flex-col justify-between p-8 shrink-0">
-                            <div>
-                                <p className="text-[#0097ab] text-[10px] font-semibold tracking-[0.25em] uppercase mb-5">
+                        <div className="w-full md:w-80 bg-[#f8f5f2] border-l border-[#e2d8d0] flex flex-col justify-between p-10 shrink-0 text-center items-center">
+                            <div className="flex flex-col items-center w-full">
+                                <p className="text-[#0097ab] text-[10px] font-bold tracking-[0.35em] uppercase mb-6">
                                     {selectedImg.category}
                                 </p>
-                                <div className="w-8 h-px bg-[#e2d8d0] mb-5" />
-                                <h3 className="text-[#001524] font-serif text-2xl font-semibold leading-tight mb-2">
+                                <div className="w-12 h-px bg-[#0097ab]/20 mb-6 mx-auto" />
+                                <h3 className="text-[#001524] font-serif text-3xl font-semibold leading-tight mb-3">
                                     {selectedImg.title}
                                 </h3>
-                                <p className="text-[#9e8e84] text-[13px] tracking-wide">
+                                <p className="text-[#9e8e84] text-sm tracking-wide font-medium">
                                     {selectedImg.subtitle}
                                 </p>
                             </div>
 
-                            <div>
-                                <p className="text-[#001524] text-[11px] font-mono mb-5 opacity-60">
-                                    {String(selectedIdx! + 1).padStart(2, "0")} / {String(filteredItems.length).padStart(2, "0")}
+                            <div className="flex flex-col items-center w-full mt-8">
+                                <p className="text-[#001524]/40 text-[11px] font-mono mb-6 tracking-widest">
+                                    {String(selectedIdx! + 1).padStart(2, "0")} <span className="mx-2 opacity-20">/</span> {String(filteredItems.length).padStart(2, "0")}
                                 </p>
-                                <p className="text-[#001524] text-[12px] leading-relaxed mb-8 font-medium">
-                                    Modern dental care with precision and comfort — every transformation tells a story.
+                                <p className="text-[#5a3a3a] text-[13px] leading-relaxed mb-10 font-medium italic opacity-80">
+                                    "Modern dental care with precision and comfort — every transformation tells a story."
                                 </p>
                                 <button
-                                    className="w-full mb-3 py-3 bg-[#001524] hover:bg-[#0097ab] text-white text-[11px] font-semibold tracking-[0.15em] uppercase flex items-center justify-center gap-2 transition-all duration-300"
-                                    style={{ borderRadius: "4px" }}
+                                    className="w-full mb-4 py-4 bg-[#001524] hover:bg-[#0097ab] text-white text-[11px] font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-[#001524]/10 hover:shadow-[#0097ab]/30"
+                                    style={{ borderRadius: "12px" }}
                                 >
-                                    <FaShareAlt size={12} />
+                                    <FaShareAlt size={14} />
                                     Share now
                                 </button>
                                 <button
                                     onClick={() => setSelectedIdx(null)}
-                                    className="w-full py-3 border border-[#e2d8d0] hover:border-[#001524] text-[#9e8e84] hover:text-[#001524] text-[11px] font-semibold tracking-[0.15em] uppercase transition-all duration-200"
-                                    style={{ borderRadius: "4px" }}
+                                    className="w-full py-4 border border-[#e2d8d0] hover:border-[#3b2a28] text-[#9e8e84] hover:text-[#3b2a28] text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300"
+                                    style={{ borderRadius: "12px" }}
                                 >
                                     Close
                                 </button>

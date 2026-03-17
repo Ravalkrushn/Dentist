@@ -7,33 +7,10 @@ export default function Service_FAQ({ faqs }: { faqs: { question: string; answer
     const [openIdx, setOpenIdx] = useState<number | null>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
-        const ctx = gsap.context(() => {
-            gsap.from(".faq-item", {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                y: 30,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out",
-            });
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="w-full bg-[#0097ab] py-20 px-6 lg:px-28">
+        <section ref={sectionRef} className="w-full bg-[#EADDD7] py-20 px-6 lg:px-28">
             <div className="max-w-7xl mx-auto mb-16 text-center">
-                <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-white pb-2">
+                <h2 className="text-[#3b2a28] text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-[#0097ab] pb-2">
                     Frequently Asked Questions
                 </h2>
             </div>
@@ -44,7 +21,7 @@ export default function Service_FAQ({ faqs }: { faqs: { question: string; answer
                     return (
                         <div
                             key={idx}
-                            className="faq-item bg-[#E2DED9] rounded-2xl overflow-hidden shadow-sm border border-white border-opacity-20 transition-all duration-300"
+                            className="faq-item bg-white rounded-2xl overflow-hidden shadow-sm border border-[#0097ab]/10 transition-all duration-300"
                         >
                             <button
                                 onClick={() => setOpenIdx(isOpen ? null : idx)}

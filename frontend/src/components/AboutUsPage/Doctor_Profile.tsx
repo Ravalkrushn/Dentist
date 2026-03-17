@@ -115,6 +115,7 @@ export default function DoctorProfile() {
             })
                 .to(".banner-title-top", { opacity: 0, y: -50, duration: 0.5 }, "<")
                 .to(".banner-title-bottom", { opacity: 0, y: 50, duration: 0.5 }, "<")
+                .to(".AfterText", { opacity: 1, duration: 1, ease: "none" }, ">=0.5")
                 .to({}, { duration: 10 / 88 }); // This forces the photo to hold perfectly still at full-screen while you keep scrolling for another 1.5x the duration of the zoom before releasing down.
         }
 
@@ -202,6 +203,37 @@ export default function DoctorProfile() {
 
                 <div className="banner-title-bottom absolute top-[75%] left-1/2 -translate-x-1/2 w-full z-[3] text-center text-[#5a3a3a]">
                     <p className="text-2xl md:text-4xl font-serif">Welcome to Dento</p>
+                </div>
+
+                {/* After-scroll text added to match Landing Page style */}
+                <div className="AfterText absolute bottom-[8%] left-1/2 z-[20] -translate-x-1/2 w-[88vw] flex flex-col items-center justify-center text-[#3b2a28] opacity-0 pointer-events-none sm:w-[80vw] sm:bottom-[10%] lg:top-[60%] lg:bottom-auto lg:w-[64rem]">
+                    <span className="text-center text-xl leading-snug sm:text-2xl md:text-3xl lg:text-4xl pointer-events-auto">
+                        Compassionate Experts, Exceptional Care
+                    </span>
+                    <span className="mt-3 text-center text-sm leading-relaxed sm:text-base sm:mt-4 md:text-xl lg:text-3xl pointer-events-auto">
+                        Meet the dedicated specialists at Dento who are committed to redefining your dental experience through comfort and precision.
+                    </span>
+                    <div className="mt-5 sm:mt-8 flex flex-row items-center justify-center gap-3 sm:gap-4 pointer-events-auto">
+                        <a href="/contact" className="group relative overflow-hidden rounded-full bg-[#0097ab] px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[10px] sm:text-xs md:text-sm font-medium text-[#eaddd7] shadow-xl transition-all duration-150 hover:scale-105 hover:shadow-2xl hover:shadow-[#0097ab]/50">
+                            <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                                Book Appointment
+                                <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-150 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                </svg>
+                            </span>
+                            <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#007b8a] transition-transform duration-150 group-hover:scale-y-100 origin-bottom" />
+                        </a>
+
+                        <a href="tel:7195393145" className="group relative overflow-hidden rounded-full border border-[#0097ab] bg-transparent px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[10px] sm:text-xs md:text-sm font-medium text-[#0097ab] transition-all duration-150 hover:-translate-y-1 hover:shadow-md hover:shadow-[#0097ab]/20">
+                            <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-150">
+                                Call Now
+                                <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-150 group-hover:rotate-12 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </span>
+                            <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#0097ab] transition-transform duration-200 group-hover:scale-y-100 origin-bottom" />
+                        </a>
+                    </div>
                 </div>
             </div>
 

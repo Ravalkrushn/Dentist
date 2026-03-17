@@ -69,8 +69,11 @@ export default function ContactPage() {
     return (
         <div ref={sectionRef} className="w-full bg-[#EADDD7]">
             {/* 1. Hero Section - Background #EADDD7 */}
-            <section className="bg-[#EADDD7] pt-32 pb-20 px-6 lg:px-12 text-center">
-                <div className="max-w-4xl mx-auto contact-header">
+            <section className="bg-[#EADDD7] h-[580px] px-6 lg:px-12 text-center relative overflow-hidden">
+                {/* Decorative Orbs to match other heroes */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                <div className="max-w-4xl mx-auto contact-header w-full pt-[180px] relative z-10">
                     <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
                         Let's Start a <span className="italic text-[#0097ab]">Conversation.</span>
                     </h1>
@@ -81,7 +84,7 @@ export default function ContactPage() {
             </section>
 
             {/* 2. Info Cards Section - Background #0097AB */}
-            <section className="bg-[#0097AB] py-24 px-6 lg:px-12 rounded-t-[4rem] -mt-10 relative z-10 transition-colors duration-500">
+            <section className="bg-[#0097AB] py-24 px-6 lg:px-12 rounded-t-[5rem] -mt-12 relative z-10 transition-colors duration-500">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="info-grid grid grid-cols-1 md:grid-cols-4 gap-6">
                         {/* Address */}
@@ -146,66 +149,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Why Choose Section - Background #3b2a28 */}
-            <section className="bg-[#EADDD7] py-24 px-6 lg:px-12 relative overflow-hidden">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    {/* Left Side: Photo */}
-                    <div className="relative">
-                        <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-x-1 -rotate-2 transform transition-transform hover:rotate-0 hover:skew-x-0 duration-700">
-                            <img
-                                src="/image/ABOUT2.png"
-                                alt="Why Choose Us"
-                                className="w-full h-full object-cover scale-110"
-                            />
-                            {/* Overlay Blur Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#3b2a28]/60 to-transparent" />
-                        </div>
-                        {/* Decorative Element */}
-                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#0097ab]/20 rounded-full blur-3xl" />
-                    </div>
-
-                    {/* Right Side: Content */}
-                    <div className="space-y-12">
-                        <h2 className="text-4xl md:text-5xl font-[Playfair_Display] text-[#3b2a28] leading-tight">
-                            Why Choose <span className="italic text-[#0097ab]">Dento?</span>
-                        </h2>
-
-                        <div className="space-y-8">
-                            {/* Feature 1 */}
-                            <div className="flex items-center gap-6 group">
-                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                    <ShieldCheck size={32} strokeWidth={1.5} />
-                                </div>
-                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comprehensive family and cosmetic dentistry</p>
-                            </div>
-
-                            {/* Feature 2 */}
-                            <div className="flex items-center gap-6 group">
-                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                    <Wind size={32} strokeWidth={1.5} />
-                                </div>
-                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comfort-focused care with sedation options</p>
-                            </div>
-
-                            {/* Feature 3 */}
-                            <div className="flex items-center gap-6 group">
-                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                    <Cpu size={32} strokeWidth={1.5} />
-                                </div>
-                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Advanced technology for precise and gentle treatment</p>
-                            </div>
-
-                            {/* Feature 4 */}
-                            <div className="flex items-center gap-6 group">
-                                <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                    <Zap size={32} strokeWidth={1.5} />
-                                </div>
-                                <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Emergency dental services available</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* 3. Form Section - Background #EADDD7 */}
             <section className="contact-main bg-[#0097AB] py-24 px-6 lg:px-12">

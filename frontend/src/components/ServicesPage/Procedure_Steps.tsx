@@ -47,17 +47,17 @@ export default function Procedure_Steps({ steps }: { steps: { stepTitle: string;
     return (
         <section
             ref={containerRef}
-            className="w-full h-screen bg-[#E2DED9] relative flex flex-col items-center justify-center px-6 pb-24"
+            className="w-full h-screen bg-[#0097ab] relative flex flex-col items-center justify-center px-6 pb-24 rounded-t-[5rem] -mt-12 z-20 overflow-hidden"
         >
             {/* Background Texture/Accent */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab] rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28] rounded-full blur-[120px]" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-black rounded-full blur-[120px]" />
             </div>
 
             {/* Pinned Title Section */}
             <div className="absolute top-12 lg:top-16 left-0 right-0 z-[20] text-center px-4">
-                <h2 className="text-[#3b2a28] text-3xl md:text-5xl font-serif inline-block border-b-4 border-[#0097ab] pb-2 leading-tight">
+                <h2 className="text-white text-3xl md:text-5xl font-serif inline-block border-b-4 border-white pb-2 leading-tight">
                     Your Treatment Journey
                 </h2>
             </div>

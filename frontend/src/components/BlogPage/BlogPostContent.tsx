@@ -81,8 +81,8 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
     return (
         <article ref={articleRef} className="w-full bg-[#E2DED9]">
             {/* 1. Header Section - Premium Design */}
-            <header className="bg-[#E2DED9] pt-8 pb-10 px-6 lg:px-12">
-                <div className="max-w-[1400px] mx-auto blog-header flex flex-col gap-8">
+            <header className="bg-[#E2DED9] pt-8 pb-10">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-8">
                     {/* Back Link - Aligned with the content/logo below navbar */}
                     <div className="flex justify-start">
                         <Link
@@ -103,8 +103,8 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             </header>
 
             {/* 2. Featured Image Section with Parallax Feel */}
-            <div className="w-full px-6 lg:px-12 pb-24">
-                <div className="max-w-6xl mx-auto relative group">
+            <div className="w-full pb-24">
+                <div className="max-w-6xl mx-auto px-6 lg:px-12 relative group">
                     <div className="aspect-[21/9] w-full rounded-[3rem] overflow-hidden shadow-2xl relative">
                         <img
                             src={blog.image}
@@ -117,8 +117,8 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             </div>
 
             {/* 3. Main Content - "Big Data" Structured Layout */}
-            <div className="w-full bg-[#0097AB] py-24 px-6 lg:px-12 rounded-t-[4rem]">
-                <div className="max-w-5xl mx-auto blog-body flex flex-col gap-20">
+            <div className="w-full bg-[#0097AB] py-24 rounded-t-[4rem]">
+                <div className="max-w-5xl mx-auto px-6 lg:px-12 blog-body flex flex-col gap-20">
 
                     {/* Intro Section */}
                     <section className="animate-section">

@@ -1,106 +1,42 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 export default function Service_Hero({ title, image }: { title: string, image: string }) {
-    const bannerContainerRef = useRef<HTMLDivElement>(null);
-    const bannerImageRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-
-            const bannerTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: bannerContainerRef.current,
-                    start: "top top",
-                    end: "+=200%",
-                    scrub: 1,
-                    pin: true,
-                    anticipatePin: 1,
-                },
-            });
-
-            bannerTl.to(bannerImageRef.current, {
-                rotate: 0,
-                height: "100vh",
-                width: "100vw",
-                top: "50%",
-                boxShadow: "none",
-                borderRadius: "0px",
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".hero-content > *", {
+                opacity: 0,
+                y: 30,
                 duration: 1,
-                ease: "power2.inOut",
-            })
-                .to(".banner-title-top", { opacity: 0, scale: 0.9, y: -50, duration: 0.5 }, "<")
-                .to(".banner-title-bottom", { opacity: 0, scale: 0.9, y: 50, duration: 0.5 }, "<")
-                .to({}, { duration: 10 / 88 }); // hold
-        }
-    }, { scope: bannerContainerRef });
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <section
-            ref={bannerContainerRef}
-            className="relative w-full overflow-hidden"
-            style={{ height: "100vh", backgroundColor: "#eaddd7" }}
-        >
-            {/* Background elements (solid color) */}
-            <div className="absolute inset-0 z-[1] bg-[#eaddd7]" />
+        <section ref={sectionRef} className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#EADDD7]">
+            {/* Decorative Orbs to match Appointment page style */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-            {/* Title (Text behind the photo) */}
-            <div className="absolute inset-0 z-[1] flex flex-col justify-between items-center pb-35 pt-20 lg:pt-15 pointer-events-none">
-                <h1
-                    className="banner-title-top text-center px-4"
-                    style={{
-                        fontFamily: "'Playfair Display', serif",
-                        fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-                        color: "#3b2a28",
-                        lineHeight: 1.1,
-                    }}
-                >
-                    {title}
+            <div className="max-w-4xl mx-auto text-center relative z-10 px-6 hero-content">
+                <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
+                    {title.split(' ')[0]} <span className="italic text-[#0097ab]">{title.split(' ').slice(1).join(' ')}.</span>
                 </h1>
-                <div className="banner-title-bottom flex flex-col items-center">
-                    <p
-                        className="text-[#5a3a3a] text-center px-4"
-                        style={{
-                            fontFamily: "'Lato', sans-serif",
-                            fontSize: "clamp(0.9rem, 1.5vw, 1.2rem)",
-                            maxWidth: "600px"
-
-                        }}
-                    >
-                        Scroll down to explore the details for
-                    </p>
-                    <span className="text-[#0097ab] font-bold uppercase tracking-[0.2em] text-sm mt-2">
-                        {title}
-                    </span>
-                </div>
-            </div>
-
-            {/* The Image that Zooms */}
-            <div
-                ref={bannerImageRef}
-                className="absolute left-1/2 z-[3] w-[200px] sm:w-[320px] md:w-[380px] h-[150px] sm:h-[220px] md:h-[260px]"
-                style={{
-                    top: "48%",
-                    transform: "translate(-50%, -50%) rotate(-6deg)",
-                    borderRadius: "80px",
-                    overflow: "hidden",
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
-                    willChange: "transform, width, height, border-radius",
-                }}
-            >
-                {/* Photo Element */}
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-full object-cover"
-                />
-
-                {/* Subtle dark overlay to let the text on scroll show if needed */}
-                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+                
+                <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed">
+                    Personalized care and advanced techniques for your dental needs. 
+                    Experience a stress-free journey to a healthier smile.
+                </p>
+                
+                {/* Visual Divider */}
+                <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab] to-transparent mx-auto mt-10 opacity-30" />
             </div>
         </section>
     );

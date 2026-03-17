@@ -39,8 +39,8 @@ export default function BlogSection() {
     return (
         <div ref={sectionRef} className="w-full">
             {/* Header Section part with #E2DED9 */}
-            <section className="w-full pt-10 pb-30 px-6 lg:px-12 bg-[#E2DED9]">
-                <div className="max-w-[1400px] mx-auto">
+            <section className="w-full h-[501px] bg-[#E2DED9] relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full pt-[100px]">
                     <div ref={headerRef} className="text-center space-y-6">
                         <h1 className="text-[#3b2a28] text-5xl md:text-6xl font-[Playfair_Display] leading-tight">
                             Relaxation Dental Blog
@@ -48,18 +48,14 @@ export default function BlogSection() {
                         <p className="text-[#3b2a28]/60 text-lg md:text-xl font-[Playfair_Display] italic text-center mx-auto">
                             Expert Dental Tips, News, and Patient Resources
                         </p>
-                        <div className="max-w-3xl mx-auto">
-                            <p className="text-[#3b2a28]/80 font-[Lato] text-lg leading-relaxed">
-                                Welcome to the Relaxation Dental Blog, your go-to resource for dental health tips, treatment insights, and expert advice. We believe in patient education, and our blog is here to help you make informed decisions about your oral health and treatment options. Check back regularly for updates on preventive care, advanced procedures, and the latest in dental technology.
-                            </p>
-                        </div>
+
                     </div>
                 </div>
             </section>
 
             {/* Blog Grid Section part with #0097AB */}
-            <section className="w-full py-24 px-6 lg:px-12 bg-[#0097AB]">
-                <div className="max-w-[1400px] mx-auto">
+            <section className="w-full py-24 bg-[#0097AB] rounded-t-[5rem] -mt-12 z-20 relative">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
                         {blogData.map((blog) => (
                             <div

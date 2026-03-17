@@ -9,40 +9,46 @@ export default function GalleryHeader() {
         gsap.to(".animate-item", {
             y: 0,
             opacity: 1,
-            duration: 1.5,
-            stagger: 0.4,
-            ease: "expo.out",
-            delay: 0.2
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power3.out",
         });
     }, []);
 
     return (
-        <section className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src="/image/ABOUT.png"
-                    alt="Clinic Gallery"
-                    className="w-full h-full object-cover object-[center_15%]"
-                />
-                <div className="absolute inset-0 bg-black/80" /> {/* Darkened to black/80 for maximum text clarity */}
+        <section className="relative h-[580px] flex items-center justify-center overflow-hidden" 
+                 ref={headerRef}>
+            {/* Parallax Background - stays fixed while scrolling */}
+            <div 
+                className="absolute inset-0 z-0"
+                style={{
+                    backgroundImage: "url('/image/ABOUT.png')",
+                    backgroundAttachment: "fixed",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center 35%",
+                }}
+            >
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-black/30" />
             </div>
 
-            {/* Content */}
-            <div className="max-w-7xl mx-auto text-center relative z-10 px-6" ref={headerRef}>
-                <div className="animate-item opacity-0 translate-y-20">
-                    <h1 className="text-6xl md:text-9xl font-serif text-white mb-8 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
-                        Our <span className="text-[#0097ab] italic font-light font-sans">Gallery</span>
+            <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
+                <div className="animate-item opacity-0 translate-y-10">
+                    <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-white mb-6 leading-tight drop-shadow-2xl">
+                        Our <span className="italic text-[#0097ab] drop-shadow-md">Gallery.</span>
                     </h1>
                 </div>
 
-                <div className="animate-item opacity-0 translate-y-20">
-                    <p className="text-[#eaddd7] max-w-3xl mx-auto text-xl md:text-2xl font-light leading-relaxed drop-shadow-xl">
-                        Take a look at our clinic, the advanced technology we use, and the beautiful smiles we've helped create.
+                <div className="animate-item opacity-0 translate-y-10">
+                    <p className="text-white text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+                        Take a look at our clinic, the advanced technology we use, and the beautiful smiles we&apos;ve helped create.
                     </p>
                 </div>
-
-
+                
+                {/* Decorative underline */}
+                <div className="animate-item opacity-0 translate-y-10 mt-10 flex justify-center">
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab]/40 to-transparent rounded-full"></div>
+                </div>
             </div>
         </section>
     );

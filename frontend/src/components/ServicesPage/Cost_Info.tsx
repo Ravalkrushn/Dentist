@@ -10,37 +10,15 @@ export default function Cost_Info({
 }) {
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
-        const ctx = gsap.context(() => {
-            gsap.from(".cost-card", {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                ease: "power3.out",
-            });
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="w-full bg-[#E2DED9] py-20 px-6 lg:px-28">
-            <div className="max-w-7xl mx-auto mb-16 text-center">
-                <h2 className="text-[#3b2a28] text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-[#0097ab] pb-2">
+        <section ref={sectionRef} className="w-full bg-[#0097ab] py-24 rounded-t-[5rem] -mt-12 z-20 relative overflow-hidden">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
+                <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-white pb-2">
                     Cost Information
                 </h2>
             </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
                 {/* Cost Details */}
                 <div className="cost-card bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
                     <h3 className="text-3xl font-serif text-[#3b2a28] mb-6 border-b-2 border-[#0097ab] inline-block pb-2">
