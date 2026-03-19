@@ -47,12 +47,6 @@ export default function Treatment_Description({
 
     return (
         <section ref={sectionRef} className="w-full bg-[#0097ab] py-24 rounded-t-[5rem] -mt-12 z-10 relative overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
-                <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-[#eaddd7] pb-2">
-                    What is {title}?
-                </h2>
-            </div>
-
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-14 items-center">
                 {/* Image */}
                 <div className="td-image w-full lg:w-[420px] flex-shrink-0">
@@ -76,6 +70,9 @@ export default function Treatment_Description({
 
                 {/* Text */}
                 <div className="td-text flex-1 text-white/90">
+                    <h2 className="text-white text-4xl lg:text-5xl font-serif mb-8 inline-block border-b-4 border-[#eaddd7] pb-2">
+                        What is {title}?
+                    </h2>
                     <p className="text-lg md:text-xl leading-relaxed mb-8 font-[Lato]">{description}</p>
                     <div className="flex items-center gap-6">
                         <div className="w-16 h-1 bg-white rounded-full opacity-30" />

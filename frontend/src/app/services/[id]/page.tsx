@@ -43,6 +43,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ id: 
                 <Treatment_Description
                     title={service.title}
                     description={service.description}
+                    image={service.heroImage}
                 />
                 <Symptoms symptoms={service.symptoms} />
                 <Procedure_Steps steps={service.steps} />

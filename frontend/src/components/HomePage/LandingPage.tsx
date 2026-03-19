@@ -23,7 +23,7 @@ const LandingPage = () => {
         trigger: containerRef.current,
         start: "top top",
         end: "+=350%",
-        scrub: 0.2,
+        scrub: 1,
         pin: true,
         anticipatePin: 1,
       },
@@ -66,7 +66,7 @@ const LandingPage = () => {
       {/* Rotated video card */}
       <div
         ref={videoRef}
-        className="absolute top-[45%] left-1/2 z-[2] -rotate-6 overflow-hidden will-change-transform rounded-[30px] w-[80vw] h-[44vw] sm:rounded-[40px] sm:w-[68vw] sm:h-[38vw] md:rounded-[50px] md:w-[35rem] md:h-[28rem] lg:w-[35rem] lg:h-[28rem]"
+        className="absolute top-[45%] left-1/2 z-[2] -rotate-6 overflow-hidden will-change-transform rounded-[30px] w-[70vw] h-[38vw] sm:rounded-[40px] sm:w-[60vw] sm:h-[33vw] md:rounded-[50px] md:w-[30rem] md:h-[24rem] lg:w-[30rem] lg:h-[24rem]"
       >
         {/* Static Image on Mobile (no lag) */}
         <img
