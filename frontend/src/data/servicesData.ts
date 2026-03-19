@@ -3,7 +3,7 @@ export const servicesData = [
         id: "teeth-cleaning",
         title: "Teeth Cleaning",
         heroImage: "/image/service1.png",
-        description: "Professional teeth cleaning is a preventative dental procedure designed to remove plaque and tartar buildup, leaving your teeth sparkling and healthy.",
+        description: "Professional teeth cleaning is a foundational preventative dental procedure designed to thoroughly remove plaque and stubborn tartar buildup that regular brushing cannot reach. This essential treatment leaves your teeth feeling exceptionally smooth and sparkling while protecting your gums from disease and keeping your breath fresh and healthy.",
         symptoms: [
             { title: "Bleeding Gums", desc: "Your gums bleed when you brush or floss." },
             { title: "Bad Breath", desc: "Persistent bad breath despite brushing." },
@@ -28,7 +28,7 @@ export const servicesData = [
         id: "root-canal-treatment",
         title: "Root Canal Treatment",
         heroImage: "/image/service2.png",
-        description: "A root canal is a treatment used to repair and save a tooth that is badly decayed or becomes infected.",
+        description: "A root canal is a sophisticated restorative treatment used by specialists to repair and save a tooth that has become badly decayed or severely infected internally. By removing the diseased pulp and sealing the inner chambers, this procedure eliminates intense pain and prevents the need for an extraction, allowing you to keep your natural smile for a lifetime.",
         symptoms: [
             { title: "Severe Pain", desc: "Intense toothache when chewing or applying pressure." },
             { title: "Sensitivity", desc: "Prolonged sensitivity to hot or cold temperatures." },
@@ -53,7 +53,7 @@ export const servicesData = [
         id: "dental-implants",
         title: "Dental Implants",
         heroImage: "/image/service3.png",
-        description: "Dental implants are artificial tooth roots placed into the jaw to hold a replacement tooth or bridge.",
+        description: "Dental implants represent the modern gold standard for tooth replacement, utilizing medical-grade titanium posts that act as artificial roots placed directly into the jawbone. These permanent foundations securely hold lifelike replacement teeth or bridges that look, feel, and function exactly like your natural teeth, restoring both your structural health and your confidence.",
         symptoms: [
             { title: "Missing Teeth", desc: "You have one or more missing teeth." },
             { title: "Loose Dentures", desc: "You are tired of dentures that slip or click." },
@@ -78,7 +78,7 @@ export const servicesData = [
         id: "orthodontics",
         title: "Orthodontics (Braces)",
         heroImage: "/image/service4.png",
-        description: "Orthodontic treatments align and straighten teeth to improve dental health and cosmetic appearance.",
+        description: "Orthodontic treatments are advanced procedures designed to align and straighten teeth while correcting complex bite issues to improve both your overall dental health and your cosmetic appearance. Whether using traditional braces or modern clear aligner technology, our goal is to create a perfectly balanced and radiant smile that is easier to maintain and uniquely tailored to your facial features.",
         symptoms: [
             { title: "Crooked Teeth", desc: "Visibly misaligned or crowded teeth." },
             { title: "Bite Issues", desc: "Overbite, underbite, or crossbite problems." },
@@ -103,7 +103,7 @@ export const servicesData = [
         id: "smile-makeover",
         title: "Smile Makeover",
         heroImage: "/image/service5.png",
-        description: "A comprehensive cosmetic and restorative approach to redesigning and improving your smile.",
+        description: "A smile makeover is a comprehensive and artistic approach to redesigning your smile, combining various cosmetic and restorative techniques such as porcelain veneers, whitening, and bonding. This personalized treatment plan addresses multiple aesthetic concerns simultaneously to create a harmonious, radiant look that dramatically enhances your natural beauty and boosts your self-confidence.",
         symptoms: [
             { title: "Stained Teeth", desc: "Severe discoloration that doesn't respond to whitening." },
             { title: "Chipped/Broken Teeth", desc: "Teeth that are damaged or worn down." },
@@ -128,7 +128,7 @@ export const servicesData = [
         id: "wisdom-tooth-extraction",
         title: "Wisdom Tooth Extraction",
         heroImage: "/image/service6.png",
-        description: "A surgical procedure to remove one or more wisdom teeth — the four permanent adult teeth located at the back corners of your mouth.",
+        description: "Wisdom tooth extraction is a common surgical procedure performed to carefully remove one or more of your third molars — the final permanent teeth to emerge at the back corners of the mouth. Often required when these teeth become impacted or crowded, this procedure prevents future alignment issues, eliminates persistent pain, and protects your surrounding oral health.",
         symptoms: [
             { title: "Impaction", desc: "Teeth trapped within the jawbone or gums." },
             { title: "Pain/Swelling", desc: "Discomfort or inflammation behind your molars." },
@@ -153,7 +153,7 @@ export const servicesData = [
         id: "pediatric-dentistry",
         title: "Pediatric Dentistry",
         heroImage: "/image/service7.png",
-        description: "Specialized dental care for infants, children, and adolescents, focusing on prevention and early intervention.",
+        description: "Pediatric dentistry provides specialized, gentle dental care for infants, children, and adolescents, with a core focus on preventative education and early intervention during critical growth stages. Our child-friendly approach is designed to create positive associations with dental visits while establishing the healthy habits necessary for your child to maintain a vibrant smile as they grow.",
         symptoms: [
             { title: "First Tooth", desc: "Time for your child's first dental visit." },
             { title: "Thumb Sucking", desc: "Prolonged habits that may affect jaw development." },
@@ -178,7 +178,7 @@ export const servicesData = [
         id: "teeth-whitening",
         title: "Teeth Whitening",
         heroImage: "/image/service8.png",
-        description: "Professional cosmetic treatment to lighten the color of your teeth and remove tough stains and discoloration.",
+        description: "Teeth whitening is a highly effective professional cosmetic treatment designed to safely lighten the color of your teeth and remove deep-seated stains and years of discoloration. Utilizing advanced, medical-grade formulas that outperform store-bought kits, this non-invasive procedure delivers an instantly brighter, more youthful-looking smile in just a single visit under our expert supervision.",
         symptoms: [
             { title: "Yellowing", desc: "General dullness or yellowing from aging." },
             { title: "Dietary Stains", desc: "Discoloration from coffee, tea, or wine." },
