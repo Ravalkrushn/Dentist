@@ -19,6 +19,7 @@ import {
     Cpu,
     Zap
 } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function ContactPage() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -36,9 +37,6 @@ export default function ContactPage() {
                 stagger: 0.2,
                 ease: "power3.out"
             });
-
-            // Info cards animation removed for static display as requested
-
 
             gsap.from(".form-section", {
                 scrollTrigger: {
@@ -69,11 +67,19 @@ export default function ContactPage() {
     return (
         <div ref={sectionRef} className="w-full bg-[#EADDD7]">
             {/* 1. Hero Section - Background #EADDD7 */}
-            <section className="bg-[#EADDD7] h-[580px] px-6 lg:px-12 text-center relative overflow-hidden">
+            <section className="bg-[#EADDD7] h-[580px] text-center relative overflow-hidden flex flex-col pt-12">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20">
+                    <Breadcrumbs 
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Contact", href: "/contact", active: true }
+                        ]} 
+                    />
+                </div>
                 {/* Decorative Orbs to match other heroes */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-                <div className="max-w-4xl mx-auto contact-header w-full pt-[180px] relative z-10">
+                <div className="max-w-4xl mx-auto contact-header w-full flex-1 flex flex-col justify-center relative z-10">
                     <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
                         Let's Start a <span className="italic text-[#0097ab]">Conversation.</span>
                     </h1>

@@ -6,6 +6,7 @@ import MainNavbar from "@/components/Navbar/MainNavbar";
 import Footer from "@/components/Footer/Footer";
 import { servicesData } from "@/data/servicesData";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function ServicesPage() {
     const headerRef = useRef<HTMLDivElement>(null);
@@ -31,12 +32,20 @@ export default function ServicesPage() {
             <MainNavbar />
 
             {/* Header Section - Styled like Appointment/Gallery */}
-            <section className="relative h-[580px] overflow-hidden bg-[#EADDD7]">
+            <section className="relative h-[580px] overflow-hidden bg-[#EADDD7] flex flex-col pt-12">
+                <div className="max-w-[1400px] mx-auto w-full z-20 px-6 lg:px-12">
+                    <Breadcrumbs 
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Services", href: "/services", active: true }
+                        ]} 
+                    />
+                </div>
                 {/* Decorative Orbs to match Appointment page style */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-                <div className="max-w-[1400px] mx-auto text-center relative z-10 px-6 w-full pt-[180px]">
+                <div className="max-w-[1400px] mx-auto text-center relative z-10 px-6 w-full flex-1 flex flex-col justify-center">
                     <h1 
                         ref={titleRef}
                         className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight opacity-0"

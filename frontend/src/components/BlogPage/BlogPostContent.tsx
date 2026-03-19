@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Blog, blogData } from "@/data/blogData";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 interface BlogPostContentProps {
     blog: Blog;
@@ -63,18 +64,25 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             });
 
             // Content sections staggered entrance
-            gsap.from(".animate-section", {
-                scrollTrigger: {
-                    trigger: ".blog-body",
-                    start: "top 80%"
-                },
-                opacity: 0,
-                y: 40,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out"
+            const sections = document.querySelectorAll(".animate-section");
+            sections.forEach((section) => {
+                gsap.fromTo(
+                    section,
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
             });
         }, articleRef);
+
         return () => ctx.revert();
     }, []);
 
@@ -83,14 +91,22 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             {/* 1. Header Section - Premium Design */}
             <header className="bg-[#E2DED9] pt-12 pb-16">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-14">
-                    {/* Back Link */}
-                    <div className="flex justify-start">
+                    {/* Top Row: Back Link & Breadcrumbs */}
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <Link
                             href="/blog"
                             className="group inline-flex items-center gap-2 text-[#0097ab] font-mono text-xs font-bold tracking-[0.2em] hover:gap-4 transition-all duration-300"
                         >
                             <ChevronLeft size={16} /> BACK TO JOURNALS
                         </Link>
+
+                        <Breadcrumbs 
+                            items={[
+                                { label: "Home", href: "/" },
+                                { label: "Blog", href: "/blog" },
+                                { label: blog.category, href: "#", active: true }
+                            ]} 
+                        />
                     </div>
 
                     {/* Centered Title */}

@@ -76,6 +76,8 @@ const doctorsList = [
     }
 ];
 
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+
 export default function DoctorProfile() {
     const bannerContainerRef = useRef<HTMLDivElement>(null);
     const bannerImageRef = useRef<HTMLDivElement>(null);
@@ -183,8 +185,18 @@ export default function DoctorProfile() {
     return (
         <section className="w-full bg-[#E2DED9]">
             {/* Banner Section */}
-            <div ref={bannerContainerRef} className="h-[100dvh] w-full relative overflow-hidden flex flex-col items-center justify-between py-24 px-6 bg-[#E2DED9] z-10">
+            <div ref={bannerContainerRef} className="h-[100dvh] w-full relative overflow-hidden flex flex-col items-center justify-between py-12 px-0 bg-[#E2DED9] z-10">
                 <div className="absolute inset-0 z-[0] bg-[#E2DED9]" />
+                
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20 relative">
+                    <Breadcrumbs 
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "About Us", href: "/about", active: true }
+                        ]} 
+                    />
+                </div>
+
 
                 <h1 className="banner-title-top absolute top-[9%] left-1/2 -translate-x-1/2 w-full z-[3] text-5xl md:text-7xl font-serif text-[#3b2a28] text-center">
                     meet team members

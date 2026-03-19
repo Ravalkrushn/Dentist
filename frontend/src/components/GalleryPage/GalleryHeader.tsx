@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function GalleryHeader() {
     const headerRef = useRef(null);
@@ -16,7 +17,7 @@ export default function GalleryHeader() {
     }, []);
 
     return (
-        <section className="relative h-[580px] flex items-center justify-center overflow-hidden" 
+        <section className="relative h-[650px] flex flex-col overflow-hidden pt-12" 
                  ref={headerRef}>
             {/* Parallax Background - stays fixed while scrolling */}
             <div 
@@ -29,25 +30,35 @@ export default function GalleryHeader() {
                 }}
             >
                 {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
 
-            <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20">
+                <Breadcrumbs 
+                    light 
+                    items={[
+                        { label: "Home", href: "/" },
+                        { label: "Gallery", href: "/gallery", active: true }
+                    ]} 
+                />
+            </div>
+
+            <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-6">
                 <div className="animate-item opacity-0 translate-y-10">
-                    <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-white mb-6 leading-tight drop-shadow-2xl">
+                    <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-white mb-6 leading-tight drop-shadow-2xl font-black">
                         Our <span className="italic text-[#0097ab] drop-shadow-md">Gallery.</span>
                     </h1>
                 </div>
 
                 <div className="animate-item opacity-0 translate-y-10">
-                    <p className="text-white text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+                    <p className="text-white text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium opacity-90">
                         Take a look at our clinic, the advanced technology we use, and the beautiful smiles we&apos;ve helped create.
                     </p>
                 </div>
                 
                 {/* Decorative underline */}
                 <div className="animate-item opacity-0 translate-y-10 mt-10 flex justify-center">
-                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab]/40 to-transparent rounded-full"></div>
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab]/60 to-transparent rounded-full"></div>
                 </div>
             </div>
         </section>

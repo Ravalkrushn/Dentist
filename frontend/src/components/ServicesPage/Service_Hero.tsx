@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function Service_Hero({ title, image }: { title: string, image: string }) {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -20,7 +21,18 @@ export default function Service_Hero({ title, image }: { title: string, image: s
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#EADDD7]">
+        <section ref={sectionRef} className="relative h-[60vh] min-h-[500px] flex flex-col pt-12 overflow-hidden bg-[#EADDD7]">
+            <div className="max-w-[1400px] mx-auto w-full z-20 px-6 lg:px-12">
+                <Breadcrumbs 
+                    items={[
+                        { label: "Home", href: "/" },
+                        { label: "Services", href: "/services" },
+                        { label: title, href: "#", active: true }
+                    ]} 
+                />
+            </div>
+            <div className="flex-1 flex items-center justify-center relative">
+
             {/* Decorative Orbs to match Appointment page style */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -37,6 +49,7 @@ export default function Service_Hero({ title, image }: { title: string, image: s
                 
                 {/* Visual Divider */}
                 <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab] to-transparent mx-auto mt-10 opacity-30" />
+            </div>
             </div>
         </section>
     );

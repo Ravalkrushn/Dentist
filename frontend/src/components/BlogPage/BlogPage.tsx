@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { blogData } from "@/data/blogData";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function BlogSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -39,8 +40,16 @@ export default function BlogSection() {
     return (
         <div ref={sectionRef} className="w-full">
             {/* Header Section part with #E2DED9 */}
-            <section className="w-full h-[501px] bg-[#E2DED9] relative overflow-hidden">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full pt-[100px]">
+            <section className="w-full h-[501px] bg-[#E2DED9] relative overflow-hidden flex flex-col pt-12">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-20 w-full">
+                    <Breadcrumbs 
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Blog", href: "/blog", active: true }
+                        ]} 
+                    />
+                </div>
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full flex-1 flex items-start justify-center">
                     <div ref={headerRef} className="text-center space-y-6">
                         <h1 className="text-[#3b2a28] text-5xl md:text-6xl font-[Playfair_Display] leading-tight">
                             Relaxation Dental Blog
