@@ -17,25 +17,15 @@ export default function GalleryHeader() {
     }, []);
 
     return (
-        <section className="relative h-[650px] flex flex-col overflow-hidden pt-12" 
+        <section className="relative h-[400px] flex flex-col overflow-hidden pt-12 bg-[#EADDD7]" 
                  ref={headerRef}>
-            {/* Parallax Background - stays fixed while scrolling */}
-            <div 
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: "url('/image/ABOUT.png')",
-                    backgroundAttachment: "fixed",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center 35%",
-                }}
-            >
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/50" />
-            </div>
+            
+            {/* Decorative Orbs for premium look */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20">
                 <Breadcrumbs 
-                    light 
                     items={[
                         { label: "Home", href: "/" },
                         { label: "Gallery", href: "/gallery", active: true }
@@ -43,23 +33,19 @@ export default function GalleryHeader() {
                 />
             </div>
 
-            <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-6">
+            <div className="flex flex-col items-center pt-4 relative z-10 px-6">
                 <div className="animate-item opacity-0 translate-y-10">
-                    <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-white mb-6 leading-tight drop-shadow-2xl font-black">
-                        Our <span className="italic text-[#0097ab] drop-shadow-md">Gallery.</span>
+                    <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight font-black">
+                        Our <span className="italic text-[#0097ab]">Gallery.</span>
                     </h1>
                 </div>
 
                 <div className="animate-item opacity-0 translate-y-10">
-                    <p className="text-white text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium opacity-90">
+                    <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed font-medium">
                         Take a look at our clinic, the advanced technology we use, and the beautiful smiles we&apos;ve helped create.
                     </p>
                 </div>
                 
-                {/* Decorative underline */}
-                <div className="animate-item opacity-0 translate-y-10 mt-10 flex justify-center">
-                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab]/60 to-transparent rounded-full"></div>
-                </div>
             </div>
         </section>
     );

@@ -32,8 +32,8 @@ export default function ServicesPage() {
             <MainNavbar />
 
             {/* Header Section - Styled like Appointment/Gallery */}
-            <section className="relative h-[580px] overflow-hidden bg-[#EADDD7] flex flex-col pt-12">
-                <div className="max-w-[1400px] mx-auto w-full z-20 px-6 lg:px-12">
+            <section className="relative h-[400px] overflow-hidden bg-[#EADDD7] flex flex-col pt-12">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20">
                     <Breadcrumbs 
                         items={[
                             { label: "Home", href: "/" },
@@ -45,16 +45,16 @@ export default function ServicesPage() {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-                <div className="max-w-[1400px] mx-auto text-center relative z-10 px-6 w-full flex-1 flex flex-col justify-center">
+                <div className="max-w-[1400px] mx-auto text-center relative z-10 px-6 w-full flex flex-col pt-4">
                     <h1 
                         ref={titleRef}
-                        className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight opacity-0"
+                        className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight opacity-0 font-black"
                     >
                         Our <span className="italic text-[#0097ab]">Services.</span>
                     </h1>
                     <p 
                         ref={descRef}
-                        className="text-[#3b2a28]/70 font-[Lato] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-0"
+                        className="text-[#3b2a28]/70 font-[Lato] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed opacity-0 font-medium"
                     >
                         Comprehensive dental care tailored to your specific needs. From routine cleanings to complete smile makeovers, we ensure a comfortable and professional experience.
                     </p>

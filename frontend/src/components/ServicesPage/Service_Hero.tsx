@@ -21,7 +21,7 @@ export default function Service_Hero({ title, image }: { title: string, image: s
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative h-[60vh] min-h-[500px] flex flex-col pt-12 overflow-hidden bg-[#EADDD7]">
+        <section ref={sectionRef} className="relative h-[400px] flex flex-col pt-12 overflow-hidden bg-[#EADDD7]">
             <div className="max-w-[1400px] mx-auto w-full z-20 px-6 lg:px-12">
                 <Breadcrumbs 
                     items={[
@@ -37,18 +37,16 @@ export default function Service_Hero({ title, image }: { title: string, image: s
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-            <div className="max-w-4xl mx-auto text-center relative z-10 px-6 hero-content">
-                <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight">
+            <div className="max-w-4xl mx-auto text-center relative z-10 px-6 hero-content flex flex-col pt-4">
+                <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] mb-6 leading-tight font-black">
                     {title.split(' ')[0]} <span className="italic text-[#0097ab]">{title.split(' ').slice(1).join(' ')}.</span>
                 </h1>
                 
-                <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed">
+                <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed font-medium">
                     Personalized care and advanced techniques for your dental needs. 
                     Experience a stress-free journey to a healthier smile.
                 </p>
                 
-                {/* Visual Divider */}
-                <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#0097ab] to-transparent mx-auto mt-10 opacity-30" />
             </div>
             </div>
         </section>

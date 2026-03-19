@@ -40,7 +40,7 @@ export default function BlogSection() {
     return (
         <div ref={sectionRef} className="w-full">
             {/* Header Section part with #E2DED9 */}
-            <section className="w-full h-[501px] bg-[#E2DED9] relative overflow-hidden flex flex-col pt-12">
+            <section className="w-full h-[400px] bg-[#E2DED9] relative overflow-hidden flex flex-col pt-12">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-20 w-full">
                     <Breadcrumbs 
                         items={[
@@ -49,15 +49,15 @@ export default function BlogSection() {
                         ]} 
                     />
                 </div>
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full flex-1 flex items-start justify-center">
-                    <div ref={headerRef} className="text-center space-y-6">
-                        <h1 className="text-[#3b2a28] text-5xl md:text-6xl font-[Playfair_Display] leading-tight">
-                            Relaxation Dental Blog
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full flex items-start justify-center pt-4">
+                    <div ref={headerRef} className="text-center">
+                        <h1 className="text-[#3b2a28] text-5xl md:text-7xl font-[Playfair_Display] leading-tight font-black mb-6">
+                            Dento <span className="italic text-[#0097ab]">Blog.</span>
                         </h1>
-                        <p className="text-[#3b2a28]/60 text-lg md:text-xl font-[Playfair_Display] italic text-center mx-auto">
-                            Expert Dental Tips, News, and Patient Resources
+                        <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-2xl mx-auto leading-relaxed font-medium">
+                            Explore our latest insights, professional dental care tips, and news from our clinic. 
+                            We&apos;re committed to keeping you informed and empowered on your journey to a healthier smile.
                         </p>
-
                     </div>
                 </div>
             </section>
