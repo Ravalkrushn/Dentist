@@ -88,9 +88,9 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
 
     return (
         <article ref={articleRef} className="w-full bg-[#E2DED9]">
-            {/* 1. Header Section - Premium Design */}
-            <header className="bg-[#E2DED9] pt-12 pb-16">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-14">
+            {/* 1. Header Section - Updated to match other pages */}
+            <header className="bg-[#E2DED9] min-h-[500px] flex flex-col pt-12 relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-14 w-full z-20">
                     {/* Top Row: Back Link & Breadcrumbs */}
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <Link
@@ -109,32 +109,24 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         />
                     </div>
 
-                    {/* Centered Title */}
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-[Playfair_Display] text-[#3b2a28] leading-[1.1] font-medium max-w-5xl mx-auto italic">
+                    {/* Centered Title & Excerpt */}
+                    <div className="text-center relative z-10 px-6 hero-content flex flex-col pt-4">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-[Playfair_Display] text-[#3b2a28] leading-[1.1] font-medium max-w-5xl mx-auto italic mb-8">
                             {blog.title}
                         </h1>
+                        <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-3xl mx-auto leading-relaxed font-medium">
+                            {blog.excerpt}
+                        </p>
                     </div>
                 </div>
+
+                {/* Decorative Orbs to match other pages style */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 z-0" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 z-0" />
             </header>
 
-            {/* 2. Featured Image Section with Parallax Feel */}
-            <div className="w-full pb-32">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-                    <div className="aspect-[21/9] w-full rounded-[4rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.15)] relative">
-                        <img
-                            src={blog.image}
-                            alt={blog.title}
-                            className="w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    {/* Floating Accent */}
-                    <div className="absolute -bottom-10 -right-4 w-40 h-40 bg-[#0097ab]/10 rounded-full blur-3xl -z-10"></div>
-                    <div className="absolute -top-10 -left-4 w-60 h-60 bg-[#3b2a28]/5 rounded-full blur-3xl -z-10"></div>
-                </div>
-            </div>
+            {/* Featured Image Section Removed As Requested */}
+            <div className="w-full h-12 bg-[#E2DED9]"></div>
 
             {/* 3. Main Content - "Big Data" Structured Layout */}
             <div className="w-full bg-[#0097AB] py-24 rounded-t-[4rem]">
@@ -180,8 +172,9 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                 </h3>
                                 
                                 {(() => {
-                                    const related = blogData.find(b => b.id !== blog.id);
-                                    if (!related) return null;
+                                    const currentIndex = blogData.findIndex(b => b.id === blog.id);
+                                    const related = blogData[(currentIndex + 1) % blogData.length];
+                                    if (!related || related.id === blog.id) return null;
                                     
                                     return (
                                         <Link href={`/blog/${related.id}`} className="group block">
@@ -277,7 +270,7 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         </section>
                     )}
 
-                    {/* 4. Related Blogs Suggestions Section (Moved here) */}
+                    {/* 4. Related Blogs Suggestions Section */}
                     <div className="w-full pb-10">
                         <div className="bg-white/5 backdrop-blur-xl rounded-[4rem] p-12 md:p-24 border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.15)] relative overflow-hidden">
                             {/* Decorative Shape */}
@@ -296,9 +289,11 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     {(() => {
-                                        const relatedBlogs = blogData
-                                            .filter((b: Blog) => b.id !== blog.id)
-                                            .slice(0, 2);
+                                        const currentIndex = blogData.findIndex(b => b.id === blog.id);
+                                        const relatedBlogs = [
+                                            blogData[(currentIndex + 1) % blogData.length],
+                                            blogData[(currentIndex + 2) % blogData.length]
+                                        ].filter(b => b.id !== blog.id);
 
                                         return relatedBlogs.map((item: Blog, i: number) => (
                                             <Link 
