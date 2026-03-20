@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-export default function Procedure_Steps({ steps }: { steps: { stepTitle: string; stepDesc: string }[] }) {
+export default function Procedure_Steps({ steps }: { steps: { stepTitle: string; stepDesc: string; stepImage?: string }[] }) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
@@ -86,33 +86,33 @@ export default function Procedure_Steps({ steps }: { steps: { stepTitle: string;
                                 </div>
                             </div>
 
-                            <h3 className="text-[#3b2a28] font-serif text-2xl lg:text-4xl mb-4 lg:mb-6 leading-[1.15]">
+                            <h3 className="text-[#3b2a28] font-serif text-2xl lg:text-3xl mb-4 lg:mb-6 leading-tight font-bold">
                                 {item.stepTitle}
                             </h3>
 
-                            <p className="text-[#5a3a3a] text-base lg:text-xl leading-relaxed mb-6 font-[Lato] opacity-90">
+                            <p className="text-[#5a3a3a] text-base lg:text-[1.1rem] leading-relaxed mb-6 font-[Lato] opacity-80 max-w-xl">
                                 {item.stepDesc}
                             </p>
 
                             {/* Bottom Footer for Page */}
-                            <div className="mt-auto pt-8 border-t border-[#eaddd7]/50 flex items-center justify-between">
+                            <div className="mt-auto pt-6 border-t border-[#eaddd7]/50 flex items-center justify-between">
                                 <div className="flex items-center gap-3">
                                     <div className="w-8 h-[1px] bg-[#0097ab]" />
                                     <span className="text-[#0097ab] text-[10px] font-bold uppercase tracking-widest">Procedural Step</span>
                                 </div>
-                                <span className="text-[#b5a7a3] font-serif text-sm lg:text-lg italic">
+                                <span className="text-[#b5a7a3] font-serif text-sm lg:text-base italic">
                                     Page {idx + 1} of {steps.length}
                                 </span>
                             </div>
                         </div>
 
                         {/* Image Side (The Arch) */}
-                        <div className="hidden lg:flex flex-1 bg-[#fcfaf9] relative overflow-hidden items-center justify-center p-12">
+                        <div className="hidden lg:flex flex-1 bg-[#fcfaf9] relative overflow-hidden items-center justify-center p-8 lg:p-14">
                             <div className="w-full h-full bg-[#f8f0ed] rounded-t-full relative overflow-hidden shadow-[inset_0_10px_40px_rgba(0,0,0,0.05)] ring-1 ring-[#eaddd7]">
                                 <img
-                                    src="/image/ABOUT2.png"
+                                    src={item.stepImage || "/image/ABOUT2.png"}
                                     alt={item.stepTitle}
-                                    className="w-full h-full object-cover opacity-90 transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110"
+                                    className="w-full h-full object-cover opacity-100 transition-all duration-1000 hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#fdfaf8]/60 via-transparent to-transparent pointer-events-none" />
                             </div>

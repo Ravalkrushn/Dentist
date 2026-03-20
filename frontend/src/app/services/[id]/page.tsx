@@ -6,9 +6,9 @@ import Service_Hero from "@/components/ServicesPage/Service_Hero";
 import Treatment_Description from "@/components/ServicesPage/Treatment_Description";
 import Symptoms from "@/components/ServicesPage/Symptoms";
 import Procedure_Steps from "@/components/ServicesPage/Procedure_Steps";
-import Benefits from "@/components/ServicesPage/Benefits";
+import Benefits_FAQ from "@/components/ServicesPage/Benefits_FAQ";
 import Cost_Info from "@/components/ServicesPage/Cost_Info";
-import Service_FAQ from "@/components/ServicesPage/Service_FAQ";
+import OtherServices from "@/components/ServicesPage/OtherServices";
 import Service_CTA from "@/components/ServicesPage/Service_CTA";
 import type { Metadata } from 'next';
 
@@ -47,9 +47,9 @@ export default async function ServiceDetail({ params }: { params: Promise<{ id: 
                 />
                 <Symptoms symptoms={service.symptoms} />
                 <Procedure_Steps steps={service.steps} />
-                <Benefits benefits={service.benefits} />
+                <Benefits_FAQ benefits={service.benefits} faqs={service.faqs} />
                 <Cost_Info costDetails={service.costInfo} />
-                <Service_FAQ faqs={service.faqs} />
+                <OtherServices currentId={service.id} />
                 <Service_CTA />
                 <Footer />
             </div>

@@ -264,8 +264,9 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                     {/* Informative Steps / Procedures */}
                     {blog.detailedData.detailedSteps && (
                         <section className="animate-section bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group">
-                            {/* Accent Circle */}
+                            {/* Accent Circles */}
                             <div className="absolute top-0 right-0 w-96 h-96 bg-[#EADDD7]/20 rounded-full -translate-y-1/2 translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
+                            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FBF8F7] rounded-full translate-y-1/2 -translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
                             
                             <h2 className="text-[#3b2a28] text-4xl md:text-6xl font-[Playfair_Display] mb-20 text-center tracking-tight leading-tight">
                                 Detailed Narrative & <span className="italic font-normal text-[#0097ab]">Expert Insights</span>
@@ -318,9 +319,9 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                             <Link 
                                                 key={i} 
                                                 href={`/blog/${item.id}`}
-                                                className="group bg-white rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 flex flex-col h-full"
+                                                className="group bg-white rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 flex flex-col h-max"
                                             >
-                                                <div className="aspect-[16/10] overflow-hidden relative">
+                                                <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative">
                                                     <img 
                                                         src={item.image} 
                                                         alt={item.title} 
@@ -331,8 +332,8 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                                     </div>
                                                 </div>
                                                 
-                                                <div className="p-12 flex flex-col h-full">
-                                                    <div className="flex items-center gap-4 text-[#3b2a28]/40 font-mono text-[10px] uppercase tracking-[0.2em] mb-6">
+                                                <div className="p-8 md:p-10 flex flex-col">
+                                                    <div className="flex items-center gap-4 text-[#3b2a28]/40 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
                                                         <span className="flex items-center gap-2">
                                                             <Calendar size={12} className="text-[#0097ab]" /> {item.date}
                                                         </span>
@@ -340,19 +341,19 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                                         <span>{item.readTime}</span>
                                                     </div>
                                                     
-                                                    <h5 className="text-[#3b2a28] text-3xl font-[Playfair_Display] font-bold mb-6 group-hover:text-[#0097ab] transition-colors line-clamp-2 leading-tight">
+                                                    <h5 className="text-[#3b2a28] text-2xl font-[Playfair_Display] font-bold mb-4 group-hover:text-[#0097ab] transition-colors line-clamp-2 leading-tight">
                                                         {item.title}
                                                     </h5>
                                                     
-                                                    <p className="text-[#3b2a28]/60 font-[Lato] text-lg line-clamp-2 mb-10 leading-relaxed">
+                                                    <p className="text-[#3b2a28]/60 font-[Lato] text-base line-clamp-2 mb-6 leading-relaxed">
                                                         {item.excerpt}
                                                     </p>
                                                     
-                                                    <div className="mt-auto border-t border-[#3b2a28]/5 pt-8 flex items-center justify-between">
-                                                        <div className="flex items-center gap-3 text-[#0097ab] font-bold text-xs tracking-[0.2em] group-hover:gap-6 transition-all duration-500">
-                                                            READ FULL FEATURE <ArrowRight size={16} />
+                                                    <div className="border-t border-[#3b2a28]/5 pt-6 flex items-center justify-between">
+                                                        <div className="flex items-center gap-3 text-[#0097ab] font-bold text-[11px] tracking-[0.2em] group-hover:gap-5 transition-all duration-500">
+                                                            READ FULL FEATURE <ArrowRight size={14} />
                                                         </div>
-                                                        <div className="w-10 h-10 rounded-full border border-[#0097ab]/20 flex items-center justify-center text-[#0097ab] transform group-hover:rotate-[360deg] transition-all duration-1000">
+                                                        <div className="w-8 h-8 rounded-full border border-[#0097ab]/20 flex items-center justify-center text-[#0097ab] transform group-hover:rotate-[360deg] transition-all duration-1000">
                                                             <Sparkles size={16} />
                                                         </div>
                                                     </div>
@@ -375,7 +376,6 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
 
                             <div className="max-w-4xl mx-auto relative z-10 space-y-16">
                                 <div className="space-y-10">
-                                    <div className="w-20 h-1 bg-[#0097ab] mx-auto rounded-full"></div>
                                     <p className="text-[#3b2a28]/80 text-2xl md:text-4xl font-[Playfair_Display] leading-[1.3] italic font-medium">
                                         {blog.detailedData.conclusion}
                                     </p>
@@ -393,17 +393,18 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                                 <Phone className="w-6 h-6 animate-pulse" />
                                                 719-539-3145
                                             </span>
-                                            <div className="absolute inset-0 z-0 h-full w-full bg-[#3b2a28] translate-y-full transform transition-transform duration-500 group-hover/btn:translate-y-0"></div>
+                                            <div className="absolute inset-0 z-0 h-full w-full bg-[#007b8a] scale-y-0 transform transition-transform duration-500 group-hover/btn:scale-y-100 origin-bottom"></div>
                                         </a>
 
                                         <Link
                                             href="/contact"
-                                            className="group/btn relative overflow-hidden border-2 border-[#0097ab] text-[#0097ab] px-12 py-6 rounded-full text-xl font-bold transition-all duration-500 bg-white hover:-translate-y-2 hover:bg-[#0097ab] hover:text-white shadow-xl"
+                                            className="group/btn relative overflow-hidden border-2 border-[#0097ab] text-[#0097ab] px-12 py-6 rounded-full text-xl font-bold transition-all duration-500 bg-white hover:-translate-y-2 shadow-xl"
                                         >
-                                            <span className="relative z-10 flex items-center gap-3">
+                                            <span className="relative z-10 flex items-center gap-3 transition-colors duration-500 group-hover/btn:text-white">
                                                 <Mail className="w-6 h-6" />
                                                 Send Us a Message
                                             </span>
+                                            <div className="absolute inset-0 z-0 h-full w-full bg-[#0097ab] scale-y-0 transform transition-transform duration-500 group-hover/btn:scale-y-100 origin-bottom"></div>
                                         </Link>
                                     </div>
 

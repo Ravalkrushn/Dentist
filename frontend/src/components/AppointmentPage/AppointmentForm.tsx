@@ -94,7 +94,7 @@ export default function AppointmentForm() {
                         <div className="appointment-card bg-white p-10 md:p-14 rounded-[3.5rem] shadow-2xl relative overflow-hidden border border-white/50">
                             {/* Accent Circles */}
                             <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#0097ab]/10 rounded-full" />
-                            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#0097ab]/5 rounded-full" />
+                            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#FBF8F7] rounded-full" />
                             
                             <div className="mb-12 relative z-10">
                                 <h3 className="text-4xl font-[Playfair_Display] text-[#3b2a28] mb-4">Consultation <span className="italic text-[#0097ab]">Booking</span></h3>
