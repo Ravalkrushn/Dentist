@@ -81,6 +81,18 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                     }
                 );
             });
+
+            // Specific line indicator growth animation
+            gsap.to(".line-indicator", {
+                scaleY: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".line-indicator",
+                    start: "top 70%",
+                    end: "bottom 40%",
+                    scrub: true
+                }
+            });
         }, articleRef);
 
         return () => ctx.revert();
@@ -88,32 +100,33 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
 
     return (
         <article ref={articleRef} className="w-full bg-[#E2DED9]">
-            {/* 1. Header Section - Updated to match other pages */}
-            <header className="bg-[#E2DED9] min-h-[500px] flex flex-col pt-12 relative overflow-hidden">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-header flex flex-col gap-14 w-full z-20">
+            {/* 1. Header Section - Redesigned to exactly match BlogPage.tsx structure */}
+            <header className="bg-[#E2DED9] h-[400px] flex flex-col pt-12 relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-20 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                     {/* Top Row: Back Link & Breadcrumbs */}
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-                        <Link
-                            href="/blog"
-                            className="group inline-flex items-center gap-2 text-[#0097ab] font-mono text-xs font-bold tracking-[0.2em] hover:gap-4 transition-all duration-300"
-                        >
-                            <ChevronLeft size={16} /> BACK TO JOURNALS
-                        </Link>
+                    <Link
+                        href="/blog"
+                        className="group inline-flex items-center gap-2 text-[#0097ab] font-mono text-xs font-bold tracking-[0.2em] hover:gap-4 transition-all duration-300"
+                    >
+                        <ChevronLeft size={16} /> BACK TO JOURNALS
+                    </Link>
 
-                        <Breadcrumbs 
-                            items={[
-                                { label: "Home", href: "/" },
-                                { label: "Blog", href: "/blog" },
-                                { label: blog.category, href: "#", active: true }
-                            ]} 
-                        />
-                    </div>
+                    <Breadcrumbs 
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Blog", href: "/blog" },
+                            { label: blog.category, href: "#", active: true }
+                        ]} 
+                    />
+                </div>
 
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-10 w-full flex items-start justify-center pt-10">
                     {/* Centered Title & Excerpt */}
-                    <div className="text-center relative z-10 px-6 hero-content flex flex-col pt-4">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-[Playfair_Display] text-[#3b2a28] leading-[1.1] font-medium max-w-5xl mx-auto italic mb-8">
+                    <div className="text-center relative z-10 px-6 hero-content flex flex-col">
+                        <h1 className="text-5xl md:text-7xl font-[Playfair_Display] text-[#3b2a28] leading-tight font-black max-w-[1400px] mx-auto italic mb-6">
                             {blog.title}
                         </h1>
+
                         <p className="text-[#3b2a28]/70 text-lg md:text-xl font-[Lato] max-w-3xl mx-auto leading-relaxed font-medium">
                             {blog.excerpt}
                         </p>
@@ -126,10 +139,10 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
             </header>
 
             {/* Featured Image Section Removed As Requested */}
-            <div className="w-full h-12 bg-[#E2DED9]"></div>
+            <div className="w-full h-[1px] bg-[#E2DED9]"></div>
 
             {/* 3. Main Content - "Big Data" Structured Layout */}
-            <div className="w-full bg-[#0097AB] py-24 rounded-t-[4rem]">
+            <div className="w-full bg-[#0097AB] py-24 rounded-t-[5rem] -mt-12 z-20 relative">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-body flex flex-col gap-20">
 
                     {/* Intro Section - Two Column (Text in white box, Widget outside) */}
@@ -150,8 +163,14 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                             <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
                                                 {heading}
                                             </h2>
-                                            <div className="space-y-8">
-                                                <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed italic border-l-4 border-[#0097ab]/30 pl-8">
+                                            <div className="space-y-8 relative">
+                                                {/* Animated Scroll Indicator Line */}
+                                                <div 
+                                                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#0097ab] origin-top scale-y-0 opacity-40 line-indicator"
+                                                    style={{ transformOrigin: 'top' }}
+                                                ></div>
+                                                
+                                                <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed font-medium pl-8">
                                                     {body}
                                                 </p>
                                             </div>

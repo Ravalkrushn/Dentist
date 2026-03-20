@@ -9,17 +9,86 @@ const categories = [
     { name: "Patients", label: "03" },
 ];
 
+function BeforeAfterSlider({ before, after }: { before: string, after: string }) {
+    const [sliderPos, setSliderPos] = useState(60);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const handleMove = (clientX: number) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
+        setSliderPos(percent);
+    };
+
+    const handlePointerMove = (e: React.PointerEvent) => {
+        if (e.buttons === 1) handleMove(e.clientX);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        handleMove(e.touches[0].clientX);
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            className="absolute inset-0 w-full h-full cursor-ew-resize select-none bg-gray-100 touch-none"
+            onPointerMove={handlePointerMove}
+            onPointerDown={handlePointerMove}
+            onTouchMove={handleTouchMove}
+            onClick={(e) => e.stopPropagation()} // Prevent opening modal when interacting with slider
+        >
+            {/* After Image (Background) */}
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url('${after}')` }}
+            >
+                <div className={`absolute top-4 right-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#0097ab] shadow-sm tracking-widest uppercase z-10 hidden md:block transition-opacity duration-300 ${sliderPos > 85 ? 'opacity-0' : 'opacity-100'}`}>After</div>
+            </div>
+
+            {/* Before Image (Foreground, clipped) */}
+            <div
+                className="absolute inset-0 bg-cover bg-center border-r-[4px] border-white drop-shadow-2xl pointer-events-none"
+                style={{
+                    backgroundImage: `url('${before}')`,
+                    clipPath: `inset(0 ${100 - sliderPos}% 0 0)`
+                }}
+            >
+                <div className={`absolute top-4 left-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#5f4f4f] shadow-sm tracking-widest uppercase z-10 hidden md:block transition-opacity duration-300 ${sliderPos < 15 ? 'opacity-0' : 'opacity-100'}`}>Before</div>
+            </div>
+
+            {/* Slider Handle */}
+            <div
+                className="absolute top-0 bottom-0 w-[4px] bg-white cursor-ew-resize z-10 shadow-[0_0_15px_rgba(0,0,0,0.4)] pointer-events-none"
+                style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}
+            >
+                <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white rounded-full shadow-lg border-[3px] border-[#0097ab] flex items-center justify-center pointer-events-auto">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097ab" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097ab" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+            
+            {/* Dark overlay for text legibility, matching static images */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/80 via-[#001524]/20 to-transparent translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 pointer-events-none" />
+        </div>
+    );
+}
+
+
 const galleryData = [
     { id: 1, category: "The Team", src: "/image/dentist1.png", title: "Dr. Nicholas Brown", subtitle: "Founder & Lead Dentist" },
     { id: 2, category: "The Team", src: "/image/ABOUT2.PNG", title: "Dr. Emily Chen", subtitle: "Orthodontist Specialist" },
     { id: 3, category: "The Team", src: "/image/dentist2.png", title: "Dr. James Wilson", subtitle: "Oral & Maxillofacial surgeon" },
     { id: 12, category: "The Team", src: "/image/dentist3.png", title: "Our Specialists", subtitle: "Dento Team" },
     { id: 13, category: "The Team", src: "/image/dentist4.png", title: "Our Specialists", subtitle: "Dento Team" },
-    { id: 4, category: "Before & After", src: "/image/DentalImplants_before.jpg", title: "Dental Implants", subtitle: "Before" },
-    { id: 5, category: "Before & After", src: "/image/DentalImplants_after.jpg", title: "Dental Implants", subtitle: "After" },
-    { id: 6, category: "Before & After", src: "/image/VeneersTransformation_before.jpg", title: "Veneers", subtitle: "Before" },
-    { id: 7, category: "Before & After", src: "/image/VeneersTransformation_after.jpg", title: "Veneers", subtitle: "After" },
-    { id: 11, category: "Before & After", src: "/image/Invisalign&TeethWhitening_after.jpg", title: "Teeth Whitening", subtitle: "After" },
+    // Replaced separate before/after items with unified slider objects
+    { id: 4, category: "Before & After", type: "slider", beforeSrc: "/image/DentalImplants_before.jpg", afterSrc: "/image/DentalImplants_after.jpg", src: "/image/DentalImplants_after.jpg", title: "Dental Implants", subtitle: "Transformation" },
+    { id: 6, category: "Before & After", type: "slider", beforeSrc: "/image/VeneersTransformation_before.jpg", afterSrc: "/image/VeneersTransformation_after.jpg", src: "/image/VeneersTransformation_after.jpg", title: "Veneers", subtitle: "Transformation" },
+    { id: 11, category: "Before & After", type: "slider", beforeSrc: "/image/Invisalign&TeethWhitening_before.png", afterSrc: "/image/Invisalign&TeethWhitening_after.jpg", src: "/image/Invisalign&TeethWhitening_after.jpg", title: "Invisalign & Whitening", subtitle: "Transformation" },
     { id: 8, category: "Patients", src: "/image/ABOUT.png", title: "Patient Care", subtitle: "Our Priority" },
     { id: 9, category: "Patients", src: "/image/p1.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
     { id: 14, category: "Patients", src: "/image/p2.png", title: "Clinic Environment", subtitle: "Modern & Calm" },
@@ -180,18 +249,25 @@ export default function GalleryGrid() {
                         {filteredItems.map((item, idx) => (
                             <div
                                 key={item.id}
-                                onClick={() => setSelectedIdx(idx)}
+                                onClick={() => {
+                                    if (item.type !== "slider") setSelectedIdx(idx);
+                                }}
                                 className="group relative min-w-[300px] md:min-w-[400px] h-[500px] overflow-hidden cursor-pointer bg-[#e8e2db] snap-start"
                                 style={{ borderRadius: "24px" }}
                             >
-                                <img
-                                    src={item.src}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
-                                />
-
-                                {/* Hover gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/80 via-[#001524]/20 to-transparent translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500" />
+                                {item.type === "slider" && item.beforeSrc && item.afterSrc ? (
+                                    <BeforeAfterSlider before={item.beforeSrc} after={item.afterSrc} />
+                                ) : (
+                                    <>
+                                        <img
+                                            src={item.src}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                                        />
+                                        {/* Hover gradient */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#001524]/80 via-[#001524]/20 to-transparent translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 pointer-events-none" />
+                                    </>
+                                )}
 
                                 {/* Info */}
                                 <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
@@ -203,10 +279,12 @@ export default function GalleryGrid() {
                                     </h3>
                                 </div>
 
-                                {/* Arrow badge */}
-                                <div className="absolute top-6 right-6 w-12 h-12 bg-white/95 rounded-full flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-xl">
-                                    <ArrowUpRight size={20} className="text-[#001524]" />
-                                </div>
+                                {/* Arrow badge - only show if it opens modal */}
+                                {item.type !== "slider" && (
+                                    <div className="absolute top-6 right-6 w-12 h-12 bg-white/95 rounded-full flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-xl pointer-events-none">
+                                        <ArrowUpRight size={20} className="text-[#001524]" />
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

@@ -64,7 +64,7 @@ function BeforeAfterSlider({ before, after, title }: { before: string, after: st
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('${after}')` }}
                 >
-                    <div className="absolute top-4 right-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#0097ab] shadow-sm tracking-widest uppercase">After</div>
+                    <div className={`absolute top-4 right-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#0097ab] shadow-sm tracking-widest uppercase transition-opacity duration-300 ${sliderPos > 85 ? 'opacity-0' : 'opacity-100'}`}>After</div>
                 </div>
 
                 {/* Before Image (Foreground, clipped) */}
@@ -75,7 +75,7 @@ function BeforeAfterSlider({ before, after, title }: { before: string, after: st
                         clipPath: `inset(0 ${100 - sliderPos}% 0 0)`
                     }}
                 >
-                    <div className="absolute top-4 left-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#5f4f4f] shadow-sm tracking-widest uppercase">Before</div>
+                    <div className={`absolute top-4 left-4 bg-white/90 py-1.5 px-3 rounded-full text-xs font-bold text-[#5f4f4f] shadow-sm tracking-widest uppercase transition-opacity duration-300 ${sliderPos < 15 ? 'opacity-0' : 'opacity-100'}`}>Before</div>
                 </div>
 
                 {/* Slider Handle */}
