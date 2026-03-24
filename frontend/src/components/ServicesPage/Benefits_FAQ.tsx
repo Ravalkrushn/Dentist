@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import { CheckCircle2, Sparkles, Plus, Minus } from "lucide-react";
+import { CheckCircle2, Sparkles, Plus, Minus, ShieldCheck, Heart, Smile, Clock, User } from "lucide-react";
 
 interface Benefits_FAQ_Props {
-    benefits: string[];
+    benefits: { title: string; iconName: string }[];
     faqs: { question: string; answer: string }[];
 }
 
@@ -31,10 +31,28 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                     className="flex items-start gap-4 p-6 bg-white rounded-3xl shadow-sm border border-white/50 group hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
                                 >
                                     <div className="w-10 h-10 rounded-2xl bg-[#0097ab]/10 flex items-center justify-center text-[#0097ab] group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-500 shrink-0">
-                                        <CheckCircle2 size={20} />
+                                        {(() => {
+                                            const name = benefit.iconName;
+                                            const size = 20;
+                                            switch (name) {
+                                                case "Shield": return <ShieldCheck size={size} />;
+                                                case "ShieldCheck": return <ShieldCheck size={size} />;
+                                                case "Zap": return <Sparkles size={size} />; 
+                                                case "Sparkles": return <Sparkles size={size} />;
+                                                case "Wind": return <CheckCircle2 size={size} />;
+                                                case "Heart": return <Heart size={size} />;
+                                                case "Smile": return <Smile size={size} />;
+                                                case "Clock": return <Clock size={size} />;
+                                                case "Activity": return <Plus size={size} />;
+                                                case "User": return <User size={size} />;
+                                                case "Grid": return <Plus size={size} />;
+                                                case "CheckCircle2": return <CheckCircle2 size={size} />;
+                                                default: return <CheckCircle2 size={size} />;
+                                            }
+                                        })()}
                                     </div>
                                     <p className="text-[#3b2a28] font-bold text-lg leading-tight pt-2">
-                                        {benefit}
+                                        {benefit.title}
                                     </p>
                                 </div>
                             ))}

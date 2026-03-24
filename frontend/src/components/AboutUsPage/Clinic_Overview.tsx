@@ -158,7 +158,7 @@ export default function ClinicOverview() {
                 </div>
 
                 {/* Centered Equipment Photos Carousel */}
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-24">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-12">
                     <div className="w-full text-center mb-10">
                         <h3 className="text-3xl font-serif text-white border-b-2 border-white inline-block pb-2">Equipment Photos</h3>
                     </div>
@@ -183,22 +183,22 @@ export default function ClinicOverview() {
                             <ChevronRight className="w-6 h-6" />
                         </button>
 
-                        {/* Slider Track (Shows 3 items max on large screens) */}
+                        {/* Slider Track (Smaller height and more compact) */}
                         <div
                             ref={sliderRef}
-                            className="w-full flex gap-6 overflow-x-auto snap-x snap-mandatory py-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                            className="w-full flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                         >
                             {[...equipmentItems, ...equipmentItems].map((eq, i) => (
                                 <div
                                     key={i}
                                     onClick={() => setSelectedPhotoIndex(i % equipmentItems.length)}
-                                    className="snap-center shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[320px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl flex flex-col transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                                    className="snap-center shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[280px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl flex flex-col transition-all duration-300 hover:-translate-y-2 cursor-pointer"
                                 >
-                                    <div className="h-[240px] w-full overflow-hidden bg-gray-100">
+                                    <div className="h-[210px] w-full overflow-hidden bg-gray-100">
                                         <img src={eq.img} alt={eq.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                                     </div>
-                                    <div className="p-4 flex-1 flex items-center justify-center bg-white z-10 border-t border-transparent">
-                                        <p className="font-bold text-[#3b2a28] text-center text-lg">{eq.name}</p>
+                                    <div className="p-3 flex-1 flex items-center justify-center bg-white z-10 border-t border-transparent">
+                                        <p className="font-bold text-[#3b2a28] text-center text-base">{eq.name}</p>
                                     </div>
                                 </div>
                             ))}

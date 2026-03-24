@@ -7,14 +7,12 @@ export default function WhyChooseDento() {
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Side: Photo */}
                 <div className="relative group">
-                    <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl transform transition-all duration-700 group-hover:shadow-2xl">
+                    <div className="aspect-[4/5] rounded-[2rem] overflow-hidden transform transition-all duration-700">
                         <img
                             src="/image/ABOUT2.png"
                             alt="Why Choose Us"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        {/* Overlay Blur Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#3b2a28]/40 to-transparent opacity-60" />
                     </div>
                 </div>
 

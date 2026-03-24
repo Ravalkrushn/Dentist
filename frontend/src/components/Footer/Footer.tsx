@@ -37,7 +37,7 @@ export default function Footer() {
                             <span>Family</span>
                         </div>
                     </div>
-                    
+
                     <p className="text-[0.9rem] font-light leading-relaxed opacity-85 mt-[-10px]" style={{ fontFamily: "'Lato', sans-serif" }}>
                         Your comfort is our top priority. We provide world-class dental care with a gentle touch, using advanced technology for a stress-free experience.
                     </p>
@@ -80,7 +80,7 @@ export default function Footer() {
                         <div className="flex justify-between"><span>Mon – SAT:</span> <span>8:00 AM – 5:00 PM</span></div>
                         <div className="flex justify-between border-b border-[#4a2e2b]/10 pb-1"><span>SUN:</span> <span>Closed</span></div>
                     </div>
-                    
+
                     <div className="flex gap-4 mt-2">
                         <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-[#0097ab] flex items-center justify-center text-white hover:bg-[#4a2e2b] transition-all hover:scale-105 shadow-sm">
                             <Facebook size={18} fill="currentColor" strokeWidth={0} />

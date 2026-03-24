@@ -99,9 +99,9 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
     }, []);
 
     return (
-        <article ref={articleRef} className="w-full bg-[#E2DED9]">
+        <article ref={articleRef} className="w-full bg-[#EADDD7]">
             {/* 1. Header Section - Redesigned to exactly match BlogPage.tsx structure */}
-            <header className="bg-[#E2DED9] h-[400px] flex flex-col pt-12 relative overflow-hidden">
+            <header className="bg-[#EADDD7] h-[400px] flex flex-col pt-12 relative overflow-hidden">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 z-20 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                     {/* Top Row: Back Link & Breadcrumbs */}
                     <Link
@@ -133,54 +133,66 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                     </div>
                 </div>
 
-                {/* Decorative Orbs to match other pages style */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 z-0" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 z-0" />
+
             </header>
 
             {/* Featured Image Section Removed As Requested */}
-            <div className="w-full h-[1px] bg-[#E2DED9]"></div>
+
 
             {/* 3. Main Content - "Big Data" Structured Layout */}
             <div className="w-full bg-[#0097AB] py-24 rounded-t-[5rem] -mt-12 z-20 relative">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 blog-body flex flex-col gap-20">
 
-                    {/* Intro Section - Two Column (Text in white box, Widget outside) */}
+
+                    {/* Intro Section - Two Column (Photo + Text in main column, Widget in sidebar) */}
                     <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start relative">
-                        {/* Main Text Content (White Box) */}
-                        <section className="animate-section flex-[2.8]">
-                            <div className="bg-white rounded-[4rem] p-10 md:p-14 lg:p-20 shadow-[0_50px_120px_rgba(0,0,0,0.1)] relative overflow-hidden group">
-                                {/* Decorative Grid Accent */}
-                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0097ab_1.5px,transparent_1.5px)] [background-size:32px_32px]"></div>
-                                
-                                {(() => {
-                                    const firstDotIndex = blog.detailedData.intro.indexOf('.');
-                                    const heading = blog.detailedData.intro.substring(0, firstDotIndex + 1);
-                                    const body = blog.detailedData.intro.substring(firstDotIndex + 1);
-
-                                    return (
-                                        <div className="relative z-10">
-                                            <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
-                                                {heading}
-                                            </h2>
-                                            <div className="space-y-8 relative">
-                                                {/* Animated Scroll Indicator Line */}
-                                                <div 
-                                                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#0097ab] origin-top scale-y-0 opacity-40 line-indicator"
-                                                    style={{ transformOrigin: 'top' }}
-                                                ></div>
-                                                
-                                                <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed font-medium pl-8">
-                                                    {body}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    );
-                                })()}
+                        {/* Main Column */}
+                        <div className="flex-[2.8] flex flex-col gap-10">
+                            {/* Featured Image - Inside the left column but outside the white text box */}
+                            <div className="w-full aspect-video md:aspect-[16/7] rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-white/10 animate-section">
+                                <img 
+                                    src={blog.image} 
+                                    alt={blog.title}
+                                    className="w-full h-full object-cover" 
+                                />
                             </div>
-                        </section>
 
-                        {/* Right Side: Related Read Widget (OUTSIDE the white box) */}
+                            {/* Main Text Content (White Box) */}
+                            <section className="animate-section">
+                                <div className="bg-white rounded-[4rem] p-10 md:p-14 lg:p-20 shadow-[0_50px_120px_rgba(0,0,0,0.1)] relative overflow-hidden group">
+                                    {/* Decorative Grid Accent */}
+                                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0097ab_1.5px,transparent_1.5px)] [background-size:32px_32px]"></div>
+                                    
+                                    {(() => {
+                                        if (!blog.detailedData.intro) return null;
+                                        const firstDotIndex = blog.detailedData.intro.indexOf('.');
+                                        const heading = firstDotIndex !== -1 ? blog.detailedData.intro.substring(0, firstDotIndex + 1) : blog.detailedData.intro;
+                                        const body = firstDotIndex !== -1 ? blog.detailedData.intro.substring(firstDotIndex + 1) : "";
+
+                                        return (
+                                                <div className="relative z-10">
+                                                    <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
+                                                        {heading}
+                                                    </h2>
+                                                <div className="space-y-8 relative">
+                                                    {/* Animated Scroll Indicator Line */}
+                                                    <div 
+                                                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#0097ab] origin-top scale-y-0 opacity-40 line-indicator"
+                                                        style={{ transformOrigin: 'top' }}
+                                                    ></div>
+                                                    
+                                                    <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed font-medium pl-8">
+                                                        {body}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })()}
+                                </div>
+                            </section>
+                        </div>
+
+                        {/* Right Side: Related Read Widget (Starts at the top level of the photo) */}
                         <div className="w-full lg:w-[320px] lg:sticky lg:top-32 shrink-0">
                             <div className="bg-[#EADDD7]/30 rounded-[3rem] p-8 border border-white/10 shadow-2xl backdrop-blur-md">
                                 <h3 className="text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
@@ -262,7 +274,7 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                     )}
 
                     {/* Informative Steps / Procedures */}
-                    {blog.detailedData.detailedSteps && (
+                    {blog.detailedData.detailedSteps && blog.detailedData.detailedSteps.length > 0 && (
                         <section className="animate-section bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group">
                             {/* Accent Circles */}
                             <div className="absolute top-0 right-0 w-96 h-96 bg-[#EADDD7]/20 rounded-full -translate-y-1/2 translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
@@ -271,18 +283,33 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                             <h2 className="text-[#3b2a28] text-4xl md:text-6xl font-[Playfair_Display] mb-20 text-center tracking-tight leading-tight">
                                 Detailed Narrative & <span className="italic font-normal text-[#0097ab]">Expert Insights</span>
                             </h2>
-                            <div className="space-y-16 max-w-5xl mx-auto">
+                            <div className="space-y-32 max-w-6xl mx-auto">
                                 {blog.detailedData.detailedSteps.map((step, i) => (
-                                    <div key={i} className="flex flex-col md:flex-row gap-8 md:gap-14 group/step">
-                                        <div className="shrink-0">
-                                            <div className="text-[#0097ab]/20 text-8xl font-serif leading-none transition-all duration-500 group-hover/step:text-[#0097ab]/80 group-hover/step:-translate-y-2">
-                                                0{i + 1}
+                                    <div 
+                                        key={i} 
+                                        className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center group/step`}
+                                    >
+                                        {/* Text Side */}
+                                        <div className="flex-1 space-y-6">
+                                            <div className="flex items-center gap-6">
+                                                <div className="text-[#0097ab] text-6xl font-serif opacity-20 group-hover/step:opacity-100 transition-opacity duration-500">
+                                                    0{i + 1}
+                                                </div>
+                                                <div className="h-[1px] flex-1 bg-[#3b2a28]/10 group-hover/step:bg-[#0097ab]/30 transition-colors"></div>
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col gap-5 pt-4">
-                                            <div className="h-1 w-12 bg-[#0097ab]/20 mb-2 transition-all duration-500 group-hover/step:w-24 group-hover/step:bg-[#0097ab]"></div>
                                             <h4 className="text-[#3b2a28] text-3xl font-[Playfair_Display] font-bold leading-tight">{step.title}</h4>
-                                            <p className="text-[#3b2a28]/70 text-xl leading-relaxed font-[Lato] max-w-2xl">{step.point}</p>
+                                            <p className="text-[#3b2a28]/70 text-xl leading-relaxed font-[Lato]">{step.point}</p>
+                                        </div>
+
+                                        {/* Image Side */}
+                                        <div className="flex-1 w-full">
+                                            <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover/step:scale-[1.02] ring-1 ring-[#3b2a28]/5">
+                                                <img 
+                                                    src={step.image || blog.image} 
+                                                    alt={step.title}
+                                                    className="w-full h-full object-cover" 
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 ))}

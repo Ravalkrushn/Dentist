@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main>
+        <main className="bg-[#EADDD7]">
             <MainNavbar />
             <DoctorProfile />
             <OurMissionVision />

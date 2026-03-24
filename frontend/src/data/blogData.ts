@@ -17,7 +17,7 @@ export type Blog = {
         intro: string;
         quickTips: string[];
         mainHighlights: BlogDetailedHighlight[];
-        detailedSteps?: { title: string; point: string }[];
+        detailedSteps?: { title: string; point: string; image?: string }[];
         conclusion: string;
     };
 };
@@ -68,10 +68,10 @@ export const blogData: Blog[] = [
                 { title: "Gum Abscess", description: "Small, pimple-like bumps on your gums indicate an active infection.", iconName: "ShieldCheck" }
             ],
             detailedSteps: [
-                { title: "Phase 1: Diagnosis", point: "We use digital X-rays to see the extent of the infection." },
-                { title: "Phase 2: Cleaning", point: "The infected pulp is gently removed using precision tools." },
-                { title: "Phase 3: Sealing", point: "The infected pulp is gently removed using precision tools." },
-                { title: "Phase 4: Crown", point: "A custom crown is placed to restore the tooth's strength and look." }
+                { title: "Phase 1: Diagnosis & Imaging", point: "Our process begins with high-resolution digital X-rays and a clinical examination to map the exact internal structure of the tooth. We identify the precise source of the infection, ensuring that we only treat the necessary areas while preserving as much of your natural tooth structure as possible for long-term health.", image: "/image/service1.jpg" },
+                { title: "Phase 2: Precision Cleaning", point: "Under local anesthesia, the infected pulp is gently and thoroughly removed using specialized endodontic instruments. This eliminates the source of the pain and the bacteria causing the inflammation. Our team ensures the canals are completely sterilized, a critical step in preventing the infection from returning.", image: "/image/service2.jpg" },
+                { title: "Phase 3: Biocompatible Sealing", point: "Once the canals are meticulously cleaned and reshaped, they are filled with a biocompatible material called gutta-percha. This rubber-like material seals the inner chambers of the tooth against future bacterial invasion, effectively 'mummifying' the empty space and providing internal support to the roots.", image: "/image/service3.jpg" },
+                { title: "Phase 4: Restorative Crown", point: "To complete the transformation, a custom-crafted porcelain crown is placed over the treated tooth. This restores its full strength, protects the brittle interior, and matches the shade and shape of your surrounding teeth perfectly—ensuring your smile looks as good as it feels.", image: "/image/service4.jpg" }
             ],
             conclusion: "With modern technology and sedation options at Dento, a root canal is no more uncomfortable than a standard filling. If you have pain, don't wait."
         }

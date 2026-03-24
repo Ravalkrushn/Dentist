@@ -20,9 +20,7 @@ export default function GalleryHeader() {
         <section className="relative h-[400px] flex flex-col overflow-hidden pt-12 bg-[#EADDD7]" 
                  ref={headerRef}>
             
-            {/* Decorative Orbs for premium look */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#0097ab]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#3b2a28]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
 
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-20">
                 <Breadcrumbs 

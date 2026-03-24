@@ -15,14 +15,20 @@ export const servicesData = [
             { stepTitle: "Professional Polishing", stepDesc: "After scaling, we polish your teeth using a high-powered electric brush and professional polishing paste to remove surface stains and create a smooth, clean finish.", stepImage: "/image/Phase_1_3.jpg" },
             { stepTitle: "Expert Flossing", stepDesc: "Our dental hygienist performs detailed flossing to clean between teeth, remove any remaining debris, and check for potential problem areas.", stepImage: "/image/Phase_1_4.jpg" }
         ],
-        benefits: ["Prevents Cavities", "Stops Tooth Loss", "Brightens Your Smile", "Freshens Breath"],
+        benefits: [
+            { title: "Prevents Cavities", iconName: "Shield" },
+            { title: "Stops Tooth Loss", iconName: "Zap" },
+            { title: "Brightens Your Smile", iconName: "Sparkles" },
+            { title: "Freshens Breath", iconName: "Wind" }
+        ],
         costInfo: { info: "Typical cost ranges from $100 to $200 before insurance.", isCoveredByInsurance: true },
         faqs: [
             { question: "Does professional cleaning hurt?", answer: "No, teeth cleaning is virtually painless. You may feel some mild pressure or vibrations, but most patients find it completely comfortable." },
             { question: "How often should I get it?", answer: "We generally recommend a professional cleaning every 6 months to maintain optimal oral health and catch potential issues early." },
             { question: "Can I eat right after my cleaning?", answer: "Yes, you can eat immediately after a standard cleaning. However, if you received a fluoride treatment, we recommend waiting 30 minutes before eating or drinking." },
             { question: "Is it safe if I have sensitive teeth?", answer: "Absolutely. We use specialized techniques and can apply desensitizing agents to ensure your cleaning is gentle and pain-free even for sensitive teeth." }
-        ]
+        ],
+        relatedBlogIds: ["oral-hygiene-tips", "teeth-whitening-safety"]
     },
     {
         id: "root-canal-treatment",
@@ -40,14 +46,19 @@ export const servicesData = [
             { stepTitle: "Gentle Pulpectomy", stepDesc: "A small opening is created in the tooth crown to carefully remove the diseased or dead pulp tissue from the inner chambers and disinfect the area thoroughly.", stepImage: "/image/dentist1.png" },
             { stepTitle: "Sealing & Filling", stepDesc: "The cleaned root canals are filled with a biocompatible material called gutta-percha and sealed to prevent any future bacterial entry or reinfection.", stepImage: "/image/ABOUT2.png" }
         ],
-        benefits: ["Stops the Spread of Infection", "Relieves Pain", "Saves the Natural Tooth"],
+        benefits: [
+            { title: "Stops the Spread of Infection", iconName: "ShieldCheck" },
+            { title: "Relieves Pain", iconName: "Heart" },
+            { title: "Saves the Natural Tooth", iconName: "Smile" }
+        ],
         costInfo: { info: "Costs vary depending on the tooth structure, ranging anywhere from $800 to $1,500.", isCoveredByInsurance: true },
         faqs: [
             { question: "Is a root canal painful?", answer: "With modern anesthesia, a root canal feels similar to a routine filling. The procedure actually relieves the pain caused by the tooth infection." },
             { question: "What happens if I don't get a root canal?", answer: "The infection will spread, potentially leading to an abscess, bone loss, and eventually the loss of the tooth itself. It can also cause systemic health issues." },
             { question: "How long does the tooth last after treatment?", answer: "With a proper crown and good oral hygiene, a root-canal-treated tooth can last a lifetime, just like your natural teeth." },
             { question: "Will I need a crown after a root canal?", answer: "Most often, yes. Because the tooth becomes more brittle after the pulp is removed, a crown is necessary to protect it from fracturing." }
-        ]
+        ],
+        relatedBlogIds: ["root-canal-signs", "cost-of-missing-teeth"]
     },
     {
         id: "dental-implants",
@@ -65,14 +76,19 @@ export const servicesData = [
             { stepTitle: "Osseointegration Period", stepDesc: "Over several months, the implant naturally fuses with your jawbone in a process called osseointegration, providing a solid foundation for the final crown.", stepImage: "/image/blog3.jpg" },
             { stepTitle: "Custom Crown Fitting", stepDesc: "Once healing is complete, we attach a custom-designed porcelain crown that matches the color and shape of your natural teeth perfectly.", stepImage: "/image/DentalImplants_after.jpg" }
         ],
-        benefits: ["Looks and Feels Complete", "Prevents Bone Loss", "Lasts a Lifetime with Proper Care"],
+        benefits: [
+            { title: "Looks and Feels Complete", iconName: "Smile" },
+            { title: "Prevents Bone Loss", iconName: "Shield" },
+            { title: "Lasts a Lifetime with Proper Care", iconName: "Clock" }
+        ],
         costInfo: { info: "A single implant can cost between $3,000 and $4,500 total.", isCoveredByInsurance: false },
         faqs: [
             { question: "What is the success rate of dental implants?", answer: "Dental implants have an incredibly high success rate, typically over 95-98% when performed on healthy patients by experienced professionals." },
             { question: "Does it feel like a real tooth?", answer: "Yes. Because they are anchored into your bone, dental implants function, feel, and look exactly like your natural teeth." },
             { question: "How long is the entire implant process?", answer: "The process can take anywhere from 3 to 9 months, as time is needed for the bone to heal and fuse with the implant before the final crown is placed." },
             { question: "Am I too old for dental implants?", answer: "There is no upper age limit. As long as you have good oral health and sufficient bone density, implants are a great solution for seniors." }
-        ]
+        ],
+        relatedBlogIds: ["cost-of-missing-teeth", "best-age-for-braces"]
     },
     {
         id: "orthodontics",
@@ -90,14 +106,19 @@ export const servicesData = [
             { stepTitle: "Progress Adjustments", stepDesc: "During regular check-updates, we adjust your wires or provide new aligner sets to continuously guide your teeth into their ideal, healthy positions.", stepImage: "/image/blog4.jpg" },
             { stepTitle: "Retention Phase", stepDesc: "To ensure your new smile stays perfect, we provide custom retainers that prevent your teeth from shifting back to their original positions.", stepImage: "/image/Invisalign&TeethWhitening_after.jpg" }
         ],
-        benefits: ["Straight, Beautiful Smile", "Reduces Risk of Decay", "Improves Bite and Jaw Function"],
+        benefits: [
+            { title: "Straight, Beautiful Smile", iconName: "Sparkles" },
+            { title: "Reduces Risk of Decay", iconName: "Shield" },
+            { title: "Improves Bite and Jaw Function", iconName: "Activity" }
+        ],
         costInfo: { info: "Costs range from $3,000 to $7,000 depending on the complexity and appliance type.", isCoveredByInsurance: true },
         faqs: [
             { question: "Can adults get braces or aligners?", answer: "Absolutely! More than 25% of all orthodontic patients are adults. It's never too late to achieve the smile you've always wanted." },
             { question: "Will braces affect my speech?", answer: "There might be a very brief adjustment period of a few days, but most patients speak perfectly normally with both braces and clear aligners." },
             { question: "Can I still play sports with braces?", answer: "Yes, you can. We highly recommend wearing a professional mouthguard to protect your appliances and your teeth during contact sports." },
             { question: "How often are the adjustment visits?", answer: "Visits are typically scheduled every 4 to 8 weeks to monitor progress and make necessary adjustments to your treatment plan." }
-        ]
+        ],
+        relatedBlogIds: ["best-age-for-braces", "teeth-whitening-safety"]
     },
     {
         id: "smile-makeover",
@@ -115,14 +136,19 @@ export const servicesData = [
             { stepTitle: "Trial Smile Phase", stepDesc: "You wear high-quality temporary restorations to 'test drive' your new smile, allowing us to make final adjustments to the look and feel.", stepImage: "/image/blog5.jpg" },
             { stepTitle: "Final Artistic Delivery", stepDesc: "Our master technicians craft your final porcelain restorations, which we then bond securely to create your breathtaking, permanent new smile.", stepImage: "/image/VeneersTransformation_after.jpg" }
         ],
-        benefits: ["Dramatic Cosmetic Improvement", "Boosts Self-Confidence", "Customized to Your Face"],
+        benefits: [
+            { title: "Dramatic Cosmetic Improvement", iconName: "Sparkles" },
+            { title: "Boosts Self-Confidence", iconName: "Smile" },
+            { title: "Customized to Your Face", iconName: "User" }
+        ],
         costInfo: { info: "Highly variable depending on the number of services combined. Can range from $1,500 to over $10,000.", isCoveredByInsurance: false },
         faqs: [
             { question: "Is a smile makeover painful?", answer: "We prioritize your comfort. Most procedures involved are minimally invasive and performed under local anesthesia, ensuring a pain-free experience." },
             { question: "How long does the makeover last?", answer: "With proper oral care and regular check-ups, porcelain veneers and crowns can last 10 to 15 years or even longer." },
             { question: "How many appointments will I need?", answer: "A smile makeover is usually completed in 2 to 3 main visits after the initial design and consultation phase." },
             { question: "Can I finance my smile makeover?", answer: "Yes, we offer flexible payment plans and financing options through partners like CareCredit to make your dream smile affordable." }
-        ]
+        ],
+        relatedBlogIds: ["teeth-whitening-safety", "best-age-for-braces"]
     },
     {
         id: "wisdom-tooth-extraction",
@@ -140,14 +166,19 @@ export const servicesData = [
             { stepTitle: "Surgical Extraction", stepDesc: "The surgeon carefully removes the tooth, clearing any small amounts of bone if necessary, while ensuring the surrounding tissue is preserved.", stepImage: "/image/dentist3.png" },
             { stepTitle: "Guided Recovery", stepDesc: "The site is gently sutured if needed, and we provide you with a comprehensive post-operative plan to ensure fast and comfortable healing at home.", stepImage: "/image/p2.png" }
         ],
-        benefits: ["Prevents Crowding", "Eliminates Pain", "Reduces Infection Risk"],
+        benefits: [
+            { title: "Prevents Crowding", iconName: "Grid" },
+            { title: "Eliminates Pain", iconName: "Zap" },
+            { title: "Reduces Infection Risk", iconName: "Shield" }
+        ],
         costInfo: { info: "Usually $200-$600 per tooth depending on impaction level.", isCoveredByInsurance: true },
         faqs: [
             { question: "Do all wisdom teeth need to be pulled?", answer: "Not always. If they are healthy, fully erupted, and properly aligned, they may stay. However, we often remove them to prevent future crowding or infection." },
             { question: "What is the best age for extraction?", answer: "Extraction is typically easier and recovery faster if done in the late teens or early twenties, before the roots are fully developed." },
             { question: "What is 'dry socket' and how do I avoid it?", answer: "Dry socket occurs when the blood clot is lost early. You can avoid it by not using straws, not smoking, and following all post-care instructions carefully." },
             { question: "When can I return to work or school?", answer: "Most patients can return to their normal daily activities within 2 to 4 days after the surgery." }
-        ]
+        ],
+        relatedBlogIds: ["oral-hygiene-tips", "root-canal-signs"]
     },
     {
         id: "pediatric-dentistry",
@@ -165,14 +196,19 @@ export const servicesData = [
             { stepTitle: "Painless Cleaning", stepDesc: "Our specialized pediatric hygienists perform a quick, gentle cleaning and polishing to keep your child's developing teeth strong and healthy.", stepImage: "/image/dentist4.png" },
             { stepTitle: "Family Education", stepDesc: "We teach both parent and child the best techniques for brushing and flossing at home, setting the foundation for a lifetime of healthy smiles.", stepImage: "/image/p4.png" }
         ],
-        benefits: ["Establishes Healthy Habits", "Prevents Early Childhood Caries", "Creates a Positive Dental Feel"],
+        benefits: [
+            { title: "Establishes Healthy Habits", iconName: "CheckCircle2" },
+            { title: "Prevents Early Childhood Caries", iconName: "Shield" },
+            { title: "Creates a Positive Dental Feel", iconName: "Smile" }
+        ],
         costInfo: { info: "Preventative pediatric visits are typically fully covered by most dental insurances.", isCoveredByInsurance: true },
         faqs: [
             { question: "How do you handle nervous children?", answer: "We use 'Tell-Show-Do' techniques, kid-friendly language, and a gentle approach to build trust and make sure every child feels safe and happy." },
             { question: "When should my child start using toothpaste?", answer: "You can start using a tiny 'smear' of fluoride toothpaste as soon as the first tooth appears, increasing to a pea-sized amount at age 3." },
             { question: "Are baby teeth really that important?", answer: "Yes! They help children chew and speak properly and serve as essential placeholders for permanent teeth. Neglected baby teeth can lead to serious infections." },
             { question: "What should I do if my child knockouts a tooth?", answer: "Keep the tooth moist (in milk if possible) and contact us immediately. Quick action can often save the tooth!" }
-        ]
+        ],
+        relatedBlogIds: ["oral-hygiene-tips", "best-age-for-braces"]
     },
     {
         id: "teeth-whitening",
@@ -190,13 +226,19 @@ export const servicesData = [
             { stepTitle: "Gel Application", stepDesc: "We apply a high-potency professional whitening gel to each tooth, which targets deep-set stains that regular stores-bought products cannot reach.", stepImage: "/image/service1.png" },
             { stepTitle: "LED Activation", stepDesc: "A specialized LED light is used to activate the whitening agent, accelerating the process to deliver a visibly brighter smile in just one visit.", stepImage: "/image/team_member.png" }
         ],
-        benefits: ["Instantly Brighter Smile", "Non-Invasive", "Safe Under Doctor Supervision"],
+        benefits: [
+            { title: "Instantly Brighter Smile", iconName: "Sparkles" },
+            { title: "Non-Invasive", iconName: "Zap" },
+            { title: "Safe Under Doctor Supervision", iconName: "ShieldCheck" },
+            { title: "Long-Lasting Results", iconName: "Clock" }
+        ],
         costInfo: { info: "In-office treatments usually cost around $400-$600.", isCoveredByInsurance: false },
         faqs: [
             { question: "How white will my teeth get?", answer: "Results vary, but most patients see a brightness increase of 5 to 10 shades in just one session. We aim for a radiant but natural look." },
             { question: "Will it make my teeth permanently sensitive?", answer: "No. Any sensitivity is temporary and usually fades within 24-48 hours. We use desensitizing gels to minimize any discomfort." },
             { question: "Can whitening fix stains on crowns or veneers?", answer: "Whitening treatments only affect natural tooth enamel. They will not change the color of dental crowns, veneers, or fillings." },
             { question: "How can I maintain my results?", answer: "Avoid staining foods and drinks like coffee or red wine for the first 48 hours, and maintain regular hygiene visits for long-lasting brightness." }
-        ]
+        ],
+        relatedBlogIds: ["teeth-whitening-safety", "cost-of-missing-teeth"]
     }
 ];

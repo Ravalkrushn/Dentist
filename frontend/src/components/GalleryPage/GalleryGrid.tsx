@@ -155,65 +155,41 @@ export default function GalleryGrid() {
     };
 
     return (
-        <section className="relative bg-[#0097ab] min-h-screen pb-32 overflow-hidden rounded-t-[5rem] -mt-12 z-[30]">
+        <section className="relative min-h-screen pb-32 overflow-hidden rounded-t-[5rem] -mt-12 z-[30]">
+            <div className="absolute inset-0 bg-[#0097ab] -z-10" />
 
             <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-16">
 
-                {/* Header row */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                {/* Header row - Large White Typography */}
+                <div className="flex flex-col items-center text-center mb-16 px-4">
+                    <p className="text-white text-[13px] font-bold tracking-[0.4em] uppercase mb-4">
+                        Dento
+                    </p>
+                    <h2 className="text-white font-[Playfair_Display] text-4xl md:text-7xl font-black mb-12 tracking-tight">
+                        Browse <span className="italic font-normal serif text-white">our work.</span>
+                    </h2>
 
-                    {/* Left: title */}
-                    <div>
-                        <p className="text-white/60 text-[11px] font-semibold tracking-[0.3em] uppercase mb-3">
-                            Dento
-                        </p>
-                        <h2 className="text-white font-[Playfair_Display] text-4xl md:text-5xl font-semibold leading-[0.95] tracking-tight">
-                            Browse<br />
-                            <span className="text-white/60 italic">our work</span>
-                        </h2>
-                    </div>
+                    {/* High-end Capsule Navigation */}
+                    <div className="bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 flex items-center gap-2">
 
-                    {/* Right: Premium vertical navigation */}
-                    <nav className="flex flex-col gap-2 min-w-[200px]">
+
                         {categories.map((cat) => (
                             <button
                                 key={cat.name}
                                 onClick={() => switchTab(cat.name)}
-                                className={`group relative flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-500 overflow-hidden ${activeTab === cat.name
-                                        ? "bg-white shadow-[0_10px_30px_rgba(0,151,171,0.1)] translate-x-2"
-                                        : "hover:bg-white/50 hover:translate-x-1"
-                                    }`}
+                                className={`px-8 py-3 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-500 ${
+                                    activeTab === cat.name 
+                                    ? "bg-white text-[#0097ab] shadow-xl scale-105" 
+                                    : "text-white/70 hover:text-white hover:bg-white/5"
+                                }`}
                             >
-                                <div className="flex items-center gap-4 z-10">
-                                    <span className={`text-[10px] font-mono font-bold transition-colors duration-300 ${activeTab === cat.name ? "text-[#0097ab]" : "text-white/40"}`}>
-                                        {cat.label}
-                                    </span>
-                                    <span className={`text-[13px] font-bold tracking-[0.1em] uppercase transition-colors duration-300 ${activeTab === cat.name ? "text-[#001524]" : "text-white/70 group-hover:text-white"}`}>
-                                        {cat.name}
-                                    </span>
-                                </div>
-
-                                {activeTab === cat.name && (
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#0097ab] z-10" />
-                                )}
-
-                                {/* Hover/Active background effect */}
-                                <div className={`absolute inset-0 bg-white opacity-0 ${activeTab === cat.name ? "opacity-100" : "group-hover:opacity-10"} transition-opacity duration-500`} />
+                                {cat.name}
                             </button>
                         ))}
-                    </nav>
-                </div>
-
-                {/* Divider + count */}
-                <div className="flex items-center gap-6 mb-12">
-                    <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                        <span className="text-white/60 text-[11px] tracking-[0.25em] uppercase font-bold">
-                            {filteredItems.length} Featured Works
-                        </span>
                     </div>
                 </div>
+
+
 
                 {/* Scrollable Gallery Container */}
                 <div className="relative group/gallery">

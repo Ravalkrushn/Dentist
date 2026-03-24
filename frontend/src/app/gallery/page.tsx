@@ -5,7 +5,7 @@ import GalleryGrid from "@/components/GalleryPage/GalleryGrid";
 
 export default function GalleryPage() {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-[#EADDD7]">
             <MainNavbar />
             <GalleryHeader />
             <GalleryGrid />

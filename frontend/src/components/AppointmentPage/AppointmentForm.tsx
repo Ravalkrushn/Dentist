@@ -24,7 +24,7 @@ export default function AppointmentForm() {
     ];
 
     return (
-        <section ref={sectionRef} className="py-24 bg-[#0097ab] px-6 lg:px-12 rounded-t-[4rem] -mt-10 relative z-10 transition-colors duration-500">
+        <section ref={sectionRef} className="py-24 bg-[#0097ab] px-6 lg:px-12 rounded-t-[5rem] -mt-12 relative z-10 transition-colors duration-500">
             <div className="max-w-[1400px] mx-auto appointment-grid">
                 <div className="grid lg:grid-cols-12 gap-10 items-stretch">
                     
