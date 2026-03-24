@@ -2,19 +2,19 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Bed, Scan, Activity, ShieldCheck, Thermometer, Wind, ShieldAlert } from "lucide-react";
 
 const infrastructureFeatures = [
-    { title: "Modern Treatment Rooms", desc: "6 fully-equipped, private treatment suites designed for patient comfort." },
-    { title: "Digital Imaging Suite", desc: "3D cone-beam CT scanner, digital panoramic X-rays, and intraoral cameras." },
-    { title: "Sedation Suite", desc: "Dedicated conscious sedation area with continuous vitals monitoring." }
+    { title: "Modern Treatment Rooms", desc: "6 fully-equipped, private treatment suites designed for patient comfort.", iconName: "Bed" },
+    { title: "Digital Imaging Suite", desc: "3D cone-beam CT scanner, digital panoramic X-rays, and intraoral cameras.", iconName: "Scan" },
+    { title: "Sedation Suite", desc: "Dedicated conscious sedation area with continuous vitals monitoring.", iconName: "Activity" }
 ];
 
 const hygieneStandards = [
-    "Hospital-Grade Autoclave Sterilization after every use.",
-    "Single-Use Instrument Policy wherever possible.",
-    "HEPA Air Filtration & UV-C filters in each room.",
-    "OSHA & CDC Compliant Protocols for all staff."
+    { title: "Hospital-Grade Autoclave", desc: "Sterilization after every use.", iconName: "ShieldCheck" },
+    { title: "Single-Use Instrument", desc: "Policy wherever possible.", iconName: "Thermometer" },
+    { title: "HEPA Air Filtration", desc: "& UV-C filters in each room.", iconName: "Wind" },
+    { title: "OSHA & CDC Compliant", desc: "Protocols for all staff.", iconName: "ShieldAlert" }
 ];
 
 const equipmentItems = [
@@ -222,11 +222,20 @@ export default function ClinicOverview() {
                         <div className="space-y-6 flex-1">
                             {infrastructureFeatures.map((feat, i) => (
                                 <div key={i} className="infra-card group bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-[#0097ab]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                                    <h4 className="text-[#0097ab] font-bold text-xl mb-3 flex items-center gap-2">
-                                        <span className="w-2 h-2 rounded-full bg-[#3b2a28] opacity-50 group-hover:bg-[#0097ab] transition-colors"></span>
+                                    <h4 className="text-[#0097ab] font-bold text-xl mb-3 flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-all">
+                                            {(() => {
+                                                switch (feat.iconName) {
+                                                    case "Bed": return <Bed size={20} />;
+                                                    case "Scan": return <Scan size={20} />;
+                                                    case "Activity": return <Activity size={20} />;
+                                                    default: return <Bed size={20} />;
+                                                }
+                                            })()}
+                                        </div>
                                         {feat.title}
                                     </h4>
-                                    <p className="text-[#5a3a3a] leading-relaxed pl-4 border-l-2 border-gray-100 group-hover:border-[#0097ab]/50 transition-colors">
+                                    <p className="text-[#5a3a3a] leading-relaxed group-hover:text-[#0097ab] transition-colors">
                                         {feat.desc}
                                     </p>
                                 </div>
@@ -245,14 +254,25 @@ export default function ClinicOverview() {
                         <ul className="space-y-4 flex-1">
                             {hygieneStandards.map((std, i) => (
                                 <li key={i} className="hygiene-item group flex items-start gap-4 bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-                                    <div className="flex-shrink-0 mt-1 w-6 h-6 rounded-full bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-colors duration-300">
-                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                                        </svg>
+                                    <div className="flex-shrink-0 mt-1 w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-colors duration-300">
+                                        {(() => {
+                                            switch (std.iconName) {
+                                                case "ShieldCheck": return <ShieldCheck size={20} />;
+                                                case "Thermometer": return <Thermometer size={20} />;
+                                                case "Wind": return <Wind size={20} />;
+                                                case "ShieldAlert": return <ShieldAlert size={20} />;
+                                                default: return <ShieldCheck size={20} />;
+                                            }
+                                        })()}
                                     </div>
-                                    <span className="text-[#3b2a28] font-medium leading-relaxed group-hover:text-[#0097ab] transition-colors duration-300">
-                                        {std}
-                                    </span>
+                                    <div className="flex flex-col">
+                                        <span className="text-[#0097ab] font-bold group-hover:text-[#0097ab] transition-colors duration-300">
+                                            {std.title}
+                                        </span>
+                                        <span className="text-[#3b2a28]/70 text-sm font-medium leading-relaxed">
+                                            {std.desc}
+                                        </span>
+                                    </div>
                                 </li>
                             ))}
                         </ul>

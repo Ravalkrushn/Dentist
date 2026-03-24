@@ -17,21 +17,25 @@ export default function ReviewsSection() {
             id: 1,
             text: "Was my first time going to the dentist in a long time! The staff made making an appointment fun and easy, checking in was a breeze. Once in the chair the staff was friendly and thorough in the exam! Never once was there an awkward moment. My teeth felt so clean and cared for by the end of the visit. Would 100% recommend coming here! The staff if what makes this place great!",
             name: "Mya",
+            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
         },
         {
             id: 2,
             text: "Today was my first visit to a dentist in 13 years and the entire staff was so welcoming! Absolute professionals and very comfortable environment. I received top notch care, and everything was explained to me in detail, so I felt very comfortable with the plan for my oral health.",
             name: "Nicole",
+            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop"
         },
         {
             id: 3,
             text: "First time patient at relaxation dental, I have to say the customer service was incredible! Everyone was so warm and welcoming. I went in for a broken bracket on my braces and they were so patient and understanding. Dr. Brown and his team fixed me right up!",
             name: "Christina",
+            image: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=150&h=150&fit=crop"
         },
         {
             id: 4,
             text: "Amazing experience! The hygienist was so gentle and Dr. Brown really took the time to answer all my questions. I also loved the modern office vibe. I used to be terrified of the dentist, but I actually look forward to coming back.",
             name: "David",
+            image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop"
         }
     ];
 
@@ -198,17 +202,26 @@ export default function ReviewsSection() {
                                         {review.text}
                                     </p>
 
-                                    {/* Reviewer Name */}
-                                    <h4
-                                        className="text-[#4a2e2b] mt-auto"
-                                        style={{
-                                            fontFamily: "'Playfair Display', Georgia, serif",
-                                            fontSize: "1.2rem",
-                                            fontWeight: 600,
-                                        }}
-                                    >
-                                        {review.name}
-                                    </h4>
+                                    {/* Reviewer Info with Image */}
+                                    <div className="flex items-center gap-4 mt-auto">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#4a2e2b]/10 shadow-sm shrink-0">
+                                            <img
+                                                src={review.image}
+                                                alt={review.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                        <h4
+                                            className="text-[#4a2e2b]"
+                                            style={{
+                                                fontFamily: "'Playfair Display', Georgia, serif",
+                                                fontSize: "1.2rem",
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            {review.name}
+                                        </h4>
+                                    </div>
                                 </div>
                             ))}
                         </div>
