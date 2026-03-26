@@ -111,12 +111,12 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         <ChevronLeft size={16} /> BACK TO JOURNALS
                     </Link>
 
-                    <Breadcrumbs 
+                    <Breadcrumbs
                         items={[
                             { label: "Home", href: "/" },
                             { label: "Blog", href: "/blog" },
                             { label: blog.category, href: "#", active: true }
-                        ]} 
+                        ]}
                     />
                 </div>
 
@@ -150,10 +150,10 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         <div className="flex-[2.8] flex flex-col gap-10">
                             {/* Featured Image - Inside the left column but outside the white text box */}
                             <div className="w-full aspect-video md:aspect-[16/7] rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-white/10 animate-section">
-                                <img 
-                                    src={blog.image} 
+                                <img
+                                    src={blog.image}
                                     alt={blog.title}
-                                    className="w-full h-full object-cover" 
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
 
@@ -162,7 +162,7 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                 <div className="bg-white rounded-[4rem] p-10 md:p-14 lg:p-20 shadow-[0_50px_120px_rgba(0,0,0,0.1)] relative overflow-hidden group">
                                     {/* Decorative Grid Accent */}
                                     <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0097ab_1.5px,transparent_1.5px)] [background-size:32px_32px]"></div>
-                                    
+
                                     {(() => {
                                         if (!blog.detailedData.intro) return null;
                                         const firstDotIndex = blog.detailedData.intro.indexOf('.');
@@ -170,17 +170,17 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                         const body = firstDotIndex !== -1 ? blog.detailedData.intro.substring(firstDotIndex + 1) : "";
 
                                         return (
-                                                <div className="relative z-10">
-                                                    <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
-                                                        {heading}
-                                                    </h2>
+                                            <div className="relative z-10">
+                                                <h2 className="text-[#3b2a28] text-4xl md:text-5xl lg:text-6xl font-[Playfair_Display] leading-[1.15] mb-12 font-medium">
+                                                    {heading}
+                                                </h2>
                                                 <div className="space-y-8 relative">
                                                     {/* Animated Scroll Indicator Line */}
-                                                    <div 
+                                                    <div
                                                         className="absolute left-0 top-0 bottom-0 w-1 bg-[#0097ab] origin-top scale-y-0 opacity-40 line-indicator"
                                                         style={{ transformOrigin: 'top' }}
                                                     ></div>
-                                                    
+
                                                     <p className="text-[#3b2a28]/90 text-xl lg:text-2xl font-[Lato] leading-relaxed font-medium pl-8">
                                                         {body}
                                                     </p>
@@ -201,19 +201,19 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                     </div>
                                     Curated For You
                                 </h3>
-                                
+
                                 {(() => {
                                     const currentIndex = blogData.findIndex(b => b.id === blog.id);
                                     const related = blogData[(currentIndex + 1) % blogData.length];
                                     if (!related || related.id === blog.id) return null;
-                                    
+
                                     return (
                                         <Link href={`/blog/${related.id}`} className="group block">
                                             <div className="aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 shadow-2xl ring-1 ring-white/20">
-                                                <img 
-                                                    src={related.image} 
+                                                <img
+                                                    src={related.image}
                                                     alt={related.title}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                                                 />
                                             </div>
                                             <h4 className="text-white font-[Playfair_Display] text-2xl font-bold mb-5 group-hover:text-white/80 transition-colors line-clamp-2 leading-tight">
@@ -279,14 +279,14 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                             {/* Accent Circles */}
                             <div className="absolute top-0 right-0 w-96 h-96 bg-[#EADDD7]/20 rounded-full -translate-y-1/2 translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
                             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FBF8F7] rounded-full translate-y-1/2 -translate-x-1/2 -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
-                            
+
                             <h2 className="text-[#3b2a28] text-4xl md:text-6xl font-[Playfair_Display] mb-20 text-center tracking-tight leading-tight">
                                 Detailed Narrative & <span className="italic font-normal text-[#0097ab]">Expert Insights</span>
                             </h2>
                             <div className="space-y-32 max-w-6xl mx-auto">
                                 {blog.detailedData.detailedSteps.map((step, i) => (
-                                    <div 
-                                        key={i} 
+                                    <div
+                                        key={i}
                                         className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center group/step`}
                                     >
                                         {/* Text Side */}
@@ -304,10 +304,10 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                         {/* Image Side */}
                                         <div className="flex-1 w-full">
                                             <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover/step:scale-[1.02] ring-1 ring-[#3b2a28]/5">
-                                                <img 
-                                                    src={step.image || blog.image} 
+                                                <img
+                                                    src={step.image || blog.image}
                                                     alt={step.title}
-                                                    className="w-full h-full object-cover" 
+                                                    className="w-full h-full object-cover"
                                                 />
                                             </div>
                                         </div>
@@ -316,24 +316,28 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                             </div>
                         </section>
                     )}
+                </div>
+            </div>
 
-                    {/* 4. Related Blogs Suggestions Section */}
+            {/* 4. Related Blogs Suggestions Section - Custom Background */}
+            <div className="w-full bg-[#E2DED9] py-24">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <div className="w-full pb-10">
-                        <div className="bg-white/5 backdrop-blur-xl rounded-[4rem] p-12 md:p-24 border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.15)] relative overflow-hidden">
+                        <div className="bg-[#0097ab] rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden">
                             {/* Decorative Shape */}
-                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0097ab]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
                             
                             <div className="relative z-10">
                                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
                                     <div className="space-y-4">
                                         <h4 className="text-white text-4xl md:text-5xl font-[Playfair_Display]">Continue Reading</h4>
-                                        <p className="text-white/50 font-[Lato] text-xl">Expand your knowledge with more professional insights.</p>
+                                        <p className="text-white/60 font-[Lato] text-xl">Expand your knowledge with more professional insights.</p>
                                     </div>
-                                    <Link href="/blog" className="text-white font-bold text-sm tracking-widest uppercase border-b-2 border-[#0097ab] pb-2 hover:text-[#0097ab] transition-colors">
+                                    <Link href="/blog" className="text-white font-bold text-sm tracking-widest uppercase border-b-2 border-white/30 pb-2 hover:text-white/70 transition-colors">
                                         View Library
                                     </Link>
                                 </div>
-                                
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     {(() => {
                                         const currentIndex = blogData.findIndex(b => b.id === blog.id);
@@ -343,22 +347,22 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                         ].filter(b => b.id !== blog.id);
 
                                         return relatedBlogs.map((item: Blog, i: number) => (
-                                            <Link 
-                                                key={i} 
+                                            <Link
+                                                key={i}
                                                 href={`/blog/${item.id}`}
                                                 className="group bg-white rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 flex flex-col h-max"
                                             >
                                                 <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden relative">
-                                                    <img 
-                                                        src={item.image} 
-                                                        alt={item.title} 
-                                                        className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
                                                     />
                                                     <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full shadow-lg">
                                                         <span className="text-[#0097ab] font-bold text-[10px] uppercase tracking-widest">{item.category}</span>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="p-8 md:p-10 flex flex-col">
                                                     <div className="flex items-center gap-4 text-[#3b2a28]/40 font-mono text-[10px] uppercase tracking-[0.2em] mb-4">
                                                         <span className="flex items-center gap-2">
@@ -367,15 +371,15 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                                                         <span className="w-[1px] h-3 bg-[#3b2a28]/10"></span>
                                                         <span>{item.readTime}</span>
                                                     </div>
-                                                    
+
                                                     <h5 className="text-[#3b2a28] text-2xl font-[Playfair_Display] font-bold mb-4 group-hover:text-[#0097ab] transition-colors line-clamp-2 leading-tight">
                                                         {item.title}
                                                     </h5>
-                                                    
+
                                                     <p className="text-[#3b2a28]/60 font-[Lato] text-base line-clamp-2 mb-6 leading-relaxed">
                                                         {item.excerpt}
                                                     </p>
-                                                    
+
                                                     <div className="border-t border-[#3b2a28]/5 pt-6 flex items-center justify-between">
                                                         <div className="flex items-center gap-3 text-[#0097ab] font-bold text-[11px] tracking-[0.2em] group-hover:gap-5 transition-all duration-500">
                                                             READ FULL FEATURE <ArrowRight size={14} />
@@ -393,7 +397,12 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         </div>
                     </div>
 
-                    {/* Conclusion & Call to Action */}
+                    {/* Conclusion & Call to Action - Back to Teal container */}
+                </div>
+            </div>
+
+            <div className="w-full bg-[#0097AB] py-24 pb-32">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <section className="animate-section">
                         <div className="bg-white rounded-[4rem] p-12 md:p-24 shadow-2xl relative overflow-hidden group text-center">
                             {/* Subtle Background Text */}
@@ -444,7 +453,6 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                             </div>
                         </div>
                     </section>
-
                 </div>
             </div>
         </article>

@@ -146,7 +146,7 @@ export default function ClinicOverview() {
 
     return (
         <>
-        <section ref={sectionRef} className="w-full bg-[#0097ab] py-20 overflow-hidden rounded-t-[5rem] -mt-12 z-30 relative">
+        <section ref={sectionRef} className="w-full bg-[#0097ab] py-20 overflow-hidden -mt-12 z-30 relative">
                 {/* Header */}
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-16 text-center">
                     <h2 className="text-white text-4xl lg:text-5xl font-serif mt-2 inline-block border-b-4 border-white pb-2">

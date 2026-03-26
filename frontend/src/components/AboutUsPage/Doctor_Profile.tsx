@@ -305,8 +305,12 @@ export default function DoctorProfile() {
                                 <h3 className="text-2xl font-serif text-[#3b2a28] border-b-2 border-[#0097ab] inline-block pb-2 mb-6">Certifications</h3>
                                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {doc.certifications.map((cert: string, certIdx: number) => (
-                                        <li key={certIdx} className="cert-item flex items-start gap-3 bg-[#e2ded9] p-4 rounded-xl shadow-sm border border-slate-200">
-                                            <span className="text-[#0097ab] text-lg font-bold leading-none mt-1">✓</span>
+                                        <li key={certIdx} className="cert-item flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                                            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0097ab] flex items-center justify-center text-white mt-0.5">
+                                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
                                             <span className="text-[#5a3a3a] text-sm font-medium">{cert}</span>
                                         </li>
                                     ))}

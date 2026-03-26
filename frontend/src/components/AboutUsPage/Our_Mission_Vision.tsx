@@ -18,42 +18,7 @@ export default function OurMissionVision() {
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
-        const ctx = gsap.context(() => {
-            // Mission cards animation
-            gsap.from(".mission-card", {
-                scrollTrigger: {
-                    trigger: ".mission-section",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                x: -30,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out"
-            });
-
-            // Vision cards animation
-            gsap.from(".vision-card", {
-                scrollTrigger: {
-                    trigger: ".vision-section",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-                opacity: 0,
-                x: 30,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out"
-            });
-
-        }, sectionRef);
-
-        return () => ctx.revert();
+        // Animations removed to ensure immediate visibility on scroll
     }, []);
 
     return (

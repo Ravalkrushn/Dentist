@@ -162,10 +162,10 @@ export default function GalleryGrid() {
 
                 {/* Header row - Large White Typography */}
                 <div className="flex flex-col items-center text-center mb-16 px-4">
-                    <p className="text-white text-[13px] font-bold tracking-[0.4em] uppercase mb-4">
+                    <p className="text-white text-[2rem] md:text-[3rem] font-[Playfair_Display] font-bold tracking-[0.2em] uppercase mb-2">
                         Dento
                     </p>
-                    <h2 className="text-white font-[Playfair_Display] text-4xl md:text-7xl font-black mb-12 tracking-tight">
+                    <h2 className="text-white font-[Playfair_Display] text-4xl md:text-6xl font-black mb-12 tracking-tight">
                         Browse <span className="italic font-normal serif text-white">our work.</span>
                     </h2>
 

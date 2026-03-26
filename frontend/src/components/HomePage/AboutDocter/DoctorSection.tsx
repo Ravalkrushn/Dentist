@@ -92,7 +92,7 @@ export default function DoctorSection() {
 
                     {/* Left: Doctor Image */}
                     <div className="doctor-image w-full lg:w-1/2 flex justify-center lg:justify-start">
-                        <div className="w-full max-w-[500px] h-[600px] rounded-tl-[3rem] rounded-tr-[3rem] rounded-bl-xl rounded-br-xl overflow-hidden shadow-xl">
+                        <div className="w-full max-w-[500px] h-[600px] rounded-[3rem] overflow-hidden shadow-xl">
                             <img
                                 src="/image/ABOUT2.png" // Assuming SIR.webp is the doctor portrait based on file list
                                 alt="Dr. Nicholas Brown"

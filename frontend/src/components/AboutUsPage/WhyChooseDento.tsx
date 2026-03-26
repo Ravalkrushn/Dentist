@@ -27,7 +27,7 @@ export default function WhyChooseDento() {
                         <div className="flex items-center gap-6 group">
                             <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
                                 <ShieldCheck size={32} strokeWidth={1.5} />
-                             </div>
+                            </div>
                             <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comprehensive family and cosmetic dentistry</p>
                         </div>
 
