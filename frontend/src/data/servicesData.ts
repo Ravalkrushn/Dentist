@@ -5,9 +5,9 @@ export const servicesData = [
         heroImage: "/image/service1.png",
         description: "Professional teeth cleaning is a foundational preventative dental procedure designed to thoroughly remove plaque and stubborn tartar buildup that regular brushing cannot reach. This essential treatment leaves your teeth feeling exceptionally smooth and sparkling while protecting your gums from disease and keeping your breath fresh and healthy.",
         symptoms: [
-            { title: "Bleeding Gums", desc: "Your gums bleed when you brush or floss.", iconName: "AlertCircle" },
-            { title: "Bad Breath", desc: "Persistent bad breath despite brushing.", iconName: "Wind" },
-            { title: "Visible Tartar", desc: "Yellow or brown deposits along the gumline.", iconName: "Search" }
+            { title: "Bleeding Gums", desc: "Your gums bleed when you brush or floss.", iconName: "BleedingGums" },
+            { title: "Bad Breath", desc: "Persistent bad breath despite brushing.", iconName: "BadBreath" },
+            { title: "Visible Tartar", desc: "Yellow or brown deposits along the gumline.", iconName: "VisibleTartar" }
         ],
         steps: [
             { stepTitle: "Comprehensive Exam", stepDesc: "We perform a thorough examination of your teeth and gums to detect cavities, gum disease, and other oral health issues. This initial assessment ensures your treatment plan is safe and effective.", stepImage: "/image/Phase_1_1.jpg" },
@@ -16,10 +16,10 @@ export const servicesData = [
             { stepTitle: "Expert Flossing", stepDesc: "Our dental hygienist performs detailed flossing to clean between teeth, remove any remaining debris, and check for potential problem areas.", stepImage: "/image/Phase_1_4.jpg" }
         ],
         benefits: [
-            { title: "Prevents Cavities", iconName: "Shield" },
-            { title: "Stops Tooth Loss", iconName: "Zap" },
-            { title: "Brightens Your Smile", iconName: "Sparkles" },
-            { title: "Freshens Breath", iconName: "Wind" }
+            { title: "Prevents Cavities", iconName: "Cavity" },
+            { title: "Stops Tooth Loss", iconName: "Tooth" },
+            { title: "Brightens Your Smile", iconName: "Smile" },
+            { title: "Freshens Breath", iconName: "Breath" }
         ],
         costInfo: { info: "Typical cost ranges from $100 to $200 before insurance.", isCoveredByInsurance: true },
         faqs: [
@@ -36,8 +36,8 @@ export const servicesData = [
         heroImage: "/image/service2.png",
         description: "A root canal is a sophisticated restorative treatment used by specialists to repair and save a tooth that has become badly decayed or severely infected internally. By removing the diseased pulp and sealing the inner chambers, this procedure eliminates intense pain and prevents the need for an extraction, allowing you to keep your natural smile for a lifetime.",
         symptoms: [
-            { title: "Severe Pain", desc: "Intense toothache when chewing or applying pressure.", iconName: "Zap" },
-            { title: "Sensitivity", desc: "Prolonged sensitivity to hot or cold temperatures.", iconName: "Thermometer" },
+            { title: "Severe Pain", desc: "Intense toothache when chewing or applying pressure.", iconName: "SeverePain" },
+            { title: "Sensitivity", desc: "Prolonged sensitivity to hot or cold temperatures.", iconName: "Sensitivity" },
             { title: "Swelling", desc: "Swollen or tender gums near the infected tooth.", iconName: "Activity" }
         ],
         steps: [

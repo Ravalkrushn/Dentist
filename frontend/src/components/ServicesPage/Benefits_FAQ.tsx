@@ -30,11 +30,15 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                     key={idx}
                                     className="flex items-start gap-4 p-6 bg-white rounded-3xl shadow-sm border border-white/50 group hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
                                 >
-                                    <div className="w-10 h-10 rounded-2xl bg-[#0097ab]/10 flex items-center justify-center text-[#0097ab] group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-500 shrink-0">
+                                    <div className="w-10 h-10 rounded-2xl bg-[#0097ab] flex items-center justify-center text-white transition-all duration-500 shrink-0 shadow-lg shadow-[#0097ab]/20">
                                         {(() => {
                                             const name = benefit.iconName;
                                             const size = 20;
                                             switch (name) {
+                                                case "Cavity": return <img src="/image/cavity.png" alt="Cavity" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Tooth": return <img src="/image/caries.png" alt="Stops Tooth Loss" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Smile": return <img src="/image/smile.png" alt="Brighten Smile" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Breath": return <img src="/image/breath1.png" alt="Fresh Breath" className="w-6 h-6 object-contain brightness-0 invert" />;
                                                 case "Shield": return <ShieldCheck size={size} />;
                                                 case "ShieldCheck": return <ShieldCheck size={size} />;
                                                 case "Zap": return <Sparkles size={size} />; 
@@ -83,7 +87,7 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                             <span className={`text-xl font-bold transition-colors duration-300 ${isOpen ? 'text-[#0097ab]' : 'text-[#3b2a28]'}`}>
                                                 {faq.question}
                                             </span>
-                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#0097ab] text-white rotate-[135deg]' : 'bg-[#EADDD7]/30 text-[#0097ab]'}`}>
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#0097ab] text-white' : 'bg-[#EADDD7]/30 text-[#0097ab]'}`}>
                                                 <Plus size={24} />
                                             </div>
                                         </button>
