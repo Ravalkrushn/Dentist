@@ -38,7 +38,7 @@ export const servicesData = [
         symptoms: [
             { title: "Severe Pain", desc: "Intense toothache when chewing or applying pressure.", iconName: "SeverePain" },
             { title: "Sensitivity", desc: "Prolonged sensitivity to hot or cold temperatures.", iconName: "Sensitivity" },
-            { title: "Swelling", desc: "Swollen or tender gums near the infected tooth.", iconName: "Activity" }
+            { title: "Swelling", desc: "Swollen or tender gums near the infected tooth.", iconName: "Swelling" }
         ],
         steps: [
             { stepTitle: "Diagnostic X-Ray", stepDesc: "We take detailed digital X-rays to see the exact shape of your root canals and determine the extent of the infection in the surrounding bone.", stepImage: "/image/service2.png" },
@@ -47,8 +47,8 @@ export const servicesData = [
             { stepTitle: "Sealing & Filling", stepDesc: "The cleaned root canals are filled with a biocompatible material called gutta-percha and sealed to prevent any future bacterial entry or reinfection.", stepImage: "/image/ABOUT2.png" }
         ],
         benefits: [
-            { title: "Stops the Spread of Infection", iconName: "ShieldCheck" },
-            { title: "Relieves Pain", iconName: "Heart" },
+            { title: "Stops the Spread of Infection", iconName: "Virus" },
+            { title: "Relieves Pain", iconName: "Relief" },
             { title: "Saves the Natural Tooth", iconName: "Smile" }
         ],
         costInfo: { info: "Costs vary depending on the tooth structure, ranging anywhere from $800 to $1,500.", isCoveredByInsurance: true },
@@ -66,9 +66,9 @@ export const servicesData = [
         heroImage: "/image/service3.png",
         description: "Dental implants represent the modern gold standard for tooth replacement, utilizing medical-grade titanium posts that act as artificial roots placed directly into the jawbone. These permanent foundations securely hold lifelike replacement teeth or bridges that look, feel, and function exactly like your natural teeth, restoring both your structural health and your confidence.",
         symptoms: [
-            { title: "Missing Teeth", desc: "You have one or more missing teeth.", iconName: "XCircle" },
-            { title: "Loose Dentures", desc: "You are tired of dentures that slip or click.", iconName: "RotateCcw" },
-            { title: "Bone Loss", desc: "Missing teeth have begun to cause jawbone deterioration.", iconName: "ShieldAlert" }
+            { title: "Missing Teeth", desc: "You have one or more missing teeth.", iconName: "MissingTeeth" },
+            { title: "Loose Dentures", desc: "You are tired of dentures that slip or click.", iconName: "LooseDentures" },
+            { title: "Bone Loss", desc: "Missing teeth have begun to cause jawbone deterioration.", iconName: "BoneLoss" }
         ],
         steps: [
             { stepTitle: "Clinical Assessment", stepDesc: "We conduct a comprehensive oral examination and use advanced 3D imaging to evaluate your jawbone density and plan the perfect implant placement.", stepImage: "/image/service3.png" },
@@ -78,8 +78,8 @@ export const servicesData = [
         ],
         benefits: [
             { title: "Looks and Feels Complete", iconName: "Smile" },
-            { title: "Prevents Bone Loss", iconName: "Shield" },
-            { title: "Lasts a Lifetime with Proper Care", iconName: "Clock" }
+            { title: "Prevents Bone Loss", iconName: "Health" },
+            { title: "Lasts a Lifetime with Proper Care", iconName: "Lifetime" }
         ],
         costInfo: { info: "A single implant can cost between $3,000 and $4,500 total.", isCoveredByInsurance: false },
         faqs: [
@@ -96,9 +96,9 @@ export const servicesData = [
         heroImage: "/image/service4.png",
         description: "Orthodontic treatments are advanced procedures designed to align and straighten teeth while correcting complex bite issues to improve both your overall dental health and your cosmetic appearance. Whether using traditional braces or modern clear aligner technology, our goal is to create a perfectly balanced and radiant smile that is easier to maintain and uniquely tailored to your facial features.",
         symptoms: [
-            { title: "Crooked Teeth", desc: "Visibly misaligned or crowded teeth.", iconName: "Grid" },
-            { title: "Bite Issues", desc: "Overbite, underbite, or crossbite problems.", iconName: "Layers" },
-            { title: "Jaw Pain", desc: "Discomfort caused by poor jaw alignment.", iconName: "Frown" }
+            { title: "Crooked Teeth", desc: "Visibly misaligned or crowded teeth.", iconName: "CrookedTeeth" },
+            { title: "Bite Issues", desc: "Overbite, underbite, or crossbite problems.", iconName: "BiteIssues" },
+            { title: "Jaw Pain", desc: "Discomfort caused by poor jaw alignment.", iconName: "JawPain" }
         ],
         steps: [
             { stepTitle: "In-Depth Consultation", stepDesc: "We analyze your bite, take digital impressions, and discuss the best options for your lifestyle, whether it's traditional braces or clear aligners.", stepImage: "/image/service4.png" },
@@ -107,8 +107,8 @@ export const servicesData = [
             { stepTitle: "Retention Phase", stepDesc: "To ensure your new smile stays perfect, we provide custom retainers that prevent your teeth from shifting back to their original positions.", stepImage: "/image/Invisalign&TeethWhitening_after.jpg" }
         ],
         benefits: [
-            { title: "Straight, Beautiful Smile", iconName: "Sparkles" },
-            { title: "Reduces Risk of Decay", iconName: "Shield" },
+            { title: "Straight, Beautiful Smile", iconName: "Sparkle" },
+            { title: "Reduces Risk of Decay", iconName: "Decay" },
             { title: "Improves Bite and Jaw Function", iconName: "Activity" }
         ],
         costInfo: { info: "Costs range from $3,000 to $7,000 depending on the complexity and appliance type.", isCoveredByInsurance: true },
