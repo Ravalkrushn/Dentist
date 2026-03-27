@@ -23,7 +23,7 @@ const LandingPage = () => {
         trigger: containerRef.current,
         start: "top top",
         end: "+=400%",
-        scrub: 3,
+        scrub: 1.8,
         pin: true,
         anticipatePin: 1,
       },

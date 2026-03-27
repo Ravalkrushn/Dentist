@@ -186,9 +186,9 @@ export const servicesData = [
         heroImage: "/image/service7.png",
         description: "Pediatric dentistry provides specialized, gentle dental care for infants, children, and adolescents, with a core focus on preventative education and early intervention during critical growth stages. Our child-friendly approach is designed to create positive associations with dental visits while establishing the healthy habits necessary for your child to maintain a vibrant smile as they grow.",
         symptoms: [
-            { title: "First Tooth", desc: "Time for your child's first dental visit.", iconName: "Baby" },
-            { title: "Thumb Sucking", desc: "Prolonged habits that may affect jaw development.", iconName: "Hand" },
-            { title: "Toothaches", desc: "Complaints of pain when eating sweets.", iconName: "Candy" }
+            { title: "First Tooth", desc: "Time for your child's first dental visit.", iconName: "FirstTooth" },
+            { title: "Thumb Sucking", desc: "Prolonged habits that may affect jaw development.", iconName: "ThumbSucking" },
+            { title: "Toothaches", desc: "Complaints of pain when eating sweets.", iconName: "ChildToothache" }
         ],
         steps: [
             { stepTitle: "Friendly Welcome", stepDesc: "We create a fun, welcoming environment to introduce your child to the dental clinic, turning the visit into a positive and engaging experience.", stepImage: "/image/service7.png" },
@@ -197,8 +197,8 @@ export const servicesData = [
             { stepTitle: "Family Education", stepDesc: "We teach both parent and child the best techniques for brushing and flossing at home, setting the foundation for a lifetime of healthy smiles.", stepImage: "/image/p4.png" }
         ],
         benefits: [
-            { title: "Establishes Healthy Habits", iconName: "CheckCircle2" },
-            { title: "Prevents Early Childhood Caries", iconName: "Shield" },
+            { title: "Establishes Healthy Habits", iconName: "Strong" },
+            { title: "Prevents Early Childhood Caries", iconName: "Protect" },
             { title: "Creates a Positive Dental Feel", iconName: "Smile" }
         ],
         costInfo: { info: "Preventative pediatric visits are typically fully covered by most dental insurances.", isCoveredByInsurance: true },
@@ -216,7 +216,7 @@ export const servicesData = [
         heroImage: "/image/service8.png",
         description: "Teeth whitening is a highly effective professional cosmetic treatment designed to safely lighten the color of your teeth and remove deep-seated stains and years of discoloration. Utilizing advanced, medical-grade formulas that outperform store-bought kits, this non-invasive procedure delivers an instantly brighter, more youthful-looking smile in just a single visit under our expert supervision.",
         symptoms: [
-            { title: "Yellowing", desc: "General dullness or yellowing from aging.", iconName: "Sun" },
+            { title: "Yellowing", desc: "General dullness or yellowing from aging.", iconName: "YellowingTeeth" },
             { title: "Dietary Stains", desc: "Discoloration from coffee, tea, or wine.", iconName: "Coffee" },
             { title: "Special Occasion", desc: "Wanting a bright smile for a wedding or event.", iconName: "Heart" }
         ],
