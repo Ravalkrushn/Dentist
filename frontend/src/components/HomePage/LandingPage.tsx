@@ -22,8 +22,8 @@ const LandingPage = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=350%",
-        scrub: 1,
+        end: "+=400%",
+        scrub: 3,
         pin: true,
         anticipatePin: 1,
       },

@@ -61,7 +61,13 @@ const IconMapper = ({ name }: { name?: string }) => {
         case "LooseDentures": return <img src="/image/partial.png" alt="Loose Dentures" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "CrookedTeeth": return <img src="/image/dental.png" alt="Crooked Teeth" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "BiteIssues": return <img src="/image/teeth.png" alt="Bite Issues" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "Crowding": return <img src="/image/wisdom-tooth.png" alt="Crowding" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "ChippedTeeth": return <img src="/image/broken-tooth.png" alt="Chipped Teeth" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "Gaps": return <img src="/image/teeth-gap.png" alt="Gaps" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "JawPain": return <img src="/image/jaw.png" alt="Jaw Pain" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "StainedTeeth": return <img src="/image/healthy-tooth.png" alt="Stained Teeth" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "Impaction": return <img src="/image/wisdom-teeth.png" alt="Impaction" className="w-10 h-10 brightness-0 invert object-contain" />;
+        case "WisdomPain": return <img src="/image/toothache2.png" alt="Wisdom Pain" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "Swelling": return <img src="/image/face-swelling.png" alt="Swelling" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "VisibleTartar": return <img src="/image/tartar.png" alt="Visible Tartar" className="w-10 h-10 brightness-0 invert object-contain" />;
         case "BleedingGums": return <BleedingGumsIcon size={32} />;

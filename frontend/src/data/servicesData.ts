@@ -103,13 +103,13 @@ export const servicesData = [
         steps: [
             { stepTitle: "In-Depth Consultation", stepDesc: "We analyze your bite, take digital impressions, and discuss the best options for your lifestyle, whether it's traditional braces or clear aligners.", stepImage: "/image/service4.png" },
             { stepTitle: "Precision Placement", stepDesc: "We carefully bond orthodontic brackets to each tooth or provide you with your first set of custom-fitted clear aligner trays to begin the movement.", stepImage: "/image/Invisalign&TeethWhitening_before.png" },
-            { stepTitle: "Progress Adjustments", stepDesc: "During regular check-updates, we adjust your wires or provide new aligner sets to continuously guide your teeth into their ideal, healthy positions.", stepImage: "/image/blog4.jpg" },
+            { stepTitle: "Progress Adjustments", stepDesc: "During regular check-ups, we adjust your wires or provide new aligner sets to continuously guide your teeth into their ideal, healthy positions.", stepImage: "/image/blog4.jpg" },
             { stepTitle: "Retention Phase", stepDesc: "To ensure your new smile stays perfect, we provide custom retainers that prevent your teeth from shifting back to their original positions.", stepImage: "/image/Invisalign&TeethWhitening_after.jpg" }
         ],
         benefits: [
             { title: "Straight, Beautiful Smile", iconName: "Sparkle" },
             { title: "Reduces Risk of Decay", iconName: "Decay" },
-            { title: "Improves Bite and Jaw Function", iconName: "Activity" }
+            { title: "Improves Bite and Jaw Function", iconName: "Jaw" }
         ],
         costInfo: { info: "Costs range from $3,000 to $7,000 depending on the complexity and appliance type.", isCoveredByInsurance: true },
         faqs: [
@@ -126,9 +126,9 @@ export const servicesData = [
         heroImage: "/image/service5.png",
         description: "A smile makeover is a comprehensive and artistic approach to redesigning your smile, combining various cosmetic and restorative techniques such as porcelain veneers, whitening, and bonding. This personalized treatment plan addresses multiple aesthetic concerns simultaneously to create a harmonious, radiant look that dramatically enhances your natural beauty and boosts your self-confidence.",
         symptoms: [
-            { title: "Stained Teeth", desc: "Severe discoloration that doesn't respond to whitening.", iconName: "Droplet" },
-            { title: "Chipped/Broken Teeth", desc: "Teeth that are damaged or worn down.", iconName: "Hammer" },
-            { title: "Gaps", desc: "Unwanted spaces between your front teeth.", iconName: "StretchHorizontal" }
+            { title: "Stained Teeth", desc: "Severe discoloration that doesn't respond to whitening.", iconName: "StainedTeeth" },
+            { title: "Chipped/Broken Teeth", desc: "Teeth that are damaged or worn down.", iconName: "ChippedTeeth" },
+            { title: "Gaps", desc: "Unwanted spaces between your front teeth.", iconName: "Gaps" }
         ],
         steps: [
             { stepTitle: "Smile Aesthetic Design", stepDesc: "Using digital smile design technology, we plan your new look, considering your facial features, lip line, and personal aesthetic goals.", stepImage: "/image/service5.png" },
@@ -137,7 +137,7 @@ export const servicesData = [
             { stepTitle: "Final Artistic Delivery", stepDesc: "Our master technicians craft your final porcelain restorations, which we then bond securely to create your breathtaking, permanent new smile.", stepImage: "/image/VeneersTransformation_after.jpg" }
         ],
         benefits: [
-            { title: "Dramatic Cosmetic Improvement", iconName: "Sparkles" },
+            { title: "Dramatic Cosmetic Improvement", iconName: "Cosmetic" },
             { title: "Boosts Self-Confidence", iconName: "Smile" },
             { title: "Customized to Your Face", iconName: "User" }
         ],
@@ -156,9 +156,9 @@ export const servicesData = [
         heroImage: "/image/service6.png",
         description: "Wisdom tooth extraction is a common surgical procedure performed to carefully remove one or more of your third molars — the final permanent teeth to emerge at the back corners of the mouth. Often required when these teeth become impacted or crowded, this procedure prevents future alignment issues, eliminates persistent pain, and protects your surrounding oral health.",
         symptoms: [
-            { title: "Impaction", desc: "Teeth trapped within the jawbone or gums.", iconName: "LocateFixed" },
-            { title: "Pain/Swelling", desc: "Discomfort or inflammation behind your molars.", iconName: "Flame" },
-            { title: "Crowding", desc: "Wisdom teeth pushing and misaligning other teeth.", iconName: "ArrowLeftRight" }
+            { title: "Impaction", desc: "Teeth trapped within the jawbone or gums.", iconName: "Impaction" },
+            { title: "Pain/Swelling", desc: "Discomfort or inflammation behind your molars.", iconName: "WisdomPain" },
+            { title: "Crowding", desc: "Wisdom teeth pushing and misaligning other teeth.", iconName: "Crowding" }
         ],
         steps: [
             { stepTitle: "Positional Imaging", stepDesc: "Advanced X-rays or 3D scans are used to determine the exact position of your wisdom teeth and their proximity to nerves and other teeth.", stepImage: "/image/service6.png" },
@@ -167,9 +167,9 @@ export const servicesData = [
             { stepTitle: "Guided Recovery", stepDesc: "The site is gently sutured if needed, and we provide you with a comprehensive post-operative plan to ensure fast and comfortable healing at home.", stepImage: "/image/p2.png" }
         ],
         benefits: [
-            { title: "Prevents Crowding", iconName: "Grid" },
-            { title: "Eliminates Pain", iconName: "Zap" },
-            { title: "Reduces Infection Risk", iconName: "Shield" }
+            { title: "Prevents Crowding", iconName: "Guard" },
+            { title: "Eliminates Pain", iconName: "PainRelief" },
+            { title: "Reduces Infection Risk", iconName: "Fluoride" }
         ],
         costInfo: { info: "Usually $200-$600 per tooth depending on impaction level.", isCoveredByInsurance: true },
         faqs: [
@@ -223,7 +223,7 @@ export const servicesData = [
         steps: [
             { stepTitle: "Initial Shade Check", stepDesc: "We measure your current tooth color against a shade guide and discuss your target brightness to ensure a natural-looking, radiant result.", stepImage: "/image/service8.png" },
             { stepTitle: "Gum & Lip Protection", stepDesc: "A protective barrier is carefully applied to your gums and lips to prevent any irritation from the professional-grade whitening formula.", stepImage: "/image/Invisalign&TeethWhitening_after.jpg" },
-            { stepTitle: "Gel Application", stepDesc: "We apply a high-potency professional whitening gel to each tooth, which targets deep-set stains that regular stores-bought products cannot reach.", stepImage: "/image/service1.png" },
+            { stepTitle: "Gel Application", stepDesc: "We apply a high-potency professional whitening gel to each tooth, which targets deep-set stains that regular store-bought products cannot reach.", stepImage: "/image/service1.png" },
             { stepTitle: "LED Activation", stepDesc: "A specialized LED light is used to activate the whitening agent, accelerating the process to deliver a visibly brighter smile in just one visit.", stepImage: "/image/team_member.png" }
         ],
         benefits: [

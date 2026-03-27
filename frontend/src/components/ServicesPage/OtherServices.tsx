@@ -72,11 +72,8 @@ export default function OtherServices({ currentId }: { currentId: string }) {
                                     </p>
                                     
                                     <div className="border-t border-[#3b2a28]/5 pt-6 flex items-center justify-between">
-                                        <div className="flex items-center gap-3 text-[#0097ab] font-bold text-[11px] tracking-[0.2em] group-hover/card:gap-5 transition-all duration-500">
+                                        <div className="flex items-center gap-3 text-[#0097ab] font-bold text-[11px] tracking-[0.2em] group-hover/card:gap-5 transition-all duration-500 uppercase">
                                             READ FULL ARTICLE <ArrowRight size={14} />
-                                        </div>
-                                        <div className="w-8 h-8 rounded-full border border-[#0097ab]/20 flex items-center justify-center text-[#0097ab] transform group-hover/card:rotate-[360deg] transition-all duration-1000">
-                                            <Sparkles size={16} />
                                         </div>
                                     </div>
                                 </div>

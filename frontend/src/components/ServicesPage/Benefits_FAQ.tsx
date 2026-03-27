@@ -45,6 +45,11 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                                 case "Lifetime": return <img src="/image/dentist.png" alt="Lifetime Care" className="w-6 h-6 object-contain brightness-0 invert" />;
                                                 case "Sparkle": return <img src="/image/tooth1.png" alt="Sparkling Smile" className="w-6 h-6 object-contain brightness-0 invert" />;
                                                 case "Decay": return <img src="/image/infection.png" alt="Reduce Decay" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Jaw": return <img src="/image/cosmetic-surgery.png" alt="Improve Jaw" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Cosmetic": return <img src="/image/eye-cream.png" alt="Cosmetic Improvement" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Guard": return <img src="/image/mouth-guard.png" alt="Prevents Crowding" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "PainRelief": return <img src="/image/dental-care.png" alt="Eliminates Pain" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Fluoride": return <img src="/image/fluoride.png" alt="Reduces Infection Risk" className="w-6 h-6 object-contain brightness-0 invert" />;
                                                 case "Shield": return <ShieldCheck size={size} />;
                                                 case "ShieldCheck": return <ShieldCheck size={size} />;
                                                 case "Zap": return <Sparkles size={size} />; 
