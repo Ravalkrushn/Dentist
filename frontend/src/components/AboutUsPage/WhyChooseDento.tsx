@@ -1,5 +1,5 @@
 "use client";
-import { ShieldCheck, Wind, Cpu, Zap } from "lucide-react";
+import Image from "next/image";
 
 export default function WhyChooseDento() {
     return (
@@ -25,32 +25,56 @@ export default function WhyChooseDento() {
                     <div className="space-y-8">
                         {/* Feature 1 */}
                         <div className="flex items-center gap-6 group">
-                            <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                <ShieldCheck size={32} strokeWidth={1.5} />
+                            <div className="bg-[#0097ab] text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20 shrink-0">
+                                <Image
+                                    src="/image/lotion.png"
+                                    alt="Comprehensive"
+                                    width={32}
+                                    height={32}
+                                    className="brightness-0 invert"
+                                />
                             </div>
                             <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comprehensive family and cosmetic dentistry</p>
                         </div>
 
                         {/* Feature 2 */}
                         <div className="flex items-center gap-6 group">
-                            <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                <Wind size={32} strokeWidth={1.5} />
+                            <div className="bg-[#0097ab] text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20 shrink-0">
+                                <Image
+                                    src="/image/11.svg"
+                                    alt="Comfort"
+                                    width={32}
+                                    height={32}
+                                    className="brightness-0 invert"
+                                />
                             </div>
                             <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Comfort-focused care with sedation options</p>
                         </div>
 
                         {/* Feature 3 */}
                         <div className="flex items-center gap-6 group">
-                            <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                <Cpu size={32} strokeWidth={1.5} />
+                            <div className="bg-[#0097ab] text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20 shrink-0">
+                                <Image
+                                    src="/image/first-aid.png"
+                                    alt="Technology"
+                                    width={32}
+                                    height={32}
+                                    className="brightness-0 invert"
+                                />
                             </div>
                             <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Advanced technology for precise and gentle treatment</p>
                         </div>
 
                         {/* Feature 4 */}
                         <div className="flex items-center gap-6 group">
-                            <div className="bg-[#0097ab]/10 p-5 rounded-2xl text-[#0097ab] border border-[#0097ab]/10 group-hover:bg-[#0097ab] group-hover:text-white transition-all duration-300">
-                                <Zap size={32} strokeWidth={1.5} />
+                            <div className="bg-[#0097ab] text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20 shrink-0">
+                                <Image
+                                    src="/image/clinic.png"
+                                    alt="Emergency"
+                                    width={32}
+                                    height={32}
+                                    className="brightness-0 invert"
+                                />
                             </div>
                             <p className="text-[#3b2a28] text-lg font-[Lato] tracking-wide">Emergency dental services available</p>
                         </div>
@@ -60,3 +84,6 @@ export default function WhyChooseDento() {
         </section>
     );
 }
+
+
+

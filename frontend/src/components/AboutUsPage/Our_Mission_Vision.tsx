@@ -1,17 +1,15 @@
 "use client";
 import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { User, HeartPulse, Monitor, Leaf } from "lucide-react";
+import Image from "next/image";
 
 const missionPoints = [
-    { title: "Patient-Centered Care", desc: "Every treatment plan is tailored to the individual. We listen first, and treat second — because your comfort and confidence matter most.", iconName: "User" },
-    { title: "Pain-Free Commitment", desc: "We specialize in gentle, sedation-assisted dentistry so that fear or anxiety never stands between you and a healthy smile.", iconName: "HeartPulse" }
+    { title: "Patient-Centered Care", desc: "Every treatment plan is tailored to the individual. We listen first, and treat second — because your comfort and confidence matter most.", iconName: "Patient" },
+    { title: "Pain-Free Commitment", desc: "We specialize in gentle, sedation-assisted dentistry so that fear or anxiety never stands between you and a healthy smile.", iconName: "Commitment" }
 ];
 
 const visionPoints = [
-    { title: "Modern Dentistry", desc: "We invest in the latest digital imaging, laser dentistry, and same-day CEREC crowns to deliver precision care at the forefront of the field.", iconName: "Monitor" },
-    { title: "Sustainable Practice", desc: "We embrace eco-conscious practices — from paperless records to reduced-waste sterilization — because a healthy community requires a healthy planet.", iconName: "Leaf" }
+    { title: "Modern Dentistry", desc: "We invest in the latest digital imaging, laser dentistry, and same-day CEREC crowns to deliver precision care at the forefront of the field.", iconName: "Modern" },
+    { title: "Lifelong Smiles", desc: "Our ultimate vision is to see our patients enjoy a lifetime of oral health and confidence through preventive dental education and state-of-the-art care.", iconName: "Smile" }
 ];
 
 export default function OurMissionVision() {
@@ -34,12 +32,28 @@ export default function OurMissionVision() {
                         {missionPoints.map((pt, i) => (
                             <div key={i} className="mission-card group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                                 <h4 className="text-[#0097ab] font-bold text-xl mb-3 flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-all">
+                                    <div className="bg-[#0097ab] text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20">
                                         {(() => {
                                             switch (pt.iconName) {
-                                                case "User": return <User size={20} />;
-                                                case "HeartPulse": return <HeartPulse size={20} />;
-                                                default: return <User size={20} />;
+                                                case "Patient": return (
+                                                    <Image
+                                                        src="/image/patient.png"
+                                                        alt="Patient"
+                                                        width={28}
+                                                        height={28}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                case "Commitment": return (
+                                                    <Image
+                                                        src="/image/commitment.png"
+                                                        alt="Commitment"
+                                                        width={28}
+                                                        height={28}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                default: return null;
                                             }
                                         })()}
                                     </div>
@@ -57,12 +71,28 @@ export default function OurMissionVision() {
                         {visionPoints.map((pt, i) => (
                             <div key={i} className="vision-card group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                                 <h4 className="text-[#0097ab] font-bold text-xl mb-3 flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-all">
+                                    <div className="bg-[#0097ab] text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0097ab]/20">
                                         {(() => {
                                             switch (pt.iconName) {
-                                                case "Monitor": return <Monitor size={20} />;
-                                                case "Leaf": return <Leaf size={20} />;
-                                                default: return <Monitor size={20} />;
+                                                case "Modern": return (
+                                                    <Image
+                                                        src="/image/dentist-5.png"
+                                                        alt="Modern Dentistry"
+                                                        width={28}
+                                                        height={28}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                case "Smile": return (
+                                                    <Image
+                                                        src="/image/smile.png"
+                                                        alt="Smile"
+                                                        width={28}
+                                                        height={28}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                default: return null;
                                             }
                                         })()}
                                     </div>
@@ -77,3 +107,5 @@ export default function OurMissionVision() {
         </section>
     );
 }
+
+
