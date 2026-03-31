@@ -2,6 +2,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Service_CTA() {
@@ -53,9 +54,13 @@ export default function Service_CTA() {
                     </Link>
                     <a
                         href="tel:7195393145"
-                        className="group relative overflow-hidden border-2 border-[#0097ab] text-[#0097ab] px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#0097ab] hover:text-white"
+                        className="group relative overflow-hidden border-2 border-[#0097ab] text-[#0097ab] px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-[#0097ab]/20"
                     >
-                        Call Now
+                        <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white">
+                            <Phone size={18} className="transition-transform duration-300 group-hover:rotate-12" />
+                            Call Now
+                        </span>
+                        <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#0097ab] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
                     </a>
                 </div>
             </div>

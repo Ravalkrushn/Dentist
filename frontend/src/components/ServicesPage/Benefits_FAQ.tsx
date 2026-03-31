@@ -30,28 +30,28 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                     key={idx}
                                     className="flex items-start gap-4 p-6 bg-white rounded-3xl shadow-sm border border-white/50 group hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
                                 >
-                                    <div className="w-10 h-10 rounded-2xl bg-[#0097ab] flex items-center justify-center text-white transition-all duration-500 shrink-0 shadow-lg shadow-[#0097ab]/20">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#0097ab] flex items-center justify-center text-white transition-all duration-500 shrink-0 shadow-lg shadow-[#0097ab]/20">
                                         {(() => {
                                             const name = benefit.iconName;
-                                            const size = 20;
+                                            const size = 30;
                                             switch (name) {
-                                                case "Cavity": return <img src="/image/cavity.png" alt="Cavity" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Tooth": return <img src="/image/caries.png" alt="Stops Tooth Loss" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Smile": return <img src="/image/smile.png" alt="Brighten Smile" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Breath": return <img src="/image/breath1.png" alt="Fresh Breath" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Virus": return <img src="/image/virus.png" alt="Stop Infection" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Relief": return <img src="/image/tooth.png" alt="Relieve Pain" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Health": return <img src="/image/dental-care.png" alt="Dental Health" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Lifetime": return <img src="/image/dentist.png" alt="Lifetime Care" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Sparkle": return <img src="/image/tooth1.png" alt="Sparkling Smile" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Decay": return <img src="/image/infection.png" alt="Reduce Decay" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Jaw": return <img src="/image/cosmetic-surgery.png" alt="Improve Jaw" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Cosmetic": return <img src="/image/eye-cream.png" alt="Cosmetic Improvement" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Guard": return <img src="/image/mouth-guard.png" alt="Prevents Crowding" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "PainRelief": return <img src="/image/dental-care.png" alt="Eliminates Pain" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Fluoride": return <img src="/image/fluoride.png" alt="Reduces Infection Risk" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Strong": return <img src="/image/teeth2.png" alt="Healthy Habits" className="w-6 h-6 object-contain brightness-0 invert" />;
-                                                case "Protect": return <img src="/image/baby-teeth3.png" alt="Prevents Caries" className="w-6 h-6 object-contain brightness-0 invert" />;
+                                                case "Cavity": return <img src="/image/cavity.png" alt="Cavity" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Tooth": return <img src="/image/caries.png" alt="Stops Tooth Loss" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Smile": return <img src="/image/smile.png" alt="Brighten Smile" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Breath": return <img src="/image/breath1.png" alt="Fresh Breath" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Virus": return <img src="/image/virus.png" alt="Stop Infection" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Relief": return <img src="/image/tooth.png" alt="Relieve Pain" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Health": return <img src="/image/dental-care.png" alt="Dental Health" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Lifetime": return <img src="/image/dentist.png" alt="Lifetime Care" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Sparkle": return <img src="/image/tooth1.png" alt="Sparkling Smile" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Decay": return <img src="/image/infection.png" alt="Reduce Decay" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Jaw": return <img src="/image/cosmetic-surgery.png" alt="Improve Jaw" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Cosmetic": return <img src="/image/eye-cream.png" alt="Cosmetic Improvement" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Guard": return <img src="/image/mouth-guard.png" alt="Prevents Crowding" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "PainRelief": return <img src="/image/dental-care.png" alt="Eliminates Pain" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Fluoride": return <img src="/image/fluoride.png" alt="Reduces Infection Risk" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Strong": return <img src="/image/teeth2.png" alt="Healthy Habits" className="w-8 h-8 object-contain brightness-0 invert" />;
+                                                case "Protect": return <img src="/image/baby-teeth3.png" alt="Prevents Caries" className="w-8 h-8 object-contain brightness-0 invert" />;
                                                 case "Shield": return <ShieldCheck size={size} />;
                                                 case "ShieldCheck": return <ShieldCheck size={size} />;
                                                 case "Zap": return <Sparkles size={size} />; 
@@ -73,6 +73,7 @@ export default function Benefits_FAQ({ benefits, faqs }: Benefits_FAQ_Props) {
                                     </p>
                                 </div>
                             ))}
+
                         </div>
                     </div>
 

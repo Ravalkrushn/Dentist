@@ -34,8 +34,18 @@ export const blogData: Blog[] = [
         author: "Dr. Relaxation",
         detailedData: {
             intro: "A healthy smile is far more than just a cosmetic asset; it is a vital window into your overall systemic health. Many people view oral hygiene as a simple chore—a quick brush in the morning and perhaps a rushed scrub at night. However, the reality is that your mouth is a complex ecosystem that requires dedicated care and attention to remain in balance. When we talk about oral hygiene, we aren't just discussing the whiteness of your teeth; we are addressing the foundation of your well-being. Chronic inflammation in the gums has been linked to various systemic issues, including heart disease, diabetes, and even respiratory conditions. At Dento, we believe that true dental health starts with patient education. Understanding the 'why' behind the 'how' empowers you to take control of your health. Think of your daily oral care routine not as a task, but as a form of preventive medicine—a daily investment that pays dividends in longevity, comfort, and confidence. In this comprehensive guide, we will dive deep into the biological necessity of proper brushing, the overlooked power of interdental cleaning, and how modern dental science has simplified the path to a lifetime of vibrant, healthy smiles.",
-            quickTips: [],
-            mainHighlights: [],
+            quickTips: [
+                "Brush twice daily with fluoride toothpaste.",
+                "Floss every night before bed.",
+                "Clean your tongue to remove bacteria.",
+                "Replace your toothbrush every 3 months.",
+                "Visit your dentist for check-ups every 6 months."
+            ],
+            mainHighlights: [
+                { title: "Severe Pain", description: "A deep, throbbing ache that keeps you awake at night is a serious warning sign.", iconName: "AlertCircle" },
+                { title: "Thermal Sensitivity", description: "Pain that lingers after hot or cold food is gone signals potential nerve damage.", iconName: "Thermometer" },
+                { title: "Gum Abscess", description: "Small, pimple-like bumps on your gums indicate an active infection.", iconName: "ShieldCheck" }
+            ],
             detailedSteps: [
                 { title: "Step 1: The Angle", point: "Place your toothbrush at a 45-degree angle to the gums." },
                 { title: "Step 2: Gentle Motion", point: "Move the brush in small, circular motions rather than scrubbing." },

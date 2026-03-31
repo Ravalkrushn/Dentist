@@ -229,31 +229,6 @@ export default function BlogPostContent({ blog }: BlogPostContentProps) {
                         </div>
                     </div>
 
-                    {/* Quick Tips Grid */}
-                    {blog.detailedData.quickTips && blog.detailedData.quickTips.length > 0 && (
-                        <section className="animate-section">
-                            <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl relative overflow-hidden">
-                                {/* Title with Decorative Bar */}
-                                <div className="text-center mb-16 relative">
-                                    <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[#3b2a28]/5 z-0"></div>
-                                    <h2 className="bg-white px-8 relative z-10 text-[#3b2a28] text-3xl md:text-4xl font-[Playfair_Display] inline-flex items-center gap-4 italic">
-                                        <Sparkles className="text-[#0097ab] w-6 h-6" /> Daily Essentials
-                                    </h2>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                                    {blog.detailedData.quickTips.map((tip, i) => (
-                                        <div key={i} className="flex items-start gap-6 group">
-                                            <div className="bg-[#0097ab] text-white p-2 rounded-xl shrink-0 mt-0.5 shadow-lg shadow-[#0097ab]/20 transform group-hover:rotate-12 transition-transform duration-300">
-                                                <Check size={18} strokeWidth={3} />
-                                            </div>
-                                            <span className="text-xl font-[Lato] text-[#3b2a28]/80 leading-snug font-medium">{tip}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </section>
-                    )}
 
                     {/* Main Highlights - Card Grid Style */}
                     {blog.detailedData.mainHighlights && blog.detailedData.mainHighlights.length > 0 && (

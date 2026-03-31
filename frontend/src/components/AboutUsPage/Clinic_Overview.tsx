@@ -3,27 +3,28 @@ import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronLeft, ChevronRight, Bed, Scan, Activity, ShieldCheck, Thermometer, Wind, ShieldAlert } from "lucide-react";
+import Image from "next/image";
 
 const infrastructureFeatures = [
-    { title: "Modern Treatment Rooms", desc: "6 fully-equipped, private treatment suites designed for patient comfort.", iconName: "Bed" },
-    { title: "Digital Imaging Suite", desc: "3D cone-beam CT scanner, digital panoramic X-rays, and intraoral cameras.", iconName: "Scan" },
-    { title: "Sedation Suite", desc: "Dedicated conscious sedation area with continuous vitals monitoring.", iconName: "Activity" }
+    { title: "Modern Treatment Rooms", desc: "6 fully-equipped, private treatment suites designed for patient comfort.", iconName: "Orthodontist" },
+    { title: "Digital Imaging Suite", desc: "Low-radiation digital radiography and high-definition imaging for precise dental assessments.", iconName: "XRay" },
+    { title: "Comfort Suites", desc: "Relaxing patient areas with entertainment options to make your visit stress-free.", iconName: "Comfort" }
 ];
 
 const hygieneStandards = [
-    { title: "Hospital-Grade Autoclave", desc: "Sterilization after every use.", iconName: "ShieldCheck" },
-    { title: "Single-Use Instrument", desc: "Policy wherever possible.", iconName: "Thermometer" },
-    { title: "HEPA Air Filtration", desc: "& UV-C filters in each room.", iconName: "Wind" },
+    { title: "Hospital-Grade Autoclave", desc: "Sterilization after every use.", iconName: "Autoclave" },
+    { title: "Single-Use Instrument", desc: "Policy wherever possible.", iconName: "Surgical" },
+    { title: "HEPA Air Filtration", desc: "& UV-C filters in each room.", iconName: "Filter" },
     { title: "OSHA & CDC Compliant", desc: "Protocols for all staff.", iconName: "ShieldAlert" }
 ];
 
 const equipmentItems = [
-    { name: "3D Cone Beam Scanner", img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80" },
+    { name: "Digital X-Ray System", img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80" },
     { name: "Digital Intraoral Camera", img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" },
     { name: "CEREC Milling Unit", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" },
     { name: "Laser Dentistry Tools", img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" },
-    { name: "Microscopes", img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=500&q=80" },
-    { name: "Digital X-Ray Systems", img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" }
+    { name: "Diagnostic Microscopes", img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=500&q=80" },
+    { name: "Modern Dental Suite", img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" }
 ];
 
 export default function ClinicOverview() {
@@ -223,13 +224,37 @@ export default function ClinicOverview() {
                             {infrastructureFeatures.map((feat, i) => (
                                 <div key={i} className="infra-card group bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-[#0097ab]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                                     <h4 className="text-[#0097ab] font-bold text-xl mb-3 flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-all">
+                                        <div className="w-14 h-14 rounded-xl bg-[#0097ab] text-white flex items-center justify-center shadow-lg shadow-[#0097ab]/20 shrink-0">
                                             {(() => {
                                                 switch (feat.iconName) {
-                                                    case "Bed": return <Bed size={20} />;
-                                                    case "Scan": return <Scan size={20} />;
-                                                    case "Activity": return <Activity size={20} />;
-                                                    default: return <Bed size={20} />;
+                                                    case "Orthodontist": return (
+                                                        <Image
+                                                            src="/image/orthodontist.png"
+                                                            alt="Orthodontist"
+                                                            width={32}
+                                                            height={32}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    );
+                                                    case "XRay": return (
+                                                        <Image
+                                                            src="/image/x-ray1.png"
+                                                            alt="X-Ray"
+                                                            width={32}
+                                                            height={32}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    );
+                                                    case "Comfort": return (
+                                                        <Image
+                                                            src="/image/healthy-tooth.png"
+                                                            alt="Comfort"
+                                                            width={32}
+                                                            height={32}
+                                                            className="brightness-0 invert"
+                                                        />
+                                                    );
+                                                    default: return <Bed size={28} />;
                                                 }
                                             })()}
                                         </div>
@@ -254,19 +279,43 @@ export default function ClinicOverview() {
                         <ul className="space-y-4 flex-1">
                             {hygieneStandards.map((std, i) => (
                                 <li key={i} className="hygiene-item group flex items-start gap-4 bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100 hover:bg-white hover:shadow-lg transition-all duration-300">
-                                    <div className="flex-shrink-0 mt-1 w-10 h-10 rounded-xl bg-[#0097ab]/10 text-[#0097ab] flex items-center justify-center group-hover:bg-[#0097ab] group-hover:text-white transition-colors duration-300">
+                                    <div className="flex-shrink-0 mt-1 w-14 h-14 rounded-xl bg-[#0097ab] text-white flex items-center justify-center shadow-lg shadow-[#0097ab]/20">
                                         {(() => {
                                             switch (std.iconName) {
-                                                case "ShieldCheck": return <ShieldCheck size={20} />;
-                                                case "Thermometer": return <Thermometer size={20} />;
-                                                case "Wind": return <Wind size={20} />;
-                                                case "ShieldAlert": return <ShieldAlert size={20} />;
-                                                default: return <ShieldCheck size={20} />;
+                                                case "Autoclave": return (
+                                                    <Image
+                                                        src="/image/dental3.png"
+                                                        alt="Autoclave"
+                                                        width={32}
+                                                        height={32}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                case "Surgical": return (
+                                                    <Image
+                                                        src="/image/surgical.png"
+                                                        alt="Surgical"
+                                                        width={32}
+                                                        height={32}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                case "Filter": return (
+                                                    <Image
+                                                        src="/image/filter.png"
+                                                        alt="Filter"
+                                                        width={32}
+                                                        height={32}
+                                                        className="brightness-0 invert"
+                                                    />
+                                                );
+                                                case "ShieldAlert": return <ShieldAlert size={30} />;
+                                                default: return <ShieldCheck size={30} />;
                                             }
                                         })()}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-[#0097ab] font-bold group-hover:text-[#0097ab] transition-colors duration-300">
+                                        <span className="text-[#0097ab] font-bold">
                                             {std.title}
                                         </span>
                                         <span className="text-[#3b2a28]/70 text-sm font-medium leading-relaxed">
@@ -277,6 +326,7 @@ export default function ClinicOverview() {
                             ))}
                         </ul>
                     </div>
+
                 </div>
             </div>
 
@@ -326,3 +376,4 @@ export default function ClinicOverview() {
         </>
     );
 }
+

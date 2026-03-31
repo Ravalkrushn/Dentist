@@ -155,11 +155,11 @@ export default function AppointmentForm() {
                                     </div>
                                 </div>
 
-                                <button className="w-full group relative overflow-hidden bg-[#0097ab] text-white py-6 rounded-[1.5rem] text-lg font-bold transition-all duration-300 shadow-lg shadow-[#0097ab]/20 hover:-translate-y-1 hover:shadow-xl">
+                                <button className="w-full group relative overflow-hidden bg-[#0097ab] text-white py-6 rounded-2xl text-lg font-bold transition-all duration-300 shadow-lg shadow-[#0097ab]/20 hover:-translate-y-1 hover:shadow-xl">
                                     <span className="relative z-10 flex items-center justify-center gap-3 tracking-[0.1em] uppercase">
                                         Confirm Reservation <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </span>
-                                    <div className="absolute inset-0 z-0 h-full w-full scale-x-0 transform bg-[#3b2a28] transition-transform duration-500 group-hover:scale-x-100 origin-left"></div>
+                                    <div className="absolute inset-0 z-0 h-full w-full scale-y-0 transform bg-[#007b8a] transition-transform duration-500 group-hover:scale-y-100 origin-bottom"></div>
                                 </button>
                             </form>
                         </div>
